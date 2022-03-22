@@ -42,16 +42,24 @@
     <h4>Pricing:</h4>
       <div class="line"></div>
       <div class="predict" >
-        <h5>The model predicts that this appartment will cost <span id="price"><?php echo $house[$experiment_data_id]["predicted_price"];?>$</span> per month.</h5>
         <p class="light-p">Based on the presented information, how would you price this appartment per month in (US dollars $)</p>
         <div class="row" style="margin-left:0px !important;">
-          <label>Price: </label>
-          <input  
-                type="text" 
-                name="user-price" 
-                id="user-price_<?php echo $id;?>" 
-                placeholder="<?php echo $house[$experiment_data_id]["predicted_price"];?>">
-          </input>
+            <label>Price: </label>
+            <input
+                  autocomplete="off" 
+                  type="text" 
+                  name="user-price" 
+                  id="user-price_<?php echo $id;?>" 
+                  placeholder="<?php echo $house[$experiment_data_id]["predicted_price"];?>">
+            </input>
+        </div>
+        <div class="row" style="margin-top:10px; margin-bottom:10px;">
+          <button id="btn_ai_<?php echo $id;?>" type="button" class="btn btn-link">Compare price with AI prediction</button>
+        </div>
+        <div id="price-suggestion">
+          <h5>The model predicts that this appartment will cost <span id="price"><?php echo $house[$experiment_data_id]["predicted_price"];?>$</span> per month. </h5>
+          <p>The difference between the current price and the predicted one is <span id="output"></span>$. 
+          <br>If you are sure that you want to save this price for the apartment click on "Next".</p>
         </div>
       </div>
   </div>          
@@ -65,8 +73,18 @@ $('#user-price_<?php echo $id;?>').on('input', function() {
     price_answered = $('#user-price_<?php echo $id;?>').val();
 
     //make the button active as soon as the value was changed
-    if (price_answered != "") $("#btn_<?php echo $id;?>").prop('disabled', false);
+    if (price_answered != "") {
+      $("#btn_<?php echo $id;?>").prop('disabled', false);
+      $("#btn_ai_<?php echo $id;?>").show();
+      var difference = <?php echo $house[$experiment_data_id]["predicted_price"];?> - $(this).val();
+      $("#output").text(difference);
+    }
 
+});
+
+//Display model prediction
+$('#btn_ai_<?php echo $id;?>').on('click', function() {
+    $('#price-suggestion').show();
 });
 
 
@@ -103,6 +121,8 @@ $('body').on('next', function(e, type){
 $('body').on('show', function(e, type){
   //price_answered = "";
   // console.log("show");
+  $("#price-suggestion").hide();
+  $("#btn_ai_<?php echo $id;?>").hide();
   if (type === '<?php echo $id;?>'){
     console.log("showing page " + type);
     console.log(<?php echo $id;?>);
