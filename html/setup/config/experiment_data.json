@@ -1,0 +1,24 @@
+{
+    "houses": [
+        {
+            "id": 0,
+            "num_of_bedrooms": 6,
+            "num_of_bathrooms": 1,
+            "image": "html/img/houses/0.jpg",
+            "square_meters": 45,
+            "parking": "no",
+            "predicted_price": 100
+
+        },
+        {
+            "id": 1,
+            "num_of_bedrooms": 3,
+            "num_of_bathrooms": 1,
+            "image": "html/img/houses/1.jpg",
+            "square_meters": 102,
+            "parking": "yes",
+            "predicted_price": 4500
+
+        }
+    ]
+}
