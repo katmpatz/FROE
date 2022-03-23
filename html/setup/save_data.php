@@ -15,6 +15,9 @@
     //variables
     $count = 0;
 
+    //-----------------------------------------------------------------//
+    //GET DATA FROM REQUEST
+
     //take the values from the request of the main page
     $predectedPrice = $_POST["predictedPrice"];
     $price = $_POST["price"];
@@ -28,6 +31,8 @@
     //take the value that the expirement ended from the last page
     $completed = $_POST["completed"];
 
+
+    //if completed is equal to 0 it means that the request is coming from the main page and therefore there are the data related to the expirement
     if($completed == 0){
       //add the values in an array
       $data = [$predectedPrice, $price, $savePriceTime, $requestPredictionTime, $startTime, $endTime, $houseId, $try];
@@ -35,18 +40,22 @@
       //print to check the values
       debug_to_console($data);
     }
-    
 
+    //-----------------------------------------------------------------//
+    //TRIALS
+    
+    //As we don't use a database we need an extra file in order to be able to create file names based on an order
     //create a file to store the trials in order to have different files for each completed trial
     $idfile = 'trials';
 
-    // open csv file for writing
+    // open csv file for reading and writing
     $idf = fopen($idfile, 'a+');
 
     if ($idf === false) {
       die('Error opening the file ' . $idfile);
     }
 
+    //id the trials file exist count all the lines to find the number of the trial
     if(0 != filesize($idfile)){
       while(!feof($idf)) {
         if(fgets($idf) != ""){
@@ -55,15 +64,19 @@
       }
     }
 
+    //if the experiment is completed add a line with the number of the trial to the trials file.
+    //In this way the next trial will have a seperate file 
     if($completed != 0){
       fwrite($idf, "trial" . $count . "\n");
     }
-    
-
     // close the file
     fclose($idf);
 
 
+   //-----------------------------------------------------------------//
+   //CREATE A NEW FILE AND SAVE THE DATA
+
+    //create a unique file for each trial
     //declare the name of the file that you want to save the data
     $filename = "trial".$count;
     //$fileNameWithPath = "data/".$filename;

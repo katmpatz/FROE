@@ -117,6 +117,7 @@ $('#btn_save_<?php echo $id;?>').on('click', function(e) {
     $("#sure_<?php echo $id;?>").text("If you are sure that you want to save this price click on 'Next'");
 
     save_price_time = e.timeStamp;
+
     //make the next button active when the user has saved a new price
     //save the data in the csv file every time that the user saves a new price
     if ( price_answered != "" && price_answered > 0) {
@@ -163,7 +164,6 @@ $('body').on('next', function(e, type){
         <?php echo $trial;?> + "", 
         <?php echo $filter;?> + "", 
         ]);
-        // console.log(trial_log);
         $.ajax({
             async: false,
             type: "POST",
@@ -171,7 +171,6 @@ $('body').on('next', function(e, type){
             data: {
                 "predictedPrice": "<?php echo $house[$experiment_data_id]["predicted_price"];?>",
                 "price": price_answered,
-                "requestPrediction": request_prediction,
                 "savePriceTime": 0,
                 "requestPredictionTime": request_prediction_time,
                 "startTime": start_time,
@@ -190,15 +189,16 @@ $('body').on('next', function(e, type){
 
 
 $('body').on('show', function(e, type){
-  //price_answered = "";
-  // console.log("show");
-  start_time = e.timeStamp;
-  request_prediction = false;
-  $('#btn_save_<?php echo $id;?>').prop('disabled', true);
-  $('#btn_ai_<?php echo $id;?>').hide();
-  $("#save_<?php echo $id;?>").text("Save");
-  $("#price_suggestion_<?php echo $id;?>").hide();
   if (type === '<?php echo $id;?>'){
+    start_time = e.timeStamp;
+    end_time = 0;
+    request_prediction_time = 0;
+    request_prediction = false;
+    $('#btn_save_<?php echo $id;?>').prop('disabled', true);
+    $('#btn_ai_<?php echo $id;?>').hide();
+    $("#save_<?php echo $id;?>").text("Save");
+    $("#price_suggestion_<?php echo $id;?>").hide();
+
     console.log("showing page " + type);
     console.log(<?php echo $id;?>);
     var img = $("#Stimulus_Image_<?php echo $id;?>");
