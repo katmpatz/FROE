@@ -54,12 +54,14 @@
             </input>
             <button id="btn_save_<?php echo $id;?>" type="button" class="save-btn btn btn-outline-primary"><span id="save_<?php echo $id;?>"></span></button>
         </div>
+        <span id="invalid_price_<?php echo $id;?>" class="error-message"></span>
         <div class="row" style="margin-top:10px; margin-bottom:10px;">
           <button id="btn_ai_<?php echo $id;?>" type="button" class="btn btn-link">Compare price with AI prediction</button>
         </div>
         <div id="price_suggestion_<?php echo $id;?>">
           <h5>The model predicts that this appartment will cost <span id="price"><?php echo $house[$experiment_data_id]["predicted_price"];?>$</span> per month. </h5>
-          <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>$) and the predicted one is <span class="price-differenece" id="output_<?php echo $id;?>"></span>$.</p>
+          <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>$) and the predicted one is <span class="price-differenece" id="output_<?php echo $id;?>"></span>$.
+          <br><span id="sure_<?php echo $id;?>"></span>.</p>
         </div>
       </div>
   </div>          
@@ -74,18 +76,26 @@
     
 //Take the value of the user's input
 $('#user-price_<?php echo $id;?>').on('input', function() {
-    price_answered = $('#user-price_<?php echo $id;?>').val();
-    //make save button not disable when the user enters a price
-    if (price_answered != "") {
-      $('#btn_save_<?php echo $id;?>').prop('disabled', false);
-    }
-
     //change text and style at the save button
     $("#save_<?php echo $id;?>").text("Save");
     $('#btn_save_<?php echo $id;?>').css({'background':'transparent', 'color':'#6f91f5'})
 
+    //check if the price is valid and make save button not disable when the user enters a price
+    price_answered = $('#user-price_<?php echo $id;?>').val();
+    if (price_answered != "" &&  price_answered > 0) {
+      $('#btn_save_<?php echo $id;?>').prop('disabled', false);
+      $("#invalid_price_<?php echo $id;?>").text("");
+    } else if(price_answered <= 0){
+      $("#invalid_price_<?php echo $id;?>").text("The price has to be a positive number");
+      $('#btn_save_<?php echo $id;?>').prop('disabled', true);
+      $('#btn_save_<?php echo $id;?>').css({'background':'transparent', 'color':'grey'})
+    }
+
     //as the user hasn't saved yet the price make the next button disabled again
     $("#btn_<?php echo $id;?>").prop('disabled', true);
+
+    //add text to help the user understand that he has to save in order to proceed
+    $("#sure_<?php echo $id;?>").text("Save first the price and then click on 'Next'");
 });
 
 //Save the price
@@ -101,6 +111,9 @@ $('#btn_save_<?php echo $id;?>').on('click', function() {
     $("#saved_price_<?php echo $id;?>").text(price_answered);
     var difference = <?php echo $house[$experiment_data_id]["predicted_price"];?> - price_answered;
     $("#output_<?php echo $id;?>").text(difference);
+    
+    //add text to help the user understand that he has to save in order to proceed
+    $("#sure_<?php echo $id;?>").text("If you are sure that you want to save this price click on 'Next'");
 
 
     //make the next button active when the user has saved a new price

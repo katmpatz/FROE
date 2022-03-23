@@ -416,6 +416,12 @@ input[type=number]{
     background: #6f91f5;
 }
 
+.error-message{
+    font-size: 12px;
+    font-weight: 500;
+    color: #ff0044;
+}
+
 
 
 
