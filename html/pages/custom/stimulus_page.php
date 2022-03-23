@@ -47,19 +47,19 @@
             <label>Price: </label>
             <input
                   autocomplete="off" 
-                  type="text" 
+                  type="number" 
                   name="user-price" 
                   id="user-price_<?php echo $id;?>" 
-                  placeholder="<?php echo $house[$experiment_data_id]["predicted_price"];?>">
+                  placeholder="1000">
             </input>
+            <button id="btn_save_<?php echo $id;?>" type="button" class="save-btn btn btn-outline-primary"><span id="save_<?php echo $id;?>"></span></button>
         </div>
         <div class="row" style="margin-top:10px; margin-bottom:10px;">
           <button id="btn_ai_<?php echo $id;?>" type="button" class="btn btn-link">Compare price with AI prediction</button>
         </div>
-        <div id="price-suggestion">
+        <div id="price_suggestion_<?php echo $id;?>">
           <h5>The model predicts that this appartment will cost <span id="price"><?php echo $house[$experiment_data_id]["predicted_price"];?>$</span> per month. </h5>
-          <p>The difference between the current price and the predicted one is <span id="output"></span>$. 
-          <br>If you are sure that you want to save this price for the apartment click on "Next".</p>
+          <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>$) and the predicted one is <span class="price-differenece" id="output_<?php echo $id;?>"></span>$.</p>
         </div>
       </div>
   </div>          
@@ -67,24 +67,53 @@
 
 <script type="text/javascript">
     var price_answered = "";
+    var request_prediction = false;
+    var start_time;
+    var end_time;
+    var request_prediction_time;
     
 //Take the value of the user's input
 $('#user-price_<?php echo $id;?>').on('input', function() {
     price_answered = $('#user-price_<?php echo $id;?>').val();
-
-    //make the button active as soon as the value was changed
+    //make save button not disable when the user enters a price
     if (price_answered != "") {
-      $("#btn_<?php echo $id;?>").prop('disabled', false);
-      $("#btn_ai_<?php echo $id;?>").show();
-      var difference = <?php echo $house[$experiment_data_id]["predicted_price"];?> - $(this).val();
-      $("#output").text(difference);
+      $('#btn_save_<?php echo $id;?>').prop('disabled', false);
     }
 
+    //change text and style at the save button
+    $("#save_<?php echo $id;?>").text("Save");
+    $('#btn_save_<?php echo $id;?>').css({'background':'transparent', 'color':'#6f91f5'})
+
+    //as the user hasn't saved yet the price make the next button disabled again
+    $("#btn_<?php echo $id;?>").prop('disabled', true);
+});
+
+//Save the price
+$('#btn_save_<?php echo $id;?>').on('click', function() {
+    //change text and style at the save button
+    $("#save_<?php echo $id;?>").text("Saved");
+    $('#btn_save_<?php echo $id;?>').css({'background':'#6f91f5', 'color':'white'})
+    
+    //display ai suggestions
+    if(!request_prediction){
+      $("#btn_ai_<?php echo $id;?>").show();
+    }
+    $("#saved_price_<?php echo $id;?>").text(price_answered);
+    var difference = <?php echo $house[$experiment_data_id]["predicted_price"];?> - price_answered;
+    $("#output_<?php echo $id;?>").text(difference);
+
+
+    //make the next button active when the user has saved a new price
+    if (price_answered != "") {
+      $("#btn_<?php echo $id;?>").prop('disabled', false);
+    }
 });
 
 //Display model prediction
 $('#btn_ai_<?php echo $id;?>').on('click', function() {
-    $('#price-suggestion').show();
+    $('#price_suggestion_<?php echo $id;?>').show();
+    $("#btn_ai_<?php echo $id;?>").hide();
+    request_prediction = true;
 });
 
 
@@ -105,6 +134,7 @@ $('body').on('next', function(e, type){
             data: {
                 "predictedPrice": "<?php echo $house[$experiment_data_id]["predicted_price"];?>",
                 "price": price_answered,
+                "requestPrediction": request_prediction,
                 "houseId": "<?php echo $house[$experiment_data_id]["id"];?>", 
                 "try":  "<?php echo $experiment_data_id;?>" 
             },
@@ -114,15 +144,17 @@ $('body').on('next', function(e, type){
             }
        });
     }
-
 });
 
 
 $('body').on('show', function(e, type){
   //price_answered = "";
   // console.log("show");
-  $("#price-suggestion").hide();
-  $("#btn_ai_<?php echo $id;?>").hide();
+  request_prediction = false;
+  $('#btn_save_<?php echo $id;?>').prop('disabled', true);
+  $('#btn_ai_<?php echo $id;?>').hide();
+  $("#save_<?php echo $id;?>").text("Save");
+  $("#price_suggestion_<?php echo $id;?>").hide();
   if (type === '<?php echo $id;?>'){
     console.log("showing page " + type);
     console.log(<?php echo $id;?>);

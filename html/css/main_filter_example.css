@@ -375,15 +375,47 @@ u{
     margin-top:100px;
 }
 
-input{
+input[type=number]{
     margin-left: 10px;
     margin-top: -5px;
+    width: 150px;
+    text-align: left;
+    font-size: 15px;
+    height:35px;
 }
 
-#output{
+.price-differenece{
     color:rgb(238, 34, 78);
     font-weight: 500;
 }
+
+.save-btn {
+    color: #6f91f5;
+    border-color: #6f91f5;
+    height: 35px;
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: 2px solid;
+    margin-top: -5px;
+    margin-left: 10px;
+}
+
+
+.save-btn:disabled,
+    button[disabled]{
+    color:rgb(129, 136, 146);
+    border-color: rgb(129, 136, 146);
+    }
+
+.save-btn:hover:not([disabled]) {
+    color: white;
+    border-color: #6f91f5;
+    background: #6f91f5;
+}
+
 
 
 
