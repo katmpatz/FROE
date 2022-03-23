@@ -19,9 +19,22 @@
 
   // This is the event triggered to save the data entered. The event triggers when the 'next' button is pressed.
 	$('body').on('next', function(e, type){
+    //send a value that the expirement is completed in order to save the data
 		// The if clause below ensures that this specific instance of a next button press is only triggered when the id of the element corresponds to the one being defined above.
     if (type === '<?php echo $id;?>' && !(typeof measurements === 'undefined')){
       measurements['optionalComments'] = $("#optionalComments").val();
+      $.ajax({
+            async: false,
+            type: "POST",
+            url: '/FROE/html/setup/save_data.php',
+            data: {
+                "completed": 1,
+            },
+            success: function(data)
+            { 
+              console.log(data);
+            }
+       });
 		}
 	});
 </script>

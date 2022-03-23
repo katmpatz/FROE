@@ -71,8 +71,9 @@
     var price_answered = "";
     var request_prediction = false;
     var start_time;
-    var end_time;
-    var request_prediction_time;
+    var end_time = 0;
+    var request_prediction_time = 0;
+    var save_price_time = 0;
     
 //Take the value of the user's input
 $('#user-price_<?php echo $id;?>').on('input', function() {
@@ -99,7 +100,7 @@ $('#user-price_<?php echo $id;?>').on('input', function() {
 });
 
 //Save the price
-$('#btn_save_<?php echo $id;?>').on('click', function() {
+$('#btn_save_<?php echo $id;?>').on('click', function(e) {
     //change text and style at the save button
     $("#save_<?php echo $id;?>").text("Saved");
     $('#btn_save_<?php echo $id;?>').css({'background':'#6f91f5', 'color':'white'})
@@ -115,23 +116,46 @@ $('#btn_save_<?php echo $id;?>').on('click', function() {
     //add text to help the user understand that he has to save in order to proceed
     $("#sure_<?php echo $id;?>").text("If you are sure that you want to save this price click on 'Next'");
 
-
+    save_price_time = e.timeStamp;
     //make the next button active when the user has saved a new price
-    if (price_answered != "") {
+    //save the data in the csv file every time that the user saves a new price
+    if ( price_answered != "" && price_answered > 0) {
       $("#btn_<?php echo $id;?>").prop('disabled', false);
+      $.ajax({
+            async: false,
+            type: "POST",
+            url: '/FROE/html/setup/save_data.php',
+            data: {
+                "predictedPrice": "<?php echo $house[$experiment_data_id]["predicted_price"];?>",
+                "price": price_answered,
+                "savePriceTime": save_price_time,
+                "requestPredictionTime": request_prediction_time,
+                "startTime": start_time,
+                "endTime": end_time,
+                "houseId": "<?php echo $house[$experiment_data_id]["id"];?>", 
+                "try":  "<?php echo $experiment_data_id;?>", 
+                "completed": 0,
+            },
+            success: function(data)
+            { 
+              console.log(data);
+            }
+       });
     }
 });
 
 //Display model prediction
-$('#btn_ai_<?php echo $id;?>').on('click', function() {
+$('#btn_ai_<?php echo $id;?>').on('click', function(e) {
     $('#price_suggestion_<?php echo $id;?>').show();
     $("#btn_ai_<?php echo $id;?>").hide();
     request_prediction = true;
+    request_prediction_time = e.timeStamp;
 });
 
 
 $('body').on('next', function(e, type){
     if (type === '<?php echo $id;?>' && price_answered != ""){
+        end_time = e.timeStamp;
         // we need to log our data
         trial_log.push([
         measurements.participant_id, 
@@ -148,8 +172,13 @@ $('body').on('next', function(e, type){
                 "predictedPrice": "<?php echo $house[$experiment_data_id]["predicted_price"];?>",
                 "price": price_answered,
                 "requestPrediction": request_prediction,
+                "savePriceTime": 0,
+                "requestPredictionTime": request_prediction_time,
+                "startTime": start_time,
+                "endTime": end_time,
                 "houseId": "<?php echo $house[$experiment_data_id]["id"];?>", 
-                "try":  "<?php echo $experiment_data_id;?>" 
+                "try":  "<?php echo $experiment_data_id;?>", 
+                "completed": 0,
             },
             success: function(data)
             { 
@@ -163,6 +192,7 @@ $('body').on('next', function(e, type){
 $('body').on('show', function(e, type){
   //price_answered = "";
   // console.log("show");
+  start_time = e.timeStamp;
   request_prediction = false;
   $('#btn_save_<?php echo $id;?>').prop('disabled', true);
   $('#btn_ai_<?php echo $id;?>').hide();
