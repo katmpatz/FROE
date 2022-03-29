@@ -27,7 +27,7 @@
     "id" : "main_stimulus",
     "button_text" : "Next",
     "page_path" : "pages/custom/stimulus_page.php",
-    "repetitions" : 2,
+    "repetitions" : 15,
     "disabled" : true,
     "start_page" : false,
     "save_page" : false

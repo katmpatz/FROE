@@ -13,26 +13,25 @@
       <div class="line"></div>
       <div class="information row">
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $house[$experiment_data_id]["num_of_bedrooms"];?>  </p>
-          <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $house[$experiment_data_id]["num_of_bathrooms"];?></p>
-        </div>
-        <div class="col-4">
+          <p class="light-p"><span class="label-info">Type:</span> <?php echo $house[$experiment_data_id]["type"];?>  </p>
           <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $house[$experiment_data_id]["square_meters"];?></p>
-          <p class="light-p"><span class="label-info">Parking:</span> <?php echo $house[$experiment_data_id]["parking"];?></p>
         </div>
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Furnished:</span> Yes</p>
-          <p class="light-p"><span class="label-info">Balcony:</span> No</p>
+          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $house[$experiment_data_id]["num_of_bedrooms"];?>  </p>
+          <p class="light-p"><span class="label-info">Furnished:</span> <?php echo $house[$experiment_data_id]["furnished"];?></p>
         </div>
-        <div class="col-12">
+        <div class="col-4">
+          <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $house[$experiment_data_id]["num_of_bathrooms"];?></p>
+          <p class="light-p"><span class="label-info">Floor:</span> <?php echo $house[$experiment_data_id]["floor"];?></p>
+        </div>
+        <!-- <div class="col-12">
           <p class="light-p"><span class="label-info">Location:</span>
             See the place in the <a href="">map</a>
           </p>
-        </div>
+        </div> -->
         <div class="col-12">
           <p class="light-p"><span class="label-info">Description:</span>
-            Double room has become available in this newly refurbished house close to Addenbrookes hospital and ARM.
-            The property benefits from a large fully fitted kitchen area along with a dining table and shared living room with TV and 2 double seater sofas, to the rear is a well sized garden area. There is a dishwasher and washing machine located in the kitchen area.
+            <?php echo $house[$experiment_data_id]["description"];?>
           </p>
         </div>
       </div>
