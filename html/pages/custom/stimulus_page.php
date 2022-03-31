@@ -58,7 +58,7 @@
           <button id="btn_ai_<?php echo $id;?>" type="button" class="btn btn-link">Compare price with AI prediction</button>
         </div>
         <div id="price_suggestion_<?php echo $id;?>">
-          <h5>The model predicts that this appartment will cost <span id="price"><?php echo $house[$experiment_data_id]["predicted_price"];?>$</span> per month. </h5>
+          <h5>The model predicts that this appartment will cost <span id="price"><?php echo $prediction;?>$</span> per month. </h5>
           <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>$) and the predicted one is <span class="price-differenece" id="output_<?php echo $id;?>"></span>$.
           <br><span id="sure_<?php echo $id;?>"></span>.</p>
         </div>
@@ -109,7 +109,7 @@ $('#btn_save_<?php echo $id;?>').on('click', function(e) {
       $("#btn_ai_<?php echo $id;?>").show();
     }
     $("#saved_price_<?php echo $id;?>").text(price_answered);
-    var difference = <?php echo $house[$experiment_data_id]["predicted_price"];?> - price_answered;
+    var difference = <?php echo $prediction?> - price_answered;
     $("#output_<?php echo $id;?>").text(difference);
     
     //add text to help the user understand that he has to save in order to proceed
