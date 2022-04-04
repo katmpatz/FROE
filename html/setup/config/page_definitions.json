@@ -23,6 +23,23 @@
     "start_page" : false,
     "save_page" : false
   },
+  "training" : {
+    "id" : "training",
+    "button_text" : "Next",
+    "page_path" : "pages/custom/training.php",
+    "repetitions" : 3,
+    "disabled" : true,
+    "start_page" : false,
+    "save_page" : false
+  },
+  "end_of_training" : {
+    "id" : "end_of_training",
+    "button_text" : "Next",
+    "page_path" : "pages/custom/end_of_training.php",
+    "disabled" : false,
+    "start_page" : false,
+    "save_page" : false
+  },
   "main_stimulus" : {
     "id" : "main_stimulus",
     "button_text" : "Next",

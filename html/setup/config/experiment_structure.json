@@ -2,6 +2,8 @@
   "welcome",
   "consent",
   "description",
+  "training",
+  "end_of_training",
   "main_stimulus",
   "attention_check",
   "feedback",

@@ -6,7 +6,7 @@ global $experiment_data_id, $houses, $house, $data_for_csv, $price;
   // If the default structure (2 factors each with 2 levels) is changed, then code below needs to be adapted. Otherwise, leave this as is.
 
 function loadConfig(){
-  global $config, $pages, $page_order, $houses;
+  global $config, $pages, $page_order, $houses, $training_houses;
   // we temporarily change working directories
   $cwd = getcwd();
   chdir(dirname(__FILE__) . '/config/');
@@ -29,6 +29,12 @@ function loadConfig(){
   if(!isset($houses)){
     $housesFileContents = file_get_contents("experiment_data.json");
     $houses = json_decode($housesFileContents, true);
+  }
+
+  
+  if(!isset($training_houses)){
+    $trainingHousesFileContents = file_get_contents("training_data.json");
+    $training_houses = json_decode($housesFileContents, true);
   }
 
   chdir($cwd);
@@ -166,14 +172,17 @@ function predictPrice($id, $price){
 
 }
 
+
 function generatePages() {
   global $page_order, $pages, $page_ids, $config, $stimuli_order, $start_page, $save_page, $factor1, $condition; 
-  global $experiment_data_id, $houses, $house, $prediction;
+  global $experiment_data_id, $houses, $house, $prediction, $training_houses;
   // generate all pages based on the data indicated in the json files
   $page_number = 0;
   $house = $houses['houses'];
+  $tr_house = $training_houses['houses'];
   //variable which counts the repeats of the expirement in order to display the right info
   $experiment_data_id = -1;
+  $training_data_id = -1;
 
   if (isset($start_page)){
     $start_page = max(0, $start_page-1);
@@ -191,6 +200,10 @@ function generatePages() {
          $page_ids[] = '#' . $id;
          if($pages[$page_id]["start_page"] && !isset($start_page)){
             $start_page = $page_number-1;
+         }
+         //if the page is part of the training increase the $training_data_id in order to display the right house details
+         if($pages[$page_id]["id"] == "training"){
+          $training_data_id++ ;
          }
 
          //if the page is part of the experiment increase the $experiment_data_id in order to display the right house details
