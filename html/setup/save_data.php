@@ -22,11 +22,12 @@
     $predectedPrice = $_POST["predictedPrice"];
     $price = $_POST["price"];
     $savePriceTime = $_POST["savePriceTime"];
-    $requestPredictionTime = $_POST["requestPredictionTime"];
+    // $requestPredictionTime = $_POST["requestPredictionTime"];
     $startTime = $_POST["startTime"];
     $endTime = $_POST["endTime"];
     $houseId = $_POST["houseId"];
     $try = $_POST["try"];
+    $likert = $_POST["likert"];
 
     //take the value that the expirement ended from the last page
     $completed = $_POST["completed"];
@@ -35,7 +36,7 @@
     //if completed is equal to 0 it means that the request is coming from the main page and therefore there are the data related to the expirement
     if($completed == 0){
       //add the values in an array
-      $data = [$predectedPrice, $price, $savePriceTime, $requestPredictionTime, $startTime, $endTime, $houseId, $try];
+      $data = [$predectedPrice, $price, $savePriceTime,  $startTime, $endTime, $houseId, $try, $likert];
       
       //print to check the values
       debug_to_console($data);
@@ -86,7 +87,7 @@
 
     // if the file is empty save the column headers
     if(0 == filesize($filename)){
-      fputcsv($f, array('Predected Price', 'Price', 'Save Price Time', ' Request Prediction Time', 'Start Time', 'End Time', 'House Id', 'Order'));
+      fputcsv($f, array('Predected Price', 'Price', 'Save Price Time', 'Start Time', 'End Time', 'House Id', 'Order', 'Likert'));
     }
 
     if ($f === false) {

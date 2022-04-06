@@ -14,14 +14,14 @@
       <div class="information row">
         <div class="col-4">
           <p class="light-p"><span class="label-info">Type:</span> <?php echo $house[$experiment_data_id]["type"];?>  </p>
-          <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $house[$experiment_data_id]["square_meters"];?></p>
+          <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $house[$experiment_data_id]["squaremeters"];?></p>
         </div>
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $house[$experiment_data_id]["num_of_bedrooms"];?>  </p>
+          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $house[$experiment_data_id]["rooms"];?>  </p>
           <p class="light-p"><span class="label-info">Furnished:</span> <?php echo $house[$experiment_data_id]["furnished"];?></p>
         </div>
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $house[$experiment_data_id]["num_of_bathrooms"];?></p>
+          <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $house[$experiment_data_id]["bathrooms"];?></p>
           <p class="light-p"><span class="label-info">Floor:</span> <?php echo $house[$experiment_data_id]["floor"];?></p>
         </div>
         <!-- <div class="col-12">
@@ -49,21 +49,53 @@
                   type="number" 
                   name="user-price" 
                   id="user-price_<?php echo $id;?>" 
-                  placeholder="1000">
+            >
             </input>
             <button id="btn_save_<?php echo $id;?>" type="button" class="save-btn btn btn-outline-primary"><span id="save_<?php echo $id;?>"></span></button>
         </div>
         <span id="invalid_price_<?php echo $id;?>" class="error-message"></span>
-        <div class="row" style="margin-top:10px; margin-bottom:10px;">
+        <!-- Button to ask for the recommendation -->
+        <!-- <div class="row" style="margin-top:10px; margin-bottom:10px;">
           <button id="btn_ai_<?php echo $id;?>" type="button" class="btn btn-link">Compare price with AI prediction</button>
-        </div>
-        <div id="price_suggestion_<?php echo $id;?>">
-          <h5>The model predicts that this appartment will cost <span id="price"><?php echo $prediction;?>$</span> per month. </h5>
+        </div> -->
+        <div id="price_suggestion_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
+          <h5>The model predicts that this appartment will cost <span id="price"><?php echo $house[$experiment_data_id]["prediction"];?>$</span> per month. </h5>
           <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>$) and the predicted one is <span class="price-differenece" id="output_<?php echo $id;?>"></span>$.
-          <br><span id="sure_<?php echo $id;?>"></span>.</p>
+          <!-- <br><span id="sure_<?php echo $id;?>"></span>. -->
+        </p>
         </div>
+        
       </div>
-  </div>          
+  </div>
+  <div class="col-12 top-40" id="evaluation_<?php echo $id;?>">
+    <h4>Evaluation:</h4>
+      <div class="line"></div>
+      <form action="" style="margin: top 20px;">
+        <p>The prediction of the model is surprising.</p>
+        <ul class='likert'>
+          <li>
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio1"  value="5">
+            <label>Strongly agree</label>
+          </li>
+          <li>
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio2" value="4">
+            <label>Agree</label>
+          </li>
+          <li>
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio3" value="3">
+            <label>Neutral</label>
+          </li>
+          <li>
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio4" value="2">
+            <label>Disagree</label>
+          </li>
+          <li>
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio5" value="1">
+            <label>Strongly disagree</label>
+          </li>
+        </ul>
+        </form> 
+  </div>         
 </div>
 
 <script type="text/javascript">
@@ -73,6 +105,7 @@
     var end_time = 0;
     var request_prediction_time = 0;
     var save_price_time = 0;
+    var likert = 0;
     
 //Take the value of the user's input
 $('#user-price_<?php echo $id;?>').on('input', function() {
@@ -95,7 +128,7 @@ $('#user-price_<?php echo $id;?>').on('input', function() {
     $("#btn_<?php echo $id;?>").prop('disabled', true);
 
     //add text to help the user understand that he has to save in order to proceed
-    $("#sure_<?php echo $id;?>").text("Save first the price and then click on 'Next'");
+    //$("#sure_<?php echo $id;?>").text("Save first the price and then click on 'Next'");
 });
 
 //Save the price
@@ -103,37 +136,41 @@ $('#btn_save_<?php echo $id;?>').on('click', function(e) {
     //change text and style at the save button
     $("#save_<?php echo $id;?>").text("Saved");
     $('#btn_save_<?php echo $id;?>').css({'background':'#6f91f5', 'color':'white'})
-    
-    //display ai suggestions
-    if(!request_prediction){
-      $("#btn_ai_<?php echo $id;?>").show();
-    }
+
+    //get out of comments to display a button to ask for the predictions
+    //display ai suggestions 
+    // if(!request_prediction){
+    //   $("#btn_ai_<?php echo $id;?>").show();
+    // }
     $("#saved_price_<?php echo $id;?>").text(price_answered);
-    var difference = <?php echo $prediction?> - price_answered;
+    var difference = <?php echo $house[$experiment_data_id]["prediction"];?> - price_answered;
     $("#output_<?php echo $id;?>").text(difference);
     
     //add text to help the user understand that he has to save in order to proceed
-    $("#sure_<?php echo $id;?>").text("If you are sure that you want to save this price click on 'Next'");
+    //$("#sure_<?php echo $id;?>").text("If you are sure that you want to save this price click on 'Next'");
 
     save_price_time = e.timeStamp;
+    $('#price_suggestion_<?php echo $id;?>').show();
+    $('#evaluation_<?php echo $id;?>').show();
 
     //make the next button active when the user has saved a new price
     //save the data in the csv file every time that the user saves a new price
     if ( price_answered != "" && price_answered > 0) {
-      $("#btn_<?php echo $id;?>").prop('disabled', false);
+      
       $.ajax({
             async: false,
             type: "POST",
             url: '/FROE/html/setup/save_data.php',
             data: {
-                "predictedPrice": "<?php echo $house[$experiment_data_id]["predicted_price"];?>",
+                "predictedPrice": "<?php echo $house[$experiment_data_id]["prediction"];?>",
                 "price": price_answered,
                 "savePriceTime": save_price_time,
-                "requestPredictionTime": request_prediction_time,
+                // "requestPredictionTime": request_prediction_time,
                 "startTime": start_time,
                 "endTime": end_time,
                 "houseId": "<?php echo $house[$experiment_data_id]["id"];?>", 
                 "try":  "<?php echo $experiment_data_id;?>", 
+                "likert": likert,
                 "completed": 0,
             },
             success: function(data)
@@ -144,13 +181,19 @@ $('#btn_save_<?php echo $id;?>').on('click', function(e) {
     }
 });
 
-//Display model prediction
-$('#btn_ai_<?php echo $id;?>').on('click', function(e) {
-    $('#price_suggestion_<?php echo $id;?>').show();
-    $("#btn_ai_<?php echo $id;?>").hide();
-    request_prediction = true;
-    request_prediction_time = e.timeStamp;
+//evaluation
+$('input:radio[name="surprise_<?php echo $id;?>"]').on('click', function() {
+  likert = $('input[type="radio"][name="surprise_<?php echo $id;?>"]:checked').val();
+  $("#btn_<?php echo $id;?>").prop('disabled', false);
 });
+
+// //Display model prediction
+// $('#btn_ai_<?php echo $id;?>').on('click', function(e) {
+//     $('#price_suggestion_<?php echo $id;?>').show();
+//     $("#btn_ai_<?php echo $id;?>").hide();
+//     request_prediction = true;
+//     request_prediction_time = e.timeStamp;
+// });
 
 
 $('body').on('next', function(e, type){
@@ -168,7 +211,7 @@ $('body').on('next', function(e, type){
             type: "POST",
             url: '/FROE/html/setup/save_data.php',
             data: {
-                "predictedPrice": "<?php echo $house[$experiment_data_id]["predicted_price"];?>",
+                "predictedPrice": "<?php echo $house[$experiment_data_id]["prediction"];?>",
                 "price": price_answered,
                 "savePriceTime": 0,
                 "requestPredictionTime": request_prediction_time,
@@ -176,6 +219,7 @@ $('body').on('next', function(e, type){
                 "endTime": end_time,
                 "houseId": "<?php echo $house[$experiment_data_id]["id"];?>", 
                 "try":  "<?php echo $experiment_data_id;?>", 
+                "likert": likert,
                 "completed": 0,
             },
             success: function(data)
@@ -197,16 +241,17 @@ $('body').on('show', function(e, type){
     $('#btn_ai_<?php echo $id;?>').hide();
     $("#save_<?php echo $id;?>").text("Save");
     $("#price_suggestion_<?php echo $id;?>").hide();
+    $('#evaluation_<?php echo $id;?>').hide();
 
     console.log("showing page " + type);
     console.log(<?php echo $id;?>);
-    var img = $("#Stimulus_Image_<?php echo $id;?>");
+    //var img = $("#Stimulus_Image_<?php echo $id;?>");
     $('#btn_<?php echo $id;?>').hide();
     var initial_mask_time = config.stimulus_timing.initial_mask_time;
     var stimulus_time = config.stimulus_timing.stimulus_time;
     var totalDelay = initial_mask_time + stimulus_time;
-    setTimeout(function(){changeImageSrc(img, '<?php echo $src;?>')}, initial_mask_time);
-    setTimeout(function(){changeImageSrc(img, "html/img/filter_example/Mask.png")}, totalDelay);
+    // setTimeout(function(){changeImageSrc(img, '<?php echo $src;?>')}, initial_mask_time);
+    // setTimeout(function(){changeImageSrc(img, "html/img/filter_example/Mask.png")}, totalDelay);
     setTimeout(function(){$('#ScalesBlock_<?php echo $id;?>').show();}, totalDelay);
     setTimeout(function(){$('#btn_<?php echo $id;?>').show();}, totalDelay);
 

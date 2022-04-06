@@ -4,6 +4,8 @@
   "description",
   "training",
   "end_of_training",
+  "testing",
+  "end_of_testing",
   "main_stimulus",
   "attention_check",
   "feedback",

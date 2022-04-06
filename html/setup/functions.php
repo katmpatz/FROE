@@ -1,6 +1,6 @@
 <?php
 
-global $experiment_data_id, $houses, $house, $data_for_csv, $price;
+global $experiment_data_id, $houses, $house, $training_houses, $tr_house,  $data_for_csv, $price;
 
   // the code below assigns the names of factor levels to variables according to the information given in the file constants.php
   // If the default structure (2 factors each with 2 levels) is changed, then code below needs to be adapted. Otherwise, leave this as is.
@@ -27,14 +27,14 @@ function loadConfig(){
   }
 
   if(!isset($houses)){
-    $housesFileContents = file_get_contents("experiment_data.json");
+    $housesFileContents = file_get_contents("testing_data.json");
     $houses = json_decode($housesFileContents, true);
   }
 
   
   if(!isset($training_houses)){
     $trainingHousesFileContents = file_get_contents("training_data.json");
-    $training_houses = json_decode($housesFileContents, true);
+    $training_houses = json_decode($trainingHousesFileContents, true);
   }
 
   chdir($cwd);
@@ -175,7 +175,7 @@ function predictPrice($id, $price){
 
 function generatePages() {
   global $page_order, $pages, $page_ids, $config, $stimuli_order, $start_page, $save_page, $factor1, $condition; 
-  global $experiment_data_id, $houses, $house, $prediction, $training_houses;
+  global $experiment_data_id, $houses, $house, $prediction, $training_houses, $tr_house;
   // generate all pages based on the data indicated in the json files
   $page_number = 0;
   $house = $houses['houses'];
@@ -202,7 +202,7 @@ function generatePages() {
             $start_page = $page_number-1;
          }
          //if the page is part of the training increase the $training_data_id in order to display the right house details
-         if($pages[$page_id]["id"] == "training"){
+         if($pages[$page_id]["id"] == "training" || $pages[$page_id]["id"] == "testing"){
           $training_data_id++ ;
          }
 

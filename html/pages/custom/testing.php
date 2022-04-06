@@ -23,11 +23,11 @@
           <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $tr_house[$training_data_id]["num_of_bathrooms"];?></p>
           <p class="light-p"><span class="label-info">Floor:</span> <?php echo $tr_house[$training_data_id]["floor"];?></p>
         </div>
-        <div class="col-12">
-          <p class="light-p"><span class="label-info">Price:</span>
-            <?php echo $tr_house[$training_data_id]["actual_price"];?>$
+        <!-- <div class="col-12">
+          <p class="light-p"><span class="label-info">Location:</span>
+            See the place in the <a href="">map</a>
           </p>
-        </div>
+        </div> -->
         <div class="col-12">
           <p class="light-p"><span class="label-info">Description:</span>
             <?php echo $tr_house[$training_data_id]["description"];?>
@@ -36,7 +36,7 @@
       </div>
     </div>
   </div>
-  <!-- <div class="col-12 top-40">
+  <div class="col-12 top-40">
     <h4>Pricing:</h4>
       <div class="line"></div>
       <div class="predict" >
@@ -57,7 +57,7 @@
          <p>The actual price for the apartment is <?php echo $tr_house[$training_data_id]["actual_price"];?>$</p>
         </div>
       </div>
-  </div>           -->
+  </div>          
 </div>
 
 <script type="text/javascript">
@@ -132,6 +132,8 @@ $('body').on('show', function(e, type){
     var initial_mask_time = config.stimulus_timing.initial_mask_time;
     var stimulus_time = config.stimulus_timing.stimulus_time;
     var totalDelay = initial_mask_time + stimulus_time;
+    // setTimeout(function(){changeImageSrc(img, '<?php echo $src;?>')}, initial_mask_time);
+    // setTimeout(function(){changeImageSrc(img, "html/img/filter_example/Mask.png")}, totalDelay);
     setTimeout(function(){$('#ScalesBlock_<?php echo $id;?>').show();}, totalDelay);
     setTimeout(function(){$('#btn_<?php echo $id;?>').show();}, totalDelay);
 

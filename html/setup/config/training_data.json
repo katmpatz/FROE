@@ -9,7 +9,7 @@
             "floor": 1,
             "furnished":"yes",
             "image": "html/img/houses/10.jpg",
-            "description":"furnished flat with living room, fitted and equipped kitchen, 1 bedroom, balcony, location: garage, green spaces",
+            "description":"furnished flat with living room, fitted and equipped kitchen, 1 bedroom, balcony, garage, green spaces",
             "actual_price": 700 
         },
         {
@@ -26,7 +26,7 @@
         },
         {
             "id": 2,
-            "type": "apartment",
+            "type": "studio",
             "num_of_bedrooms": 1,
             "num_of_bathrooms": 1,
             "square_meters": 14,

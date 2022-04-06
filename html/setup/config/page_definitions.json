@@ -28,7 +28,7 @@
     "button_text" : "Next",
     "page_path" : "pages/custom/training.php",
     "repetitions" : 3,
-    "disabled" : true,
+    "disabled" : false,
     "start_page" : false,
     "save_page" : false
   },
@@ -40,11 +40,28 @@
     "start_page" : false,
     "save_page" : false
   },
+  "testing" : {
+    "id" : "testing",
+    "button_text" : "Next",
+    "page_path" : "pages/custom/testing.php",
+    "repetitions" : 3,
+    "disabled" : true,
+    "start_page" : false,
+    "save_page" : false
+  },
+  "end_of_testing" : {
+    "id" : "end_of_testing",
+    "button_text" : "Next",
+    "page_path" : "pages/custom/end_of_testing.php",
+    "disabled" : false,
+    "start_page" : false,
+    "save_page" : false
+  },
   "main_stimulus" : {
     "id" : "main_stimulus",
     "button_text" : "Next",
     "page_path" : "pages/custom/stimulus_page.php",
-    "repetitions" : 15,
+    "repetitions" : 5,
     "disabled" : true,
     "start_page" : false,
     "save_page" : false
