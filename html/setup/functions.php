@@ -33,7 +33,7 @@ function loadConfig(){
 
   
   if(!isset($training_houses)){
-    $trainingHousesFileContents = file_get_contents("training_data.json");
+    $trainingHousesFileContents = file_get_contents("testing_data.json");
     $training_houses = json_decode($trainingHousesFileContents, true);
   }
 
@@ -149,37 +149,39 @@ function randomAssignmentFromFiles($basedir = 'html/setup') {
   }
 }
 
-function predictPrice($id, $price){
-  $plus_or_minus = 0;
-  $percentage = 0;
+// function predictPrice($id, $price){
+//   $plus_or_minus = 0;
+//   $percentage = 0;
 
-  //decide if the difference will be minus or plus in the actual price
-  if(rand(0,10) < 5){
-    $plus_or_minus = -1;
-  } else {
-    $plus_or_minus = 1;
-  }
+//   //decide if the difference will be minus or plus in the actual price
+//   if(rand(0,10) < 5){
+//     $plus_or_minus = -1;
+//   } else {
+//     $plus_or_minus = 1;
+//   }
 
-  //percentage of difference
-  if($id % 7 != 0 && $id != 0){
-    //surprisingly predictions every 7 trials
-    $percentage = rand(0,10) * 0.01;
-  } else {
-    $percentage = rand(50,75) * 0.01;
-  }
+//   //percentage of difference
+//   if($id % 7 != 0 && $id != 0){
+//     //surprisingly predictions every 7 trials
+//     $percentage = rand(0,10) * 0.01;
+//   } else {
+//     $percentage = rand(50,75) * 0.01;
+//   }
   
-  return $price + $plus_or_minus * $percentage * $price;
+//   return $price + $plus_or_minus * $percentage * $price;
 
-}
+// }
 
 
 function generatePages() {
+  // generate all pages based on the data indicated in the json files
   global $page_order, $pages, $page_ids, $config, $stimuli_order, $start_page, $save_page, $factor1, $condition; 
   global $experiment_data_id, $houses, $house, $prediction, $training_houses, $tr_house;
-  // generate all pages based on the data indicated in the json files
+  $condition = 2;
   $page_number = 0;
   $house = $houses['houses'];
   $tr_house = $training_houses['houses'];
+
   //variable which counts the repeats of the expirement in order to display the right info
   $experiment_data_id = -1;
   $training_data_id = -1;
@@ -209,8 +211,6 @@ function generatePages() {
          //if the page is part of the experiment increase the $experiment_data_id in order to display the right house details
          if($pages[$page_id]["id"] == "main_stimulus"){
           $experiment_data_id++ ;
-          $prediction = predictPrice($house[$experiment_data_id]['id'], $house[$experiment_data_id]['actual_price']);
-          
          }
          // check if the current page needs to be repeated (multiple trials); 
          // can never happen on the last page (which just thanks the participant and gives the link to receive payment)

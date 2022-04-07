@@ -41,7 +41,7 @@
     <h4>Pricing:</h4>
       <div class="line"></div>
       <div class="predict" >
-        <p class="light-p">Based on the presented information, how would you price this appartment per month in (US dollars $)</p>
+        <p class="light-p">Based on the presented information, how would you price this appartment per month in Euros €</p>
         <div class="row" style="margin-left:0px !important;">
             <label>Price: </label>
             <input
@@ -59,8 +59,8 @@
           <button id="btn_ai_<?php echo $id;?>" type="button" class="btn btn-link">Compare price with AI prediction</button>
         </div> -->
         <div id="price_suggestion_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
-          <h5>The model predicts that this appartment will cost <span id="price"><?php echo $house[$experiment_data_id]["prediction"];?>$</span> per month. </h5>
-          <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>$) and the predicted one is <span class="price-differenece" id="output_<?php echo $id;?>"></span>$.
+          <h5>The model predicts that this appartment will cost <span id="price"><?php echo $house[$experiment_data_id]["prediction"];?>€</span> per month. </h5>
+          <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>€) and the predicted one is <span class="price-differenece" id="output_<?php echo $id;?>"></span>€.
           <!-- <br><span id="sure_<?php echo $id;?>"></span>. -->
         </p>
         </div>

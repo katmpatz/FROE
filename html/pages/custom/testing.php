@@ -13,14 +13,14 @@
       <div class="information row">
         <div class="col-4">
           <p class="light-p"><span class="label-info">Type:</span> <?php echo $tr_house[$training_data_id]["type"];?>  </p>
-          <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $tr_house[$training_data_id]["square_meters"];?></p>
+          <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $tr_house[$training_data_id]["squaremeters"];?></p>
         </div>
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $tr_house[$training_data_id]["num_of_bedrooms"];?>  </p>
+          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $tr_house[$training_data_id]["rooms"];?>  </p>
           <p class="light-p"><span class="label-info">Furnished:</span> <?php echo $tr_house[$training_data_id]["furnished"];?></p>
         </div>
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $tr_house[$training_data_id]["num_of_bathrooms"];?></p>
+          <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $tr_house[$training_data_id]["bathrooms"];?></p>
           <p class="light-p"><span class="label-info">Floor:</span> <?php echo $tr_house[$training_data_id]["floor"];?></p>
         </div>
         <!-- <div class="col-12">
@@ -37,10 +37,12 @@
     </div>
   </div>
   <div class="col-12 top-40">
-    <h4>Pricing:</h4>
+  <!-- condition 1 -->
+    <?php if ($condition == 1): ?>
+      <h4>Pricing:</h4>
       <div class="line"></div>
       <div class="predict" >
-        <p class="light-p">Based on the presented information, how would you price this appartment per month in (US dollars $)</p>
+        <p class="light-p">Based on the presented information, how would you price this appartment per month in Euros €</p>
         <div class="row" style="margin-left:0px !important;">
             <label>Price: </label>
             <input
@@ -54,9 +56,35 @@
         </div>
         <span id="invalid_price_<?php echo $id;?>" class="error-message"></span>
         <div class="row" id="display_price_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
-         <p>The actual price for the apartment is <?php echo $tr_house[$training_data_id]["actual_price"];?>$</p>
+         <p>The actual price for the apartment is <?php echo $tr_house[$training_data_id]["price"];?>€</p>
         </div>
       </div>
+      <!-- end of condition 1 -->
+      <!-- condition 2 -->
+    <?php elseif ($condition == 2): ?> 
+      <h4>Price prediction:</h4>
+      <div class="line"></div>
+      <div class="predict" >
+        <p class="light-p">Based on the presented information, what do you think that the model will predict for this appartment per month in Euros €</p>
+        <div class="row" style="margin-left:0px !important;">
+            <label>Prediction: </label>
+            <input
+                  autocomplete="off" 
+                  type="number" 
+                  name="user-price" 
+                  id="user-price_<?php echo $id;?>" 
+            >
+            </input>
+            <button id="btn_save_<?php echo $id;?>" type="button" class="save-btn btn btn-outline-primary"><span id="save_<?php echo $id;?>"></span></button>
+        </div>
+        <span id="invalid_price_<?php echo $id;?>" class="error-message"></span>
+        <div class="row" id="display_price_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
+         <p>The prediction for the apartment is <?php echo $tr_house[$training_data_id]["prediction"];?>$</p>
+        </div>
+      </div>
+    <?php endif ?>
+  <!-- end of condition 2 -->
+
   </div>          
 </div>
 

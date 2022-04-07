@@ -10,23 +10,18 @@
     <div class="col-6">
       <h4>Information:</h4>
       <div class="line"></div>
-      <div class="information row">
+      <div class="information row" style="margin-bottom:20px;">
         <div class="col-4">
           <p class="light-p"><span class="label-info">Type:</span> <?php echo $tr_house[$training_data_id]["type"];?>  </p>
-          <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $tr_house[$training_data_id]["square_meters"];?></p>
+          <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $tr_house[$training_data_id]["squaremeters"];?></p>
         </div>
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $tr_house[$training_data_id]["num_of_bedrooms"];?>  </p>
+          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $tr_house[$training_data_id]["rooms"];?>  </p>
           <p class="light-p"><span class="label-info">Furnished:</span> <?php echo $tr_house[$training_data_id]["furnished"];?></p>
         </div>
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $tr_house[$training_data_id]["num_of_bathrooms"];?></p>
+          <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $tr_house[$training_data_id]["bathrooms"];?></p>
           <p class="light-p"><span class="label-info">Floor:</span> <?php echo $tr_house[$training_data_id]["floor"];?></p>
-        </div>
-        <div class="col-12">
-          <p class="light-p"><span class="label-info">Price:</span>
-            <?php echo $tr_house[$training_data_id]["actual_price"];?>$
-          </p>
         </div>
         <div class="col-12">
           <p class="light-p"><span class="label-info">Description:</span>
@@ -34,70 +29,40 @@
           </p>
         </div>
       </div>
+      <h4>Pricing:</h4>
+      <div class="line"></div>
+      <div class="information row">
+        <div class="col-12">
+          <p class="light-p"><span class="label-info">Price:</span>
+            <span id="price"><?php echo $tr_house[$training_data_id]["price"];?>€</span>
+          </p>
+        </div>
+        <!-- condition 2 -->
+        <?php if ($condition == 2): ?>
+          <div class="col-12">
+            <p class="light-p"><span class="label-info">Prediction of the model:</span>
+              <span id="price" style="color:#386cba;"><?php echo $tr_house[$training_data_id]["prediction"];?>€</span>
+            </p>
+            <p style="font-size:15px;">The difference between the actual price and the prediction is <span id="difference_<?php echo $id;?>"></span>€</p>
+          </div>  
+        <?php endif ?>
+        <!-- end of condition 2 -->
+      </div>
     </div>
   </div>
-  <!-- <div class="col-12 top-40">
-    <h4>Pricing:</h4>
-      <div class="line"></div>
-      <div class="predict" >
-        <p class="light-p">Based on the presented information, how would you price this appartment per month in (US dollars $)</p>
-        <div class="row" style="margin-left:0px !important;">
-            <label>Price: </label>
-            <input
-                  autocomplete="off" 
-                  type="number" 
-                  name="user-price" 
-                  id="user-price_<?php echo $id;?>" 
-            >
-            </input>
-            <button id="btn_save_<?php echo $id;?>" type="button" class="save-btn btn btn-outline-primary"><span id="save_<?php echo $id;?>"></span></button>
-        </div>
-        <span id="invalid_price_<?php echo $id;?>" class="error-message"></span>
-        <div class="row" id="display_price_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
-         <p>The actual price for the apartment is <?php echo $tr_house[$training_data_id]["actual_price"];?>$</p>
-        </div>
-      </div>
-  </div>           -->
 </div>
 
 <script type="text/javascript">
     var price_answered = "";
     var request_prediction = false;
-    
-//Take the value of the user's input
-$('#user-price_<?php echo $id;?>').on('input', function() {
-    //change text and style at the save button
-    $("#save_<?php echo $id;?>").text("Save");
-    $('#btn_save_<?php echo $id;?>').css({'background':'transparent', 'color':'#6f91f5'})
-
-    //check if the price is valid and make save button not disable when the user enters a price
-    price_answered = $('#user-price_<?php echo $id;?>').val();
-    if (price_answered != "" &&  price_answered > 0) {
-      $('#btn_save_<?php echo $id;?>').prop('disabled', false);
-      $("#invalid_price_<?php echo $id;?>").text("");
-    } else if(price_answered <= 0){
-      $("#invalid_price_<?php echo $id;?>").text("The price has to be a positive number");
-      $('#btn_save_<?php echo $id;?>').prop('disabled', true);
-      $('#btn_save_<?php echo $id;?>').css({'background':'transparent', 'color':'grey'})
+    var difference = <?php echo $tr_house[$training_data_id]["prediction"];?> - <?php echo $tr_house[$training_data_id]["price"];?>;
+    $("#difference_<?php echo $id;?>").text(difference);
+    if(difference > 0){
+      $('#difference_<?php echo $id;?>').css({'color':'rgb(70, 152, 121)', 'font-weight': 600});
+    } else {
+      $('#difference_<?php echo $id;?>').css({'color':'rgb(238, 34, 78)', 'font-weight': 600});
     }
-
-    //as the user hasn't saved yet the price make the next button disabled again
-    $("#btn_<?php echo $id;?>").prop('disabled', true);
-
-    //add text to help the user understand that he has to save in order to proceed
-    //$("#sure_<?php echo $id;?>").text("Save first the price and then click on 'Next'");
-});
-
-//Save the price
-$('#btn_save_<?php echo $id;?>').on('click', function(e) {
-    //change text and style at the save button
-    $("#save_<?php echo $id;?>").text("Saved");
-    $('#btn_save_<?php echo $id;?>').css({'background':'#6f91f5', 'color':'white'})
-    $("#display_price_<?php echo $id;?>").show();
-    $("#btn_<?php echo $id;?>").prop('disabled', false);
     
-});
-
 
 $('body').on('next', function(e, type){
     if (type === '<?php echo $id;?>' && price_answered != ""){
@@ -114,20 +79,9 @@ $('body').on('next', function(e, type){
 });
 
 
-
 $('body').on('show', function(e, type){
   if (type === '<?php echo $id;?>'){
-    start_time = e.timeStamp;
-    end_time = 0;
-    request_prediction_time = 0;
-    request_prediction = false;
-    $('#btn_save_<?php echo $id;?>').prop('disabled', true);
-    $('#display_price_<?php echo $id;?>').hide();
-    $("#save_<?php echo $id;?>").text("Save");
 
-    console.log("showing page " + type);
-    console.log(<?php echo $id;?>);
-    //var img = $("#Stimulus_Image_<?php echo $id;?>");
     $('#btn_<?php echo $id;?>').hide();
     var initial_mask_time = config.stimulus_timing.initial_mask_time;
     var stimulus_time = config.stimulus_timing.stimulus_time;
