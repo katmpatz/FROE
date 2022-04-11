@@ -5,27 +5,27 @@
   </div>
   <div class="row top-40">
     <div class="col-6" id="ImageBlock_<?php echo $id;?>">
-        <img src ="<?php echo $tr_house[$training_data_id]["image"];?>" class="Image">
+        <img src ="<?php echo $house[$experiment_data_id]["image"];?>" class="Image">
     </div>
     <div class="col-6">
       <h4>Information:</h4>
       <div class="line"></div>
       <div class="information row" style="margin-bottom:20px;">
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Type:</span> <?php echo $tr_house[$training_data_id]["type"];?>  </p>
-          <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $tr_house[$training_data_id]["squaremeters"];?></p>
+          <p class="light-p"><span class="label-info">Type:</span> <?php echo $house[$experiment_data_id]["type"];?>  </p>
+          <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $house[$experiment_data_id]["squaremeters"];?></p>
         </div>
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $tr_house[$training_data_id]["rooms"];?>  </p>
-          <p class="light-p"><span class="label-info">Furnished:</span> <?php echo $tr_house[$training_data_id]["furnished"];?></p>
+          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $house[$experiment_data_id]["rooms"];?>  </p>
+          <p class="light-p"><span class="label-info">Furnished:</span> <?php echo $house[$experiment_data_id]["furnished"];?></p>
         </div>
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $tr_house[$training_data_id]["bathrooms"];?></p>
-          <p class="light-p"><span class="label-info">Floor:</span> <?php echo $tr_house[$training_data_id]["floor"];?></p>
+          <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $house[$experiment_data_id]["bathrooms"];?></p>
+          <p class="light-p"><span class="label-info">Floor:</span> <?php echo $house[$experiment_data_id]["floor"];?></p>
         </div>
         <div class="col-12">
           <p class="light-p"><span class="label-info">Description:</span>
-            <?php echo $tr_house[$training_data_id]["description"];?>
+            <?php echo $house[$experiment_data_id]["description"];?>
           </p>
         </div>
       </div>
@@ -34,14 +34,14 @@
       <div class="information row">
         <div class="col-12">
           <p class="light-p"><span class="label-info">Price:</span>
-            <span id="price"><?php echo $tr_house[$training_data_id]["price"];?>€</span>
+            <span id="price"><?php echo $house[$experiment_data_id]["price"];?>€</span>
           </p>
         </div>
         <!-- condition 2 -->
         <?php if ($condition == 2): ?>
           <div class="col-12">
             <p class="light-p"><span class="label-info">Prediction of the model:</span>
-              <span id="price" style="color:#386cba;"><?php echo $tr_house[$training_data_id]["prediction"];?>€</span>
+              <span id="price" style="color:#386cba;"><?php echo $house[$experiment_data_id]["prediction"];?>€</span>
             </p>
             <p style="font-size:15px;">The difference between the actual price and the prediction is <span id="difference_<?php echo $id;?>"></span>€</p>
           </div>  
@@ -55,7 +55,7 @@
 <script type="text/javascript">
     var price_answered = "";
     var request_prediction = false;
-    var difference = <?php echo $tr_house[$training_data_id]["prediction"];?> - <?php echo $tr_house[$training_data_id]["price"];?>;
+    var difference = Math.round((<?php echo $house[$experiment_data_id]["prediction"];?> - <?php echo $house[$experiment_data_id]["price"];?>) * 100) / 100;
     $("#difference_<?php echo $id;?>").text(difference);
     if(difference > 0){
       $('#difference_<?php echo $id;?>').css({'color':'rgb(70, 152, 121)', 'font-weight': 600});

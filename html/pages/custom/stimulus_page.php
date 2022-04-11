@@ -143,7 +143,7 @@ $('#btn_save_<?php echo $id;?>').on('click', function(e) {
     //   $("#btn_ai_<?php echo $id;?>").show();
     // }
     $("#saved_price_<?php echo $id;?>").text(price_answered);
-    var difference = <?php echo $house[$experiment_data_id]["prediction"];?> - price_answered;
+    var difference = Math.round((<?php echo $house[$experiment_data_id]["prediction"];?> - price_answered) * 100) / 100;
     $("#output_<?php echo $id;?>").text(difference);
     
     //add text to help the user understand that he has to save in order to proceed

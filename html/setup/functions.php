@@ -27,15 +27,15 @@ function loadConfig(){
   }
 
   if(!isset($houses)){
-    $housesFileContents = file_get_contents("testing_data.json");
+    $housesFileContents = file_get_contents("houses.json");
     $houses = json_decode($housesFileContents, true);
   }
 
   
-  if(!isset($training_houses)){
-    $trainingHousesFileContents = file_get_contents("testing_data.json");
-    $training_houses = json_decode($trainingHousesFileContents, true);
-  }
+  // if(!isset($training_houses)){
+  //   $trainingHousesFileContents = file_get_contents("testing_data.json");
+  //   $training_houses = json_decode($trainingHousesFileContents, true);
+  // }
 
   chdir($cwd);
 }
@@ -149,42 +149,26 @@ function randomAssignmentFromFiles($basedir = 'html/setup') {
   }
 }
 
-// function predictPrice($id, $price){
-//   $plus_or_minus = 0;
-//   $percentage = 0;
-
-//   //decide if the difference will be minus or plus in the actual price
-//   if(rand(0,10) < 5){
-//     $plus_or_minus = -1;
-//   } else {
-//     $plus_or_minus = 1;
-//   }
-
-//   //percentage of difference
-//   if($id % 7 != 0 && $id != 0){
-//     //surprisingly predictions every 7 trials
-//     $percentage = rand(0,10) * 0.01;
-//   } else {
-//     $percentage = rand(50,75) * 0.01;
-//   }
-  
-//   return $price + $plus_or_minus * $percentage * $price;
-
-// }
+function randomCondition(){
+  //decide if the difference will be minus or plus in the actual price
+  if(rand(0,1) < 0.5){
+    return 1;
+  } else {
+    return 2;
+  }
+}
 
 
 function generatePages() {
   // generate all pages based on the data indicated in the json files
   global $page_order, $pages, $page_ids, $config, $stimuli_order, $start_page, $save_page, $factor1, $condition; 
-  global $experiment_data_id, $houses, $house, $prediction, $training_houses, $tr_house;
-  $condition = 2;
+  global $experiment_data_id, $houses, $house;
+  $condition = randomCondition();
   $page_number = 0;
   $house = $houses['houses'];
-  $tr_house = $training_houses['houses'];
-
+  shuffle($house);
   //variable which counts the repeats of the expirement in order to display the right info
   $experiment_data_id = -1;
-  $training_data_id = -1;
 
   if (isset($start_page)){
     $start_page = max(0, $start_page-1);
@@ -204,12 +188,7 @@ function generatePages() {
             $start_page = $page_number-1;
          }
          //if the page is part of the training increase the $training_data_id in order to display the right house details
-         if($pages[$page_id]["id"] == "training" || $pages[$page_id]["id"] == "testing"){
-          $training_data_id++ ;
-         }
-
-         //if the page is part of the experiment increase the $experiment_data_id in order to display the right house details
-         if($pages[$page_id]["id"] == "main_stimulus"){
+         if($pages[$page_id]["id"] == "training" || $pages[$page_id]["id"] == "testing" || $pages[$page_id]["id"] == "main_stimulus"){
           $experiment_data_id++ ;
          }
          // check if the current page needs to be repeated (multiple trials); 
