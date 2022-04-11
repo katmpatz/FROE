@@ -464,6 +464,13 @@ form .likert li input[type=radio] {
   
 }
 
+#end-training p {
+    font-size:17px;
+}
+
+#end-testing p {
+    font-size:17px;
+}
 
 
 
