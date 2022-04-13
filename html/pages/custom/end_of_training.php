@@ -1,6 +1,6 @@
 <div class="top-100 row">
     <div class="col">
-      <h1>End of training</h1>
+      <h1>End of <b>Phase 1</b></h1>
       <div class="line"></div>
       <div class="consent" id="end-training">
         <p>You completed the first phase of the expirement!</p>
@@ -20,7 +20,7 @@
               <img src ="html/img/end_training_c2_1.JPG" width="800" style="margin-bottom:50px">
             <?php endif ?> 
           </li>
-          <li>
+          <!-- <li>
             <p>When you save your prediction you will see the actual 
             <?php if ($condition == 1): ?>
               <span>price of the apartment.</span>
@@ -33,7 +33,7 @@
             <?php elseif ($condition == 2): ?>
               <img src ="html/img/end_training_c2_2.JPG" width="800" style="margin-bottom:50px">
             <?php endif ?> 
-          </li>
+          </li> -->
           <li>
             <p>Click the <i>"Next"</i> button below, to proceed at the next apartment</p>
           </li>

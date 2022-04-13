@@ -32,18 +32,19 @@
       <h4>Pricing:</h4>
       <div class="line"></div>
       <div class="information row">
+        <?php if ($condition == 1): ?>
         <div class="col-12">
-          <p class="light-p"><span class="label-info">Price:</span>
+          <p class="light-p"><span class="label-info">Rental price of the apartment in the market:</span>
             <span id="price"><?php echo $house[$experiment_data_id]["price"];?>€</span>
           </p>
         </div>
         <!-- condition 2 -->
-        <?php if ($condition == 2): ?>
+        <?php elseif ($condition == 2): ?>
           <div class="col-12">
-            <p class="light-p"><span class="label-info">Prediction of the model:</span>
+            <p class="light-p"><span class="label-info">Price prediction of the algorithm:</span>
               <span id="price" style="color:#386cba;"><?php echo $house[$experiment_data_id]["prediction"];?>€</span>
             </p>
-            <p style="font-size:15px;">The difference between the actual price and the prediction is <span id="difference_<?php echo $id;?>"></span>€</p>
+            <!-- <p style="font-size:15px;">The difference between the actual price and the prediction is <span id="difference_<?php echo $id;?>"></span>€</p> -->
           </div>  
         <?php endif ?>
         <!-- end of condition 2 -->

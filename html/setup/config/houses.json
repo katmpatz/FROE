@@ -16,15 +16,15 @@
         {
           "id": 1,
           "type": "apartment",
-          "rooms": 1,
+          "rooms": 5,
           "bathrooms": 1,
-          "squaremeters": 9,
-          "floor": "-",
+          "squaremeters": 91,
+          "floor": 0,
           "furnished": "yes",
-          "image": "html/img/houses/2.jpg",
-          "description": "Furnished room, very good standing, renovated, double glazing, good insulation, close to shops, STAR bus, metro, train station, school",
-          "price": 355,
-          "prediction": 326.84
+          "image": "html/img/houses/201.JPG",
+          "description": "Located near the Villejean metro station, UNIVERSITE RENNES 2, buses and shops. Come and discover this beautiful furnished type 5 apartment on the raised ground floor in a 1960s building. It offers you an entrance hall, a fitted and equipped kitchen (hood, hob, oven, microwave, dishwasher, fridge, washing machine) and a living room. In the sleeping area, you will find a hallway with cupboard, 4 bedrooms (TV, wardrobe, single bed and desk) and a bathroom.",
+          "price": 1770,
+          "prediction": 1012.23
         },
         {
           "id": 2,
@@ -2127,7 +2127,7 @@
           "squaremeters": 15,
           "floor": 2,
           "furnished": "yes",
-          "image": "html/img/houses/162.JPG",
+          "image": "html/img/houses/18.JPG",
           "description": "Furnished room with shared fitted and equipped kitchen, shared bathroom, 1 shared toilet, close to shops, STAR bus, metro, school.",
           "price": 360,
           "prediction": 354.93
@@ -2625,19 +2625,6 @@
           "description": "Studio, close to shops, amenities, STAR bus, living room, location: air parking.",
           "price": 480,
           "prediction": 468.87
-        },
-        {
-          "id": 201,
-          "type": "apartment",
-          "rooms": 5,
-          "bathrooms": 1,
-          "squaremeters": 91,
-          "floor": 0,
-          "furnished": "yes",
-          "image": "html/img/houses/201.JPG",
-          "description": "Located near the Villejean metro station, UNIVERSITE RENNES 2, buses and shops. Come and discover this beautiful furnished type 5 apartment on the raised ground floor in a 1960s building. It offers you an entrance hall, a fitted and equipped kitchen (hood, hob, oven, microwave, dishwasher, fridge, washing machine) and a living room. In the sleeping area, you will find a hallway with cupboard, 4 bedrooms (TV, wardrobe, single bed and desk) and a bathroom.",
-          "price": 1770,
-          "prediction": 1012.23
         }
        ]
 }

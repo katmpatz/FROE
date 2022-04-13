@@ -55,9 +55,9 @@
             <button id="btn_save_<?php echo $id;?>" type="button" class="save-btn btn btn-outline-primary"><span id="save_<?php echo $id;?>"></span></button>
         </div>
         <span id="invalid_price_<?php echo $id;?>" class="error-message"></span>
-        <div class="row" id="display_price_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
+        <!-- <div class="row" id="display_price_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
          <p>The actual price for the apartment is <?php echo $house[$experiment_data_id]["price"];?>€</p>
-        </div>
+        </div> -->
       </div>
       <!-- end of condition 1 -->
       <!-- condition 2 -->
@@ -78,9 +78,9 @@
             <button id="btn_save_<?php echo $id;?>" type="button" class="save-btn btn btn-outline-primary"><span id="save_<?php echo $id;?>"></span></button>
         </div>
         <span id="invalid_price_<?php echo $id;?>" class="error-message"></span>
-        <div class="row" id="display_price_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
+        <!-- <div class="row" id="display_price_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
          <p>The prediction for the apartment is <?php echo $house[$experiment_data_id]["prediction"];?>$</p>
-        </div>
+        </div> -->
       </div>
     <?php endif ?>
   <!-- end of condition 2 -->

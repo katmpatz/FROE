@@ -24,11 +24,6 @@
           <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $house[$experiment_data_id]["bathrooms"];?></p>
           <p class="light-p"><span class="label-info">Floor:</span> <?php echo $house[$experiment_data_id]["floor"];?></p>
         </div>
-        <!-- <div class="col-12">
-          <p class="light-p"><span class="label-info">Location:</span>
-            See the place in the <a href="">map</a>
-          </p>
-        </div> -->
         <div class="col-12">
           <p class="light-p"><span class="label-info">Description:</span>
             <?php echo $house[$experiment_data_id]["description"];?>
@@ -41,9 +36,19 @@
     <h4>Pricing:</h4>
       <div class="line"></div>
       <div class="predict" >
-        <p class="light-p">Based on the presented information, how would you price this appartment per month in Euros €</p>
+        <p class="light-p">Based on the presented information, 
+            <?php if ($condition == 1): ?>
+              <span>how would you price this appartment per month in Euros €</span>
+            <?php elseif ($condition == 2): ?>
+              <span>what do you think the algorithm price prediction will be in Euros €</span>
+            <?php endif ?>
+        </p>
         <div class="row" style="margin-left:0px !important;">
-            <label>Price: </label>
+            <?php if ($condition == 1): ?>
+              <label>Price: </label>
+            <?php elseif ($condition == 2): ?>
+              <label>Prediction: </label>
+            <?php endif ?>
             <input
                   autocomplete="off" 
                   type="number" 
@@ -59,8 +64,13 @@
           <button id="btn_ai_<?php echo $id;?>" type="button" class="btn btn-link">Compare price with AI prediction</button>
         </div> -->
         <div id="price_suggestion_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
-          <h5>The model predicts that this appartment will cost <span id="price"><?php echo $house[$experiment_data_id]["prediction"];?>€</span> per month. </h5>
-          <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>€) and the predicted one is <span class="price-differenece" id="output_<?php echo $id;?>"></span>€.
+            <?php if ($condition == 1): ?>
+              <h5>The actual price of this appartment is <span id="price"><?php echo $house[$experiment_data_id]["price"];?>€</span> per month. </h5>
+              <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>€) and the actual one is <span class="price-differenece" id="output_c1_<?php echo $id;?>"></span>€.
+            <?php elseif ($condition == 2): ?>
+              <h5>The algorithm predicts that this appartment will cost <span id="price"><?php echo $house[$experiment_data_id]["prediction"];?>€</span> per month. </h5>
+              <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>€) and the predicted one is <span class="price-differenece" id="output_c2_<?php echo $id;?>"></span>€.
+            <?php endif ?>
           <!-- <br><span id="sure_<?php echo $id;?>"></span>. -->
         </p>
         </div>
@@ -75,11 +85,11 @@
         <ul class='likert'>
           <li>
             <input type="radio" name="surprise_<?php echo $id;?>" id="radio1"  value="5">
-            <label>Strongly agree</label>
+            <label>Strongly disagree</label>
           </li>
           <li>
             <input type="radio" name="surprise_<?php echo $id;?>" id="radio2" value="4">
-            <label>Agree</label>
+            <label>Disagree</label>
           </li>
           <li>
             <input type="radio" name="surprise_<?php echo $id;?>" id="radio3" value="3">
@@ -87,11 +97,11 @@
           </li>
           <li>
             <input type="radio" name="surprise_<?php echo $id;?>" id="radio4" value="2">
-            <label>Disagree</label>
+            <label>Agree</label>
           </li>
           <li>
             <input type="radio" name="surprise_<?php echo $id;?>" id="radio5" value="1">
-            <label>Strongly disagree</label>
+            <label>Strongly agree</label>
           </li>
         </ul>
         </form> 
@@ -143,8 +153,10 @@ $('#btn_save_<?php echo $id;?>').on('click', function(e) {
     //   $("#btn_ai_<?php echo $id;?>").show();
     // }
     $("#saved_price_<?php echo $id;?>").text(price_answered);
-    var difference = Math.round((<?php echo $house[$experiment_data_id]["prediction"];?> - price_answered) * 100) / 100;
-    $("#output_<?php echo $id;?>").text(difference);
+    var difference_c1 = Math.round((<?php echo $house[$experiment_data_id]["price"];?> - price_answered) * 100) / 100;
+    var difference_c2 = Math.round((<?php echo $house[$experiment_data_id]["prediction"];?> - price_answered) * 100) / 100;
+    $("#output_c1_<?php echo $id;?>").text(difference_c1);
+    $("#output_c2_<?php echo $id;?>").text(difference_c2);
     
     //add text to help the user understand that he has to save in order to proceed
     //$("#sure_<?php echo $id;?>").text("If you are sure that you want to save this price click on 'Next'");
