@@ -17,17 +17,20 @@
 
     //-----------------------------------------------------------------//
     //GET DATA FROM REQUEST
+      //take the values from the request of the main page
+      $condition = $_POST["condition"];
+      $step = $_POST["step"];
+      $actual = $_POST["actual"];
+      $answer = $_POST["answer"];
+      $savePriceTime = $_POST["savePriceTime"];
+      // $requestPredictionTime = $_POST["requestPredictionTime"];
+      $startTime = $_POST["startTime"];
+      $endTime = $_POST["endTime"];
+      $houseId = $_POST["houseId"];
+      $trial = $_POST["trial"];
+      $likert = $_POST["likert"];
 
-    //take the values from the request of the main page
-    $predectedPrice = $_POST["predictedPrice"];
-    $price = $_POST["price"];
-    $savePriceTime = $_POST["savePriceTime"];
-    // $requestPredictionTime = $_POST["requestPredictionTime"];
-    $startTime = $_POST["startTime"];
-    $endTime = $_POST["endTime"];
-    $houseId = $_POST["houseId"];
-    $try = $_POST["try"];
-    $likert = $_POST["likert"];
+    
 
     //take the value that the expirement ended from the last page
     $completed = $_POST["completed"];
@@ -35,8 +38,9 @@
 
     //if completed is equal to 0 it means that the request is coming from the main page and therefore there are the data related to the expirement
     if($completed == 0){
+
       //add the values in an array
-      $data = [$predectedPrice, $price, $savePriceTime,  $startTime, $endTime, $houseId, $try, $likert];
+      $data = [$trial, $houseId, $condition, $step, $actual, $answer, $savePriceTime, $startTime, $endTime, $likert];
       
       //print to check the values
       debug_to_console($data);
@@ -75,6 +79,7 @@
 
 
    //-----------------------------------------------------------------//
+   
    //CREATE A NEW FILE AND SAVE THE DATA
 
     //create a unique file for each trial
@@ -87,7 +92,7 @@
 
     // if the file is empty save the column headers
     if(0 == filesize($filename)){
-      fputcsv($f, array('Predected Price', 'Price', 'Save Price Time', 'Start Time', 'End Time', 'House Id', 'Order', 'Likert'));
+      fputcsv($f, array('Trial', 'House id', 'Condition', 'Step', 'Actual', 'Answer', 'Save Price Time', 'Start Time', 'End Time', 'Likert'));
     }
 
     if ($f === false) {

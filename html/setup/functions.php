@@ -1,6 +1,6 @@
 <?php
 
-global $experiment_data_id, $houses, $house, $training_houses, $tr_house,  $data_for_csv, $price;
+global $experiment_data_id, $houses, $house, $training_houses, $tr_house,  $data_for_csv, $price, $con, $pointer;
 
   // the code below assigns the names of factor levels to variables according to the information given in the file constants.php
   // If the default structure (2 factors each with 2 levels) is changed, then code below needs to be adapted. Otherwise, leave this as is.
@@ -158,17 +158,66 @@ function randomCondition(){
   }
 }
 
+//function that ensure that we will have exactly the same order of houses in the two conditions
+function mirrorConditions($basedir = 'html/setup'){
+  $count = 0;
+  //open the condition file
+  //As we don't use a database we need an extra file in order to be able to create file names based on an order
+  //create a file to store the trials in order to have different files for each completed trial
+  $idfile = $basedir . '/trials';
+
+  // open csv file for reading and writing
+    $idf = fopen($idfile, 'r');
+
+  if ($idf === false) {
+      die('Error opening the file ' . $idfile);
+  }
+
+  //id the trials file exist count all the lines to find the number of the trial
+  if(0 != filesize($idfile)){
+    while(!feof($idf)) {
+      if(fgets($idf) != ""){
+        $count =  $count + 1;
+      }
+    }
+  }
+
+  //if the trials are more than the total number of houses, start from the beginning
+  if($count >= 200){
+    $count = $count - 200;
+  }
+
+  // close the file
+  fclose($idf);
+  //if the total number of lines is an even number move the pointer and change condition
+  if($count == 0 || $count % 2 == 0){
+    $con = 1;
+    $pointer = $count - 1 - intdiv($count, 2); //-1 because we increase +1 before the first trial at the generatePages() and - count/2 to increase every two trials
+  //else if the total number of lines is an odd number keep the same position of the pointer as the previous condition and change condition
+  } else {
+    $con = 2;
+    $pointer = $count - 2 - intdiv($count, 2); //-2 because we want to keep the same order of appartments as the previous condition which was $count-1
+  }
+  
+  return array($con,$pointer, $count);
+
+}
+
+
 
 function generatePages() {
   // generate all pages based on the data indicated in the json files
-  global $page_order, $pages, $page_ids, $config, $stimuli_order, $start_page, $save_page, $factor1, $condition; 
-  global $experiment_data_id, $houses, $house;
-  $condition = randomCondition();
+  global $page_order, $pages, $page_ids, $config, $stimuli_order, $start_page, $save_page, $factor1, $condition, $count; 
+  global $experiment_data_id, $houses, $house, $pointer, $trial;
+
+  list($condition,$pointer, $count) = mirrorConditions();
+
   $page_number = 0;
   $house = $houses['houses'];
-  shuffle($house);
+  //shuffle($house);
   //variable which counts the repeats of the expirement in order to display the right info
-  $experiment_data_id = -1;
+  $experiment_data_id = $pointer;
+  $trial = -1;
 
   if (isset($start_page)){
     $start_page = max(0, $start_page-1);
@@ -190,6 +239,9 @@ function generatePages() {
          //if the page is part of the training increase the $training_data_id in order to display the right house details
          if($pages[$page_id]["id"] == "training" || $pages[$page_id]["id"] == "testing" || $pages[$page_id]["id"] == "main_stimulus"){
           $experiment_data_id++ ;
+         }
+         if($pages[$page_id]["id"] == "main_stimulus"){
+          $trial++;
          }
          // check if the current page needs to be repeated (multiple trials); 
          // can never happen on the last page (which just thanks the participant and gives the link to receive payment)
