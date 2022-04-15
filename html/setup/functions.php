@@ -218,6 +218,8 @@ function generatePages() {
   //variable which counts the repeats of the expirement in order to display the right info
   $experiment_data_id = $pointer;
   $trial = -1;
+  $trial_test = -1;
+  
 
   if (isset($start_page)){
     $start_page = max(0, $start_page-1);
@@ -243,6 +245,10 @@ function generatePages() {
          if($pages[$page_id]["id"] == "main_stimulus"){
           $trial++;
          }
+        if($pages[$page_id]["id"] == "testing"){
+          $trial_test++;
+        }
+        
          // check if the current page needs to be repeated (multiple trials); 
          // can never happen on the last page (which just thanks the participant and gives the link to receive payment)
          if ($i < count($page_order) - 1){
@@ -266,14 +272,8 @@ function generatePages() {
          if(isset($pages[$page_order[$i]]["save_page"])){
             $save_page = $pages[$page_order[$i]]["save_page"];
           }
-          // the next few lines are specific to the image filter example.
-          // Custom variables can be easily added here. Just make sure to check whether variables you need to access actually exist (use isset($var) for this purpose).
-         if($rep > 1 && isset($stimuli_order)){
-          $src = 'html/img/filter_example/'. $stimuli_order[$j] . ".jpg";
-          $filter = $stimuli_order[$j] % 10;
-          $image = floor($stimuli_order[$j]/10);
-          $trial = $j + 1;
-         }
+          
+
          // by calling the statement below a page will be generated and inserted in the main file (content.php) using the variables set above
          // there should rarely be any need to modify the page_skeleton; exceptions exist of course, for example, if you want to include a component on all pages
          include "html/page_skeleton.php";

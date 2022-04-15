@@ -22,7 +22,7 @@
       $step = $_POST["step"];
       $actual = $_POST["actual"];
       $answer = $_POST["answer"];
-      $savePriceTime = $_POST["savePriceTime"];
+      // $savePriceTime = $_POST["savePriceTime"];
       // $requestPredictionTime = $_POST["requestPredictionTime"];
       $startTime = $_POST["startTime"];
       $endTime = $_POST["endTime"];
@@ -40,7 +40,7 @@
     if($completed == 0){
 
       //add the values in an array
-      $data = [$trial, $houseId, $condition, $step, $actual, $answer, $savePriceTime, $startTime, $endTime, $likert];
+      $data = [$trial, $houseId, $condition, $step, $actual, $answer, $startTime, $endTime, $likert];
       
       //print to check the values
       debug_to_console($data);
@@ -92,7 +92,7 @@
 
     // if the file is empty save the column headers
     if(0 == filesize($filename)){
-      fputcsv($f, array('Trial', 'House id', 'Condition', 'Step', 'Actual', 'Answer', 'Save Price Time', 'Start Time', 'End Time', 'Likert'));
+      fputcsv($f, array('Trial', 'House id', 'Condition', 'Step', 'Actual', 'Answer', 'Start Time', 'End Time', 'Likert'));
     }
 
     if ($f === false) {

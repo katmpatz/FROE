@@ -1,5 +1,4 @@
 [
-  "welcome",
   "consent",
   "description",
   "training",
@@ -7,7 +6,6 @@
   "testing",
   "end_of_testing",
   "main_stimulus",
-  "attention_check",
   "feedback",
   "end"
 ]

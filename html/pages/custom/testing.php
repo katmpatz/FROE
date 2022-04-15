@@ -91,6 +91,7 @@
 <script type="text/javascript">
     var price_answered = "";
     var request_prediction = false;
+    var save_price_time = 0;
     
 //Take the value of the user's input
 $('#user-price_<?php echo $id;?>').on('input', function() {
@@ -123,6 +124,8 @@ $('#btn_save_<?php echo $id;?>').on('click', function(e) {
     $('#btn_save_<?php echo $id;?>').css({'background':'#6f91f5', 'color':'white'})
     $("#display_price_<?php echo $id;?>").show();
     $("#btn_<?php echo $id;?>").prop('disabled', false);
+
+    save_price_time = e.timeStamp;
     
 });
 
@@ -137,6 +140,34 @@ $('body').on('next', function(e, type){
         <?php echo $trial;?> + "", 
         <?php echo $filter;?> + "", 
         ]);
+        if(<?php echo $condition;?> == 1){
+          actual = "<?php echo $house[$experiment_data_id]["price"];?>"
+        } else {
+          actual = "<?php echo $house[$experiment_data_id]["prediction"];?>"
+        }
+        $.ajax({
+            async: false,
+            type: "POST",
+            url: '/FROE/html/setup/save_data.php',
+            data: {
+                "condition": "<?php echo $condition;?>",
+                "step":2,
+                "actual": actual,
+                "answer": price_answered,
+                "savePriceTime": save_price_time,
+                //"requestPredictionTime": request_prediction_time,
+                "startTime": start_time,
+                "endTime": end_time,
+                "houseId": "<?php echo $house[$experiment_data_id]["id"];?>", 
+                "trial":  "<?php echo $trial_test;?>", 
+                "likert": 0,
+                "completed": 0,
+            },
+            success: function(data)
+            { 
+              console.log(data);
+            }
+       });
        
     }
 });

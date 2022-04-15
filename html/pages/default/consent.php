@@ -7,7 +7,7 @@
         include 'html/components/warning.php';
       ?>
       <div class="consent">
-        <p><b>Project title: </b> Pilot Study</p>
+        <p><b>Project title: </b> Rental price prediction</p>
         <p>
           <b>Main researcher: </b> [anonymized: researcher identification].
         </p>
@@ -21,7 +21,8 @@
           <b>Research goal: </b> The goal of this study is to demonstrate an example.
         </p>
         <p>
-          <b>What do we expect from you: </b>  If you agree to participate in the study, you will be shown apartments for rental and will be asked questions such as to evaluate how surprising is their price or the price prediction. The entire experiment will take approximately <?php echo $config["Prolific"]["experiment_duration"]; ?> minutes.
+          <!-- <b>What do we expect from you: </b>  If you agree to participate in the study, you will be shown apartments for rental and will be asked questions such as to evaluate how surprising is their price or the price prediction. The entire experiment will take approximately <?php echo $config["Prolific"]["experiment_duration"]; ?> minutes. -->
+          <b>What do we expect from you: </b>  If you agree to participate in the study, you will be shown apartments for rental and will be asked questions such as to evaluate how surprising is their price or the price prediction. The entire experiment will take approximately 13 minutes.
         </p>
         <p>
           <b>Your rights to withdraw from the experiment at any time: </b> Your participation in this experiment is entirely voluntary and you may stop at any time, without providing a reason and without penalty. However, we will not be able to pay you if you do not complete the experiment.

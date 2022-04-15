@@ -9,7 +9,7 @@
           "floor": 3,
           "furnished": "yes",
           "image": "html/img/houses/3.jpeg",
-          "description": "Beautiful rooms with a view of the rooftops of Rennes, Sainte ThÃ©rÃ¨se district. Within walking distance of the metro (line a) and the bus (line 12). A small equipped kitchen, as well as a shower room and WC are on the same floor as the 2 bedrooms.",
+          "description": "Beautiful rooms with a view of the rooftops of Rennes. Within walking distance of the metro (line a) and the bus (line 12). A small equipped kitchen, as well as a shower room and WC are on the same floor as the 2 bedrooms.",
           "price": 1600,
           "prediction": 629.97
         },
@@ -35,7 +35,7 @@
           "floor": 3,
           "furnished": "no",
           "image": "html/img/houses/1.jpg",
-          "description": "This 110 mÂ² flat comprises an entrance hall, a very bright living room, a fitted and equipped kitchen (hob, oven, fridge, dishwasher), 3 bedrooms with cupboards, a shower room, a bathroom and a toilet. It also has 3 attics and two cellars.",
+          "description": "This 110 square meters flat comprises an entrance hall, a very bright living room, a fitted and equipped kitchen (hob, oven, fridge, dishwasher), 3 bedrooms with cupboards, a shower room, a bathroom and a toilet. It also has 3 attics and two cellars.",
           "price": 1650,
           "prediction": 1194.07
         },
@@ -87,7 +87,7 @@
           "floor": 1,
           "furnished": "no",
           "image": "html/img/houses/6.jpg",
-          "description": "Type 1 of 25 mÂ² on the 1st floor, entrance with cupboard, Living room, Equipped kitchen, bathroom with c wc, Parking",
+          "description": "Type 1 of 25 square meters on the 1st floor, entrance with cupboard, Living room, Equipped kitchen, bathroom with c wc, Parking",
           "price": 450,
           "prediction": 485.55
         },
@@ -113,7 +113,7 @@
           "floor": 1,
           "furnished": "no",
           "image": "html/img/houses/8.jpg",
-          "description": "Surface of 56.32mÂ² with balcony and parking- Living room 35mÂ², 1 bedroom, bathroom - balcony (18.20mÂ²)",
+          "description": "Surface of 56.32square meters with balcony and parking- Living room 35square meters, 1 bedroom, bathroom - balcony (18.20square meters)",
           "price": 720,
           "prediction": 747.3
         },
@@ -230,7 +230,7 @@
           "floor": 4,
           "furnished": "yes",
           "image": "html/img/houses/17.jpg",
-          "description": "On the 4th floor, nice furnished flat of 21.64mÂ² with a nice decoration composed of an entrance, a living room with a fitted kitchen opening onto a south facing balcony, shower room with toilet. Individual covered parking - Collective heating. The residence has common areas: Laundry-Co Working with wifi connection- Relaxation area-Reading area- Common terrace-Wifi connection",
+          "description": "On the 4th floor, nice furnished flat of 21.64square meters with a nice decoration composed of an entrance, a living room with a fitted kitchen opening onto a south facing balcony, shower room with toilet. Individual covered parking - Collective heating. The residence has common areas: Laundry-Co Working with wifi connection- Relaxation area-Reading area- Common terrace-Wifi connection",
           "price": 575,
           "prediction": 493.7
         },
@@ -243,7 +243,7 @@
           "floor": 0,
           "furnished": "yes",
           "image": "html/img/houses/18.jpg",
-          "description": "Furnished room, in residence, bathroom + toilet in common in common, rent + charges: 410 euros including 0 euros of charges.",
+          "description": "Furnished room, in residence, bathroom + toilet in common in common.",
           "price": 410,
           "prediction": 397.23
         },
@@ -256,7 +256,7 @@
           "floor": "-",
           "furnished": "no",
           "image": "html/img/houses/19.jpg",
-          "description": "Studio of 14.48mÂ² in a quiet area, close to the Faculty of Law, it includes a south facing living room opening onto a common courtyard, equipped kitchenette (hotplates, fridge, hood), a shower room with toilet. ",
+          "description": "Studio of 14.48square meters in a quiet area, close to the Faculty of Law, it includes a south facing living room opening onto a common courtyard, equipped kitchenette (hotplates, fridge, hood), a shower room with toilet. ",
           "price": 400,
           "prediction": 374.35
         },
@@ -282,7 +282,7 @@
           "floor": 4,
           "furnished": "no",
           "image": "html/img/houses/21.jpg",
-          "description": "This apartment of 95 mÂ² (about 1021 ftÂ²), in a building of 4 floors comprises 4 rooms including 3 bedrooms, 1 bathroom and 1 toilet. Near the historic centre, shops and public transport. It is composed of an entrance, three bedrooms (North-West, South-East, South-West), one of which has a cupboard and another which can be used as an office. Living room with south-east exposure leading to a balcony with a clear view. Separate fitted kitchen, bathroom with new MAL outlet, separate WC. Two people sharing accepted. Cellar and garage.",
+          "description": "This apartment of 95 square meters (about 1021 ftÂ²), in a building of 4 floors comprises 4 rooms including 3 bedrooms, 1 bathroom and 1 toilet. Near the historic centre, shops and public transport. It is composed of an entrance, three bedrooms (North-West, South-East, South-West), one of which has a cupboard and another which can be used as an office. Living room with south-east exposure leading to a balcony with a clear view. Separate fitted kitchen, bathroom with new MAL outlet, separate WC. Two people sharing accepted. Cellar and garage.",
           "price": 1155,
           "prediction": 1014.5
         },
@@ -295,7 +295,7 @@
           "floor": 3,
           "furnished": "yes",
           "image": "html/img/houses/22.jpg",
-          "description": "Located on the 3rd floor, this beautiful 60.65 mÂ² flat consists of an entrance hall with cupboard, a living room open onto a fully equipped kitchen area (storage units, hob, hood) and extended by a 17.3 mÂ² terrace. You will also enjoy 2 bedrooms and a bathroom with washbasin and towel rail. Individual gas heating. A garage and a private parking space complete this property.",
+          "description": "Located on the 3rd floor, this beautiful 60.65 square meters flat consists of an entrance hall with cupboard, a living room open onto a fully equipped kitchen area (storage units, hob, hood) and extended by a 17.3 square meters terrace. You will also enjoy 2 bedrooms and a bathroom with washbasin and towel rail. Individual gas heating. A garage and a private parking space complete this property.",
           "price": 758,
           "prediction": 758.88
         },
@@ -347,7 +347,7 @@
           "floor": "-",
           "furnished": "no",
           "image": "html/img/houses/26.jpg",
-          "description": "This apartment of 25 mÂ² , in a building of 4 floors comprises 1 room and 1 toilet. It is provided with a living room and with a terrace. It is equipped with a living room and with a terrace.",
+          "description": "This apartment of 25 square meters , in a building of 4 floors comprises 1 room and 1 toilet. It is provided with a living room and with a terrace. It is equipped with a living room and with a terrace.",
           "price": 520,
           "prediction": 473.71
         },
@@ -360,7 +360,7 @@
           "floor": 1,
           "furnished": "no",
           "image": "html/img/houses/27.jpg",
-          "description": "WEST OF RENNES 2 ROOMS OF 36 MÂ² 65 ON THE 1ST FLOOR A BEDROOM WITH BALCONY HEATING GAS GARAGE CLINICAL DISTRICT OF WISDOM .. BUS IN FRONT OF THE BUILDING",
+          "description": "WEST OF RENNES 2 ROOMS OF 36 square meters 65 ON THE 1ST FLOOR A BEDROOM WITH BALCONY HEATING GAS GARAGE CLINICAL DISTRICT OF WISDOM .. BUS IN FRONT OF THE BUILDING",
           "price": 528,
           "prediction": 579.03
         },
@@ -373,7 +373,7 @@
           "floor": 0,
           "furnished": "no",
           "image": "html/img/houses/28.JPG",
-          "description": "Recent residence located in a quiet area, overlooking the green corridor, close to shops, transport (lines 3, 5, 9), CHR and the St Laurent clinic. Very nice 4-room apartment of 79.41 mÂ² with large terrace of 38 mÂ². It consists of an entrance with cupboard, a fitted kitchen (hob, extractor, high and low storage, worktop) open to a large living room and giving access to a west-facing terrace not overlooked. Finally, you will have three bedrooms, one with closet and two opening onto the terrace, a bathroom (bath, double sinks and mirror) and separate WC.",
+          "description": "Recent residence located in a quiet area, overlooking the green corridor, close to shops, transport (lines 3, 5, 9), CHR and the St Laurent clinic. Very nice 4-room apartment of 79.41 square meters with large terrace of 38 square meters. It consists of an entrance with cupboard, a fitted kitchen (hob, extractor, high and low storage, worktop) open to a large living room and giving access to a west-facing terrace not overlooked. Finally, you will have three bedrooms, one with closet and two opening onto the terrace, a bathroom (bath, double sinks and mirror) and separate WC.",
           "price": 846,
           "prediction": 978.06
         },
@@ -386,7 +386,7 @@
           "floor": 1,
           "furnished": "yes",
           "image": "html/img/houses/29.JPG",
-          "description": "Very beautiful furnished apartment of 107 mÂ² located on the first floor of a quiet condominium close to shops and transport. It consists of a corridor leading to a living room, two beautiful bedrooms, an office, a fitted and equipped kitchen, a bathroom, a WC and a storeroom. A parking space and a garage complete this accommodation.",
+          "description": "Very beautiful furnished apartment of 107 square meters located on the first floor of a quiet condominium close to shops and transport. It consists of a corridor leading to a living room, two beautiful bedrooms, an office, a fitted and equipped kitchen, a bathroom, a WC and a storeroom. A parking space and a garage complete this accommodation.",
           "price": 1415,
           "prediction": 1240.06
         },
@@ -399,7 +399,7 @@
           "floor": 2,
           "furnished": "no",
           "image": "html/img/houses/30.JPG",
-          "description": "14mÂ² studio ideally located close to shops and transport, on the 2nd floor of a small building, . . It consists of an entrance with cupboards, a living room with open kitchen, and a bathroom with WC.",
+          "description": "14square meters studio ideally located close to shops and transport, on the 2nd floor of a small building, . . It consists of an entrance with cupboards, a living room with open kitchen, and a bathroom with WC.",
           "price": 450,
           "prediction": 405.38
         },
@@ -412,7 +412,7 @@
           "floor": 0,
           "furnished": "yes",
           "image": "html/img/houses/31.JPG",
-          "description": "Furnished studio, 22.69 mÂ² located in the area of â€‹â€‹La Poterie close to shops and public transport, . It includes a fully fitted and equipped kitchen, a bedroom with double bed and storage space and a bathroom equipped with a washing machine and WC.",
+          "description": "Furnished studio, 22.69 square meters located in the area of â€‹â€‹La Poterie close to shops and public transport, . It includes a fully fitted and equipped kitchen, a bedroom with double bed and storage space and a bathroom equipped with a washing machine and WC.",
           "price": 550,
           "prediction": 459.23
         },
@@ -477,7 +477,7 @@
           "floor": 2,
           "furnished": "no",
           "image": "html/img/houses/36.JPG",
-          "description": "In a recent luxury residence, a 3-room apartment of 57.24 mÂ². It includes a living room with a fitted and equipped kitchen area, a loggia, two bedrooms, one of which has a loggia, a bathroom, a toilet with washbasin. You will have covered parking. Collective heating and hot water.",
+          "description": "In a recent luxury residence, a 3-room apartment of 57.24 square meters. It includes a living room with a fitted and equipped kitchen area, a loggia, two bedrooms, one of which has a loggia, a bathroom, a toilet with washbasin. You will have covered parking. Collective heating and hot water.",
           "price": 790,
           "prediction": 753.71
         },
@@ -503,7 +503,7 @@
           "floor": 4,
           "furnished": "yes",
           "image": "html/img/houses/38.JPG",
-          "description": "Beautiful Furnished T2 43.60 mÂ² completely renovated, ideally located, place du Parlement on the 4th floor in a quiet area, including living room with fitted and equipped kitchen, bedroom, shower room.",
+          "description": "Beautiful Furnished T2 43.60 square meters completely renovated, ideally located, place du Parlement on the 4th floor in a quiet area, including living room with fitted and equipped kitchen, bedroom, shower room.",
           "price": 960,
           "prediction": 666.89
         },
@@ -516,7 +516,7 @@
           "floor": 2,
           "furnished": "no",
           "image": "html/img/houses/39.JPG",
-          "description": "The residence is located in a lively area: local shops, restaurants, library, schools, leisure activities, administrative infrastructure , services, green spacesâ€¦ Located on the second floor with lift, very nice two-room apartment of 46.38 mÂ². It consists of an entrance hall with cupboard, a kitchen area open to a large bright living room and giving access to a beautiful balcony. Finally, you will enjoy a bedroom, a bathroom (vanity unit, mirror, shower) and separate WC. Individual gas heating. Private parking completes this property.",
+          "description": "The residence is located in a lively area: local shops, restaurants, library, schools, leisure activities, administrative infrastructure , services, green spacesâ€¦ Located on the second floor with lift, very nice two-room apartment of 46.38 square meters. It consists of an entrance hall with cupboard, a kitchen area open to a large bright living room and giving access to a beautiful balcony. Finally, you will enjoy a bedroom, a bathroom (vanity unit, mirror, shower) and separate WC. Individual gas heating. Private parking completes this property.",
           "price": 519,
           "prediction": 669.08
         },
@@ -581,7 +581,7 @@
           "floor": 4,
           "furnished": "yes",
           "image": "html/img/houses/44.JPG",
-          "description": "Rennes center, rue Jules Simon, near RÃ©publique metro station apartment type two in very good condition with an area of â€‹â€‹52.25 mÂ² located on the 4th floor with elevator comprising: entrance with dressing room, kitchen, living room, bedroom, shower room with wc.",
+          "description": "Rennes center, rue Jules Simon, near RÃ©publique metro station apartment type two in very good condition with an area of â€‹â€‹52.25 square meters located on the 4th floor with elevator comprising: entrance with dressing room, kitchen, living room, bedroom, shower room with wc.",
           "price": 750,
           "prediction": 746.59
         },
@@ -594,7 +594,7 @@
           "floor": 2,
           "furnished": "yes",
           "image": "html/img/houses/45.JPG",
-          "description": "Beautiful apartment type 3 Bis of 69 mÂ² comprising entrance hall, west-facing living room, fitted and equipped kitchen, office space, 2 bedrooms, shower room with wc, cellar... Parking nearby very easy.",
+          "description": "Beautiful apartment type 3 Bis of 69 square meters comprising entrance hall, west-facing living room, fitted and equipped kitchen, office space, 2 bedrooms, shower room with wc, cellar... Parking nearby very easy.",
           "price": 870,
           "prediction": 867.6
         },
@@ -607,7 +607,7 @@
           "floor": 1,
           "furnished": "no",
           "image": "html/img/houses/46.JPG",
-          "description": "Rue Camille Desmoulins, near Metro Anatole France. On the 1st floor of a small condominium, studio, 27 mÂ², living room facing south, fitted and equipped kitchen area (hob, fridge), bathroom with WC. Electric heating. Private outdoor parking.",
+          "description": "Rue Camille Desmoulins, near Metro Anatole France. On the 1st floor of a small condominium, studio, 27 square meters, living room facing south, fitted and equipped kitchen area (hob, fridge), bathroom with WC. Electric heating. Private outdoor parking.",
           "price": 480,
           "prediction": 510.17
         },
@@ -620,7 +620,7 @@
           "floor": 4,
           "furnished": "yes",
           "image": "html/img/houses/47.JPG",
-          "description": "'Student' residence, on the 4th floor, beautiful furnished type 1 apartment of 21.64mÂ² with neat decoration composed of an entrance, a living room with fitted kitchen opening onto a SOUTH-facing balcony , bathroom with wc. Individual covered parking- Collective heating- The residence has common areas: Laundry-Co Working with wifi connection-Relaxation area-Reading area-Common terrace-Wifi connection Free on 8/4",
+          "description": "'Student' residence, on the 4th floor, beautiful furnished type 1 apartment of 21.64square meters with neat decoration composed of an entrance, a living room with fitted kitchen opening onto a SOUTH-facing balcony , bathroom with wc. Individual covered parking- Collective heating- The residence has common areas: Laundry-Co Working with wifi connection-Relaxation area-Reading area-Common terrace-Wifi connection Free on 8/4",
           "price": 575,
           "prediction": 491.75
         },
@@ -659,7 +659,7 @@
           "floor": 2,
           "furnished": "yes",
           "image": "html/img/houses/50.JPG",
-          "description": "In a student residence near Pontchaillou, enjoy a 9mÂ² room on the 2nd floor with an unobstructed view of green spaces. Composed of numerous storage spaces, a water point and an office, you will have an ideal environment as a student. The toilets are on the landing with showers or a bathtub, as well as separate toilets. On each floor, common living space with a kitchen area (hob, oven, microwave), a common refrigerator consisting of private lockable mini-fridges and a dining area with tables and chairs. Relaxation area with sofas.",
+          "description": "In a student residence near Pontchaillou, enjoy a 9square meters room on the 2nd floor with an unobstructed view of green spaces. Composed of numerous storage spaces, a water point and an office, you will have an ideal environment as a student. The toilets are on the landing with showers or a bathtub, as well as separate toilets. On each floor, common living space with a kitchen area (hob, oven, microwave), a common refrigerator consisting of private lockable mini-fridges and a dining area with tables and chairs. Relaxation area with sofas.",
           "price": 320,
           "prediction": 301.79
         },
@@ -672,7 +672,7 @@
           "floor": 2,
           "furnished": "yes",
           "image": "html/img/houses/51.JPG",
-          "description": "4 free room(s) in a 4-bedroom shared apartment in a 95m2 apartment The apartment is in a condominium with intercom and digicode. Facing the metro, ten minutes from the city center, and twenty minutes from the ESC RENNES by the valley. Shops nearby Center Alma (Carrefour) Post office, pharmacy, bakery. Doctors. Very clean residence, respect for the neighborhood assured. Apartment with four individually closed bedrooms. Each room has: a desk a chair a wardrobe a bed (140 or 90) (Bedding: pillow, duvet, sheets provided for 4 months) 50 euros or protective undersheet 15 euros. The common areas: a bathroom with shower a small bathroom a separate toilet a fitted kitchen (fridge-freezer, kettle, coffee maker, microwave, crockery) a living room: table, 4 chairs, sofa, 1 armchair, coffee table, TV cabinet . a balcony a vacuum cleaner a laundry room including a washing machine, an ironing board and an iron. ",
+          "description": "4 free room(s) in a 4-bedroom shared apartment in a 95m2 apartment The apartment is in a condominium with intercom and digicode. Facing the metro, ten minutes from the city center, and twenty minutes from the ESC RENNES by the valley. Shops nearby Center Alma (Carrefour) Post office, pharmacy, bakery. Doctors. Very clean residence, respect for the neighborhood assured. Apartment with four individually closed bedrooms. Each room has: a desk a chair a wardrobe a bed (140 or 90) (Bedding: pillow, duvet, sheets provided for 4 months). The common areas: a bathroom with shower a small bathroom a separate toilet a fitted kitchen (fridge-freezer, kettle, coffee maker, microwave, crockery) a living room: table, 4 chairs, sofa, 1 armchair, coffee table, TV cabinet . a balcony a vacuum cleaner a laundry room including a washing machine, an ironing board and an iron. ",
           "price": 435,
           "prediction": 1144.14
         },
@@ -724,7 +724,7 @@
           "floor": 0,
           "furnished": "no",
           "image": "html/img/houses/54.JPG",
-          "description": " T4 of 91mÂ² located on the ground floor of a small collective. Entrance with cupboard, separate fitted kitchen (storage, extractor hood), living room extended by a pleasant terrace, 3 bedrooms, fitted cupboards, bathroom and separate WC. The apartment is rented with a cellar and a closed box in the secure basement. Well located, the residence allows quick access to the Jules Verne bus stop (line C6), Dargent (line 9, STAR network) and the city â€‹â€‹center including on foot. Metro line B to come.",
+          "description": " T4 of 91square meters located on the ground floor of a small collective. Entrance with cupboard, separate fitted kitchen (storage, extractor hood), living room extended by a pleasant terrace, 3 bedrooms, fitted cupboards, bathroom and separate WC. The apartment is rented with a cellar and a closed box in the secure basement. Well located, the residence allows quick access to the Jules Verne bus stop (line C6), Dargent (line 9, STAR network) and the city â€‹â€‹center including on foot. Metro line B to come.",
           "price": 901,
           "prediction": 1021.34
         },
@@ -763,7 +763,7 @@
           "floor": 0,
           "furnished": "no",
           "image": "html/img/houses/57.JPG",
-          "description": "Residence located on the left bank of the Vilaine in the Arsenal-Redon district, a 20-minute walk from Place de la RÃ©publique. Taking advantage of the tranquility of the banks of the Vilaine, just 400 m on foot, the district offers a pleasant and lively living environment thanks to the many services and local shops. T2 apartment of 49 mÂ² with a terrace of 19.3 mÂ². It consists of an entrance, a fitted kitchen opening onto a beautiful living room and opening onto the terrace. You will also enjoy a bedroom and a bathroom (vanity unit, mirror, heated towel rail, WC).",
+          "description": "Residence located on the left bank of the Vilaine in the Arsenal-Redon district, a 20-minute walk from Place de la RÃ©publique. Taking advantage of the tranquility of the banks of the Vilaine, just 400 m on foot, the district offers a pleasant and lively living environment thanks to the many services and local shops. T2 apartment of 49 square meters with a terrace of 19.3 square meters. It consists of an entrance, a fitted kitchen opening onto a beautiful living room and opening onto the terrace. You will also enjoy a bedroom and a bathroom (vanity unit, mirror, heated towel rail, WC).",
           "price": 600,
           "prediction": 674.96
         },
@@ -802,7 +802,7 @@
           "floor": 2,
           "furnished": "yes",
           "image": "html/img/houses/60.JPG",
-          "description": "ORPI Rennes Aristide Briand offers you for rent this very beautiful apartment type 3 Bis of 69 mÂ² comprising entrance hall, west-facing living room, fitted and equipped kitchen, office space, 2 bedrooms, shower room with wc, cellar. Parking nearby very easy.",
+          "description": "ORPI Rennes Aristide Briand offers you for rent this very beautiful apartment type 3 Bis of 69 square meters comprising entrance hall, west-facing living room, fitted and equipped kitchen, office space, 2 bedrooms, shower room with wc, cellar. Parking nearby very easy.",
           "price": 870,
           "prediction": 854.81
         },
@@ -880,7 +880,7 @@
           "floor": 2,
           "furnished": "no",
           "image": "html/img/houses/66.JPG",
-          "description": "Residence located close to the shops of Gast. T2 apartment of 46mÂ² located on the second floor. It is composed of an entrance, a living room opening onto an equipped kitchen (sink, cupboards, hob, extractor, oven, microwave), an 11mÂ² loggia facing south, a bedroom with cupboard and a bathroom (shower, vanity unit and mirror). Individual gas heating.",
+          "description": "Residence located close to the shops of Gast. T2 apartment of 46square meters located on the second floor. It is composed of an entrance, a living room opening onto an equipped kitchen (sink, cupboards, hob, extractor, oven, microwave), an 11square meters loggia facing south, a bedroom with cupboard and a bathroom (shower, vanity unit and mirror). Individual gas heating.",
           "price": 590,
           "prediction": 669.08
         },
@@ -893,7 +893,7 @@
           "floor": 2,
           "furnished": "yes",
           "image": "html/img/houses/67.JPG",
-          "description": "Beautiful spacious unfurnished studio of 33 mÂ², located on the 2nd floor of a recent luxury building (2006), in perfect condition, comprising: entrance with cupboards, beautiful bright room with open fitted kitchen, bathroom with WC. Individual electric heating (low consumption DPE/C). 1 private underground parking.",
+          "description": "Beautiful spacious unfurnished studio of 33 square meters, located on the 2nd floor of a recent luxury building (2006), in perfect condition, comprising: entrance with cupboards, beautiful bright room with open fitted kitchen, bathroom with WC. Individual electric heating (low consumption DPE/C). 1 private underground parking.",
           "price": 570,
           "prediction": 577.34
         },
@@ -906,7 +906,7 @@
           "floor": 0,
           "furnished": "no",
           "image": "html/img/houses/68.JPG",
-          "description": "Duplex apartment of 77mÂ² located on the ground floor of a recent residence. Kitchen open to living room, 3 bedrooms, bathroom and shower room, 2 WCs, wardrobe, private loggia at the entrance. The apartment is rented with a private parking space in the secure basement. Heating and hot water are included in the charges. Well located, the residence allows quick access to the Dargent bus stop (line 9, STAR network) and in the city center including on foot. Metro line B to come.",
+          "description": "Duplex apartment of 77square meters located on the ground floor of a recent residence. Kitchen open to living room, 3 bedrooms, bathroom and shower room, 2 WCs, wardrobe, private loggia at the entrance. The apartment is rented with a private parking space in the secure basement. Heating and hot water are included in the charges. Well located, the residence allows quick access to the Dargent bus stop (line 9, STAR network) and in the city center including on foot. Metro line B to come.",
           "price": 794,
           "prediction": 897.35
         },
@@ -1010,7 +1010,7 @@
           "floor": 3,
           "furnished": "yes",
           "image": "html/img/houses/76.JPG",
-          "description": "2 free room(s) in a 3-bedroom flatshare in a 60m2 apartment Friendly flatshare in the Sainte-ThÃ©rÃ¨se district, rue des Ecotais. You will be in peace, in a green environment with access to sports activities nearby: football/basketball fields, parks, sports courses... Furnished apartment of 60mÂ², bright and refurbished, quality services.",
+          "description": "2 free room(s) in a 3-bedroom flatshare in a 60m2 apartment Friendly flatshare in the Sainte-ThÃ©rÃ¨se district, rue des Ecotais. You will be in peace, in a green environment with access to sports activities nearby: football/basketball fields, parks, sports courses... Furnished apartment of 60square meters, bright and refurbished, quality services.",
           "price": 495,
           "prediction": 781.52
         },
@@ -1036,7 +1036,7 @@
           "floor": 3,
           "furnished": "no",
           "image": "html/img/houses/78.JPG",
-          "description": "Very nice location, near faculty of law. - In a small condominium. Large T2 (46.57 mÂ²) on the 3rd floor (no lift), comprising: entrance with cupboard, kitchen (13.19 mÂ²) fitted and partially equipped (hob, small fridge), living room (12.09 mÂ²), bedroom (12.47 mÂ², with cupboards), shower room-WC (with space for washing machine). ",
+          "description": "Very nice location, near faculty of law. - In a small condominium. Large T2 (46.57 square meters) on the 3rd floor (no lift), comprising: entrance with cupboard, kitchen (13.19 square meters) fitted and partially equipped (hob, small fridge), living room (12.09 square meters), bedroom (12.47 square meters, with cupboards), shower room-WC (with space for washing machine). ",
           "price": 795,
           "prediction": 688.28
         },
@@ -1075,7 +1075,7 @@
           "floor": 2,
           "furnished": "no",
           "image": "html/img/houses/81.JPG",
-          "description": "Residence very close to the city center of Rennes (10 minutes) located in a quiet and residential area with high-end services. Close to shops, CHR transport and the St Laurent clinic. Very nice 3-room apartment of 61.26 mÂ² located on the 2nd floor with lift, west exposure. It consists of an entrance with cupboard, a fitted kitchen (worktop, storage, hob, extractor) open to a large living room giving access to a large 15.5 mÂ² balcony, two bedrooms with parquet on the ground, a bathroom (vanity unit, mirror, shower) and separate WC.",
+          "description": "Residence very close to the city center of Rennes (10 minutes) located in a quiet and residential area with high-end services. Close to shops, CHR transport and the St Laurent clinic. Very nice 3-room apartment of 61.26 square meters located on the 2nd floor with lift, west exposure. It consists of an entrance with cupboard, a fitted kitchen (worktop, storage, hob, extractor) open to a large living room giving access to a large 15.5 square meters balcony, two bedrooms with parquet on the ground, a bathroom (vanity unit, mirror, shower) and separate WC.",
           "price": 715,
           "prediction": 789.13
         },
@@ -1114,7 +1114,7 @@
           "floor": 0,
           "furnished": "yes",
           "image": "html/img/houses/84.JPG",
-          "description": "In the foot of the future Gayeulles metro station and shops, very beautiful furnished T4 of 78.88mÂ² in a 2010 residence. On the ground floor, it offers: entrance with cupboard, beautiful living room opening onto a balcony of 5.63 mÂ² facing south, open kitchen, corridor, 3 bedrooms with cupboards, bathroom and separate WC. Closed garage in secure basement and aerial parking space. Furniture. Living area: 78.88 mÂ². ",
+          "description": "In the foot of the future Gayeulles metro station and shops, very beautiful furnished T4 of 78.88square meters in a 2010 residence. On the ground floor, it offers: entrance with cupboard, beautiful living room opening onto a balcony of 5.63 square meters facing south, open kitchen, corridor, 3 bedrooms with cupboards, bathroom and separate WC. Closed garage in secure basement and aerial parking space. Furniture. Living area: 78.88 square meters. ",
           "price": 1385,
           "prediction": 909.89
         },
@@ -1192,7 +1192,7 @@
           "floor": 2,
           "furnished": "yes",
           "image": "html/img/houses/90.JPG",
-          "description": "Common areas: fitted kitchen (8.05 mÂ²), bathroom (5.65 mÂ²), WC and small living room (8.98 mÂ²). Bedroom: 9.01 mÂ² + adjoining dressing room of 0.90 mÂ² (plus shared balcony).Fitted bedroom: single bed, bedside table, cupboards, desk, shelves , office chair, etc. Household appliances: ceramic hob, fridge (+ freezer compartment), dishwasher, microwave, coffee maker, kettle, toaster and washing machine. Wi-Fi included. Apartment located on the 2nd floor of a small building. Metro Villejean and University less than 10 minutes walk. Shopping center (bakery, butcher, supermarket, pharmacy, press, fast food) located at the foot of the building.  ",
+          "description": "Common areas: fitted kitchen (8.05 square meters), bathroom (5.65 square meters), WC and small living room (8.98 square meters). Bedroom: 9.01 square meters + adjoining dressing room of 0.90 square meters (plus shared balcony).Fitted bedroom: single bed, bedside table, cupboards, desk, shelves , office chair, etc. Household appliances: ceramic hob, fridge (+ freezer compartment), dishwasher, microwave, coffee maker, kettle, toaster and washing machine. Wi-Fi included. Apartment located on the 2nd floor of a small building. Metro Villejean and University less than 10 minutes walk. Shopping center (bakery, butcher, supermarket, pharmacy, press, fast food) located at the foot of the building.  ",
           "price": 365,
           "prediction": 904.01
         },
@@ -1257,7 +1257,7 @@
           "floor": 0,
           "furnished": "yes",
           "image": "html/img/houses/95.JPG",
-          "description": "Beautiful apartment (88 mÂ²) free, furnished and tastefully decorated, on the ground floor. 4 rooms to share in a flatshare (room excluding charge 325E, charge: 75E) in the Italy district (Italy metro stop); the building is secure, intercom, with a badge at the entrance. It is located 50m from the Italy metro stop; 1 km from Alma shopping center; 15 mins from the city center and 30 mins from the universities. Open kitchen equipped: Oven, microwave, induction hob, extractor, combined fridge, toaster, coffee maker, etc.. We find in the apartment: TV, fridge, sofa, sideboard and sideboard, coffee table, dining table , Washing machine and storage, iron and ironing board, broom vacuum cleaner and all household essentials. Each room has a double bed, duvet, cushions and sheets. A desk. A (dressing) closet and storage. The doors each have a key lock. Shower room separated from the WC room and comprising a shower cubicle with sliding door, a radiator, a washbasin on a cupboard with storage units. The apartment has internet access and 3 balconies.",
+          "description": "Beautiful apartment (88 square meters) free, furnished and tastefully decorated, on the ground floor. 4 rooms to share in a flatshare (room excluding charge 325E, charge: 75E) in the Italy district (Italy metro stop); the building is secure, intercom, with a badge at the entrance. It is located 50m from the Italy metro stop; 1 km from Alma shopping center; 15 mins from the city center and 30 mins from the universities. Open kitchen equipped: Oven, microwave, induction hob, extractor, combined fridge, toaster, coffee maker, etc.. We find in the apartment: TV, fridge, sofa, sideboard and sideboard, coffee table, dining table , Washing machine and storage, iron and ironing board, broom vacuum cleaner and all household essentials. Each room has a double bed, duvet, cushions and sheets. A desk. A (dressing) closet and storage. The doors each have a key lock. Shower room separated from the WC room and comprising a shower cubicle with sliding door, a radiator, a washbasin on a cupboard with storage units. The apartment has internet access and 3 balconies.",
           "price": 400,
           "prediction": 985.66
         },
@@ -1270,7 +1270,7 @@
           "floor": 2,
           "furnished": "no",
           "image": "html/img/houses/96.JPG",
-          "description": "In recent residence, Type 3 of 58 mÂ² on the 2nd floor with lift, including a living room opening onto a terrace, a fitted fitted kitchen area, a hallway, 2 bedrooms with fitted wardrobes, shower room, wc, gas heater, 2 covered parking spaces. ",
+          "description": "In recent residence, Type 3 of 58 square meters on the 2nd floor with lift, including a living room opening onto a terrace, a fitted fitted kitchen area, a hallway, 2 bedrooms with fitted wardrobes, shower room, wc, gas heater, 2 covered parking spaces. ",
           "price": 725,
           "prediction": 762.56
         },
@@ -1283,7 +1283,7 @@
           "floor": 2,
           "furnished": "yes",
           "image": "html/img/houses/97.JPG",
-          "description": "One bedroom is currently available in a building located at the foot of the Villejean-UniversitÃ© metro station, opposite Rennes 2 University, 4-bedroom flatshare in an 84mÂ² apartment, on the 7th floor with lift.",
+          "description": "One bedroom is currently available in a building located at the foot of the Villejean-UniversitÃ© metro station, opposite Rennes 2 University, 4-bedroom flatshare in an 84square meters apartment, on the 7th floor with lift.",
           "price": 400,
           "prediction": 970.93
         },
@@ -1348,7 +1348,7 @@
           "floor": 3,
           "furnished": "yes",
           "image": "html/img/houses/102.JPG",
-          "description": "Near the city center and the faculty of law, in a small collective, on the top floor, apartment with a floor area of â€‹â€‹30 mÂ² recently renovated and comprising entrance hall, living room, equipped kitchenette, bathroom.",
+          "description": "Near the city center and the faculty of law, in a small collective, on the top floor, apartment with a floor area of â€‹â€‹30 square meters recently renovated and comprising entrance hall, living room, equipped kitchenette, bathroom.",
           "price": 435,
           "prediction": 463.7
         },
@@ -1400,7 +1400,7 @@
           "floor": 3,
           "furnished": "no",
           "image": "html/img/houses/106.JPG",
-          "description": "Located Quai de la PrÃ©valaye, in a quiet and secure condominium on the edge of the Vilaine, 23mÂ² studio on the 3rd and last floor without lift comprising a living room with kitchenette area and storage cupboard. Bathroom with bath and washing machine, separate WC.",
+          "description": "Located Quai de la PrÃ©valaye, in a quiet and secure condominium on the edge of the Vilaine, 23square meters studio on the 3rd and last floor without lift comprising a living room with kitchenette area and storage cupboard. Bathroom with bath and washing machine, separate WC.",
           "price": 457,
           "prediction": 495.43
         },
@@ -1413,7 +1413,7 @@
           "floor": 2,
           "furnished": "no",
           "image": "html/img/houses/106.JPG",
-          "description": "In a recent luxury residence, a 3-room apartment of 57.24 mÂ². It includes a living room with a fitted and equipped kitchen area, a loggia, two bedrooms, one of which has a loggia, a bathroom, a toilet with washbasin.",
+          "description": "In a recent luxury residence, a 3-room apartment of 57.24 square meters. It includes a living room with a fitted and equipped kitchen area, a loggia, two bedrooms, one of which has a loggia, a bathroom, a toilet with washbasin.",
           "price": 790,
           "prediction": 753.71
         },
@@ -1426,7 +1426,7 @@
           "floor": 1,
           "furnished": "no",
           "image": "html/img/houses/108.JPG",
-          "description": "On the 1st floor of a small condominium, studio, 27 mÂ², living room facing south, fitted and equipped kitchen area (hob, fridge), bathroom with WC. Electric heating. Private outdoor parking.",
+          "description": "On the 1st floor of a small condominium, studio, 27 square meters, living room facing south, fitted and equipped kitchen area (hob, fridge), bathroom with WC. Electric heating. Private outdoor parking.",
           "price": 480,
           "prediction": 510.17
         },
@@ -1452,7 +1452,7 @@
           "floor": 3,
           "furnished": "no",
           "image": "html/img/houses/110.JPG",
-          "description": "Recent luxury residence, located in the Beaulieu Baud district. Located on the 3rd floor, this beautiful apartment of 60.65 mÂ² consists of an entrance hall with cupboard, a living room opening onto a fitted kitchen area (storage furniture, hob, extractor) and extended by a terrace of 17.3 mÂ². You will also enjoy 2 bedrooms and a bathroom with sink and heated towel rail. Individual gas heating. A garage and a private parking space complete this property. ",
+          "description": "Recent luxury residence, located in the Beaulieu Baud district. Located on the 3rd floor, this beautiful apartment of 60.65 square meters consists of an entrance hall with cupboard, a living room opening onto a fitted kitchen area (storage furniture, hob, extractor) and extended by a terrace of 17.3 square meters. You will also enjoy 2 bedrooms and a bathroom with sink and heated towel rail. Individual gas heating. A garage and a private parking space complete this property. ",
           "price": 758,
           "prediction": 755.2
         },
@@ -1465,7 +1465,7 @@
           "floor": 1,
           "furnished": "no",
           "image": "html/img/houses/111.JPG",
-          "description": "Recent one-bedroom apartment of 36.5 mÂ², located on the 1st floor of a luxury building. Bright living room opening onto a small balcony, separate fitted kitchen, 1 bedroom and a shower room with WC. Private parking space in the basement.",
+          "description": "Recent one-bedroom apartment of 36.5 square meters, located on the 1st floor of a luxury building. Bright living room opening onto a small balcony, separate fitted kitchen, 1 bedroom and a shower room with WC. Private parking space in the basement.",
           "price": 675,
           "prediction": 570.17
         },
@@ -1491,7 +1491,7 @@
           "floor": 1,
           "furnished": "yes",
           "image": "html/img/houses/113.JPG",
-          "description": "Type three apartment with a living area of â€‹â€‹61.50 MÂ² located on the 1st floor with elevator comprising: entrance hall, living room opening onto balcony, kitchen, two bedrooms, wc, bathroom, terrace of 10.60 MÂ² Individual electric heating.",
+          "description": "Type three apartment with a living area of â€‹â€‹61.50 square meters located on the 1st floor with elevator comprising: entrance hall, living room opening onto balcony, kitchen, two bedrooms, wc, bathroom, terrace of 10.60 square meters Individual electric heating.",
           "price": 750,
           "prediction": 791.33
         },
@@ -1621,7 +1621,7 @@
           "floor": 3,
           "furnished": "yes",
           "image": "html/img/houses/123.JPG",
-          "description": "New secure residence located in RENNES close to all amenities. Ideal students or young professionals. Large and beautiful NEW T2 of 39.35 mÂ² located on the 3rd floor with lift. It consists of a large living room opening onto an equipped kitchenette (sink, sink unit, hob, top fridge and storage units), a bedroom and a bathroom (shower, cabinet basin, mirror and WC). Heating and water included in the charges.",
+          "description": "New secure residence located in RENNES close to all amenities. Ideal students or young professionals. Large and beautiful NEW T2 of 39.35 square meters located on the 3rd floor with lift. It consists of a large living room opening onto an equipped kitchenette (sink, sink unit, hob, top fridge and storage units), a bedroom and a bathroom (shower, cabinet basin, mirror and WC). Heating and water included in the charges.",
           "price": 661,
           "prediction": 621.12
         },
@@ -1673,7 +1673,7 @@
           "floor": 1,
           "furnished": "no",
           "image": "html/img/houses/127.JPG",
-          "description": "Recent one-bedroom apartment of 36.5 mÂ², located on the 1st floor of a luxury building. Bright living room opening onto a small balcony, separate fitted kitchen, 1 bedroom and a shower room with WC. Private parking space in the basement.",
+          "description": "Recent one-bedroom apartment of 36.5 square meters, located on the 1st floor of a luxury building. Bright living room opening onto a small balcony, separate fitted kitchen, 1 bedroom and a shower room with WC. Private parking space in the basement.",
           "price": 675,
           "prediction": 570.17
         },
@@ -1699,7 +1699,7 @@
           "floor": 12,
           "furnished": "no",
           "image": "html/img/houses/129.JPG",
-          "description": "Modern residence in the heart of the Baud Chardonnet eco-district and a stone's throw from the Place de la RÃ©publique, facing the Vilaine. T2 apartment of 44.84 mÂ² on a high floor with lift, very bright with a loggia of 13.10 mÂ². It consists of a living room with an equipped kitchen area (sink, oven, fridge, electric hob, extractor, high and low storage) opening onto the loggia, a bedroom, a bathroom (shower, washbasin and vanity unit) and separate WC.",
+          "description": "Modern residence in the heart of the Baud Chardonnet eco-district and a stone's throw from the Place de la RÃ©publique, facing the Vilaine. T2 apartment of 44.84 square meters on a high floor with lift, very bright with a loggia of 13.10 square meters. It consists of a living room with an equipped kitchen area (sink, oven, fridge, electric hob, extractor, high and low storage) opening onto the loggia, a bedroom, a bathroom (shower, washbasin and vanity unit) and separate WC.",
           "price": 605,
           "prediction": 754.82
         },
@@ -1790,7 +1790,7 @@
           "floor": 3,
           "furnished": "no",
           "image": "html/img/houses/136.JPG",
-          "description": "On the top floor, 3-room apartment of 60 mÂ² including, living room on SOUTH balcony, fitted and equipped kitchen (hood + hob + oven), 2 bedrooms, bathroom, WC, loggia and plenty of storage . You also have a cellar and a private parking space. ",
+          "description": "On the top floor, 3-room apartment of 60 square meters including, living room on SOUTH balcony, fitted and equipped kitchen (hood + hob + oven), 2 bedrooms, bathroom, WC, loggia and plenty of storage . You also have a cellar and a private parking space. ",
           "price": 690,
           "prediction": 790.62
         },
@@ -1803,7 +1803,7 @@
           "floor": 0,
           "furnished": "yes",
           "image": "html/img/houses/137.JPG",
-          "description": " In the sought-after district of Saint-HÃ©lier and 600 meters from the line A metro station and within a year the second line (B). Small collective from the 1950s, clean and in good condition. Come and discover this type 2 furnished apartment on the raised ground floor with an area of â€‹â€‹approximately 37.5 mÂ². It includes an entrance and its hallway, a living room with a fitted and equipped kitchen area, a separate bedroom, a bathroom.  ",
+          "description": " In the sought-after district of Saint-HÃ©lier and 600 meters from the line A metro station and within a year the second line (B). Small collective from the 1950s, clean and in good condition. Come and discover this type 2 furnished apartment on the raised ground floor with an area of â€‹â€‹approximately 37.5 square meters. It includes an entrance and its hallway, a living room with a fitted and equipped kitchen area, a separate bedroom, a bathroom.  ",
           "price": 659,
           "prediction": 572.37
         },
@@ -1959,7 +1959,7 @@
           "floor": 3,
           "furnished": "no",
           "image": "html/img/houses/149.JPG",
-          "description": "In a secure residence at the foot of the University of Beaulieu and the Chateaubriand high school, pleasant 18 mÂ² studio located on the 3rd and last floor, renovated, consisting of a main room with kitchenette area and shower room/WC. Heating, water and electricity in the charges. Quiet, green spaces. ",
+          "description": "In a secure residence at the foot of the University of Beaulieu and the Chateaubriand high school, pleasant 18 square meters studio located on the 3rd and last floor, renovated, consisting of a main room with kitchenette area and shower room/WC. Heating, water and electricity in the charges. Quiet, green spaces. ",
           "price": 430,
           "prediction": 442.3
         },
@@ -1998,7 +1998,7 @@
           "floor": 6,
           "furnished": "no",
           "image": "html/img/houses/152.JPG",
-          "description": "T1 bis apartment of 30mÂ², comprising: entrance with cupboards, a living room with fitted and equipped kitchen and balcony, a sleeping area with a second balcony, view of the villa, a shower room, WC, laundry room and cellar. ",
+          "description": "T1 bis apartment of 30square meters, comprising: entrance with cupboards, a living room with fitted and equipped kitchen and balcony, a sleeping area with a second balcony, view of the villa, a shower room, WC, laundry room and cellar. ",
           "price": 515,
           "prediction": 588.46
         },
@@ -2011,7 +2011,7 @@
           "floor": 0,
           "furnished": "yes",
           "image": "html/img/houses/153.JPG",
-          "description": "Rennes - Clinique St Yves sector In a small condominium, come and visit this charming one-bedroom apartment of approx. 25 mÂ² furnished It consists of a living room with large storage cupboard, a separate fitted and equipped kitchen, a shower room and separate toilet. All complemented by a large cellar and a garden area. ",
+          "description": "Rennes - Clinique St Yves sector In a small condominium, come and visit this charming one-bedroom apartment of approx. 25 square meters furnished It consists of a living room with large storage cupboard, a separate fitted and equipped kitchen, a shower room and separate toilet. All complemented by a large cellar and a garden area. ",
           "price": 570,
           "prediction": 485.8
         },
@@ -2024,7 +2024,7 @@
           "floor": 2,
           "furnished": "no",
           "image": "html/img/houses/154.JPG",
-          "description": "Boulevard de Verdun, in an old house, Cogir Immobilier offers you this type of 3-room apartment of 46 mÂ². and 58 mÂ² on the ground, on the 2nd and last floor. It consists of an entrance, a living room, a separate kitchen, two bedrooms, a dressing room, an office and a bathroom with separate WC. Rented with cellar and garage. ",
+          "description": "Boulevard de Verdun, in an old house, Cogir Immobilier offers you this type of 3-room apartment of 46 square meters. and 58 square meters on the ground, on the 2nd and last floor. It consists of an entrance, a living room, a separate kitchen, two bedrooms, a dressing room, an office and a bathroom with separate WC. Rented with cellar and garage. ",
           "price": 730,
           "prediction": 660.22
         },
@@ -2037,7 +2037,7 @@
           "floor": 0,
           "furnished": "yes",
           "image": "html/img/houses/155.JPG",
-          "description": " In the immediate vicinity of the city center and public transport, a furnished studio of 19.12 mÂ², including an entrance with cupboard, a main room with balcony, an equipped kitchen area, a bathroom. with WC. Heating, hot and cold water in the charges.",
+          "description": " In the immediate vicinity of the city center and public transport, a furnished studio of 19.12 square meters, including an entrance with cupboard, a main room with balcony, an equipped kitchen area, a bathroom. with WC. Heating, hot and cold water in the charges.",
           "price": 450,
           "prediction": 432.66
         },
@@ -2089,7 +2089,7 @@
           "floor": 1,
           "furnished": "no",
           "image": "html/img/houses/159.JPG",
-          "description": "For rent, rue Pierre Roy, a type 3 apartment of 64.54 mÂ² completely renovated in a quiet and green area near the Landry park comprising an entrance with cupboard, a fitted and equipped kitchen (ceramic hob and extractor), a stay on balcony, two rooms, a bathroom, a TOILET, a cellar and a garage. ",
+          "description": "For rent, rue Pierre Roy, a type 3 apartment of 64.54 square meters completely renovated in a quiet and green area near the Landry park comprising an entrance with cupboard, a fitted and equipped kitchen (ceramic hob and extractor), a stay on balcony, two rooms, a bathroom, a TOILET, a cellar and a garage. ",
           "price": 775,
           "prediction": 805.36
         },
@@ -2193,7 +2193,7 @@
           "floor": 6,
           "furnished": "yes",
           "image": "html/img/houses/167.JPG",
-          "description": "New secure residence located in RENNES close to all amenities. Ideal students or young professionals. Very nice NEW apartment of 23.90 mÂ² fully FURNISHED located on the 6th floor with lift. It consists of a large living room opening onto an equipped kitchenette (sink, sink unit, hob, top fridge and storage units) and a bathroom (shower, washbasin unit, mirror and WC ). Heating and water included in the charges.",
+          "description": "New secure residence located in RENNES close to all amenities. Ideal students or young professionals. Very nice NEW apartment of 23.90 square meters fully FURNISHED located on the 6th floor with lift. It consists of a large living room opening onto an equipped kitchenette (sink, sink unit, hob, top fridge and storage units) and a bathroom (shower, washbasin unit, mirror and WC ). Heating and water included in the charges.",
           "price": 580,
           "prediction": 539.01
         },
@@ -2245,7 +2245,7 @@
           "floor": 0,
           "furnished": "no",
           "image": "html/img/houses/171.JPG",
-          "description": "20mÂ² studio, located near the Faculty of Law on the ground floor, it includes a living room, a fitted and equipped kitchen (hob, fridge, extractor), a bathroom with wc.",
+          "description": "20square meters studio, located near the Faculty of Law on the ground floor, it includes a living room, a fitted and equipped kitchen (hob, fridge, extractor), a bathroom with wc.",
           "price": 430,
           "prediction": 437.83
         },
@@ -2258,7 +2258,7 @@
           "floor": 2,
           "furnished": "yes",
           "image": "html/img/houses/172.JPG",
-          "description": "Type 2 apartment of 34.15mÂ² including an entrance with cupboard, a living room, a fitted and equipped kitchen area (hob, fridge), a bedroom with cupboard, a bathroom and a toilet separate. The apartment is rented with a garage in the basement.",
+          "description": "Type 2 apartment of 34.15square meters including an entrance with cupboard, a living room, a fitted and equipped kitchen area (hob, fridge), a bedroom with cupboard, a bathroom and a toilet separate. The apartment is rented with a garage in the basement.",
           "price": 550,
           "prediction": 566.49
         },
@@ -2271,7 +2271,7 @@
           "floor": 1,
           "furnished": "no",
           "image": "html/img/houses/173.JPG",
-          "description": "Very beautiful furnished apartment of 107 mÂ² located on the first floor of a quiet condominium close to shops and transport. It consists of a corridor leading to a living room, two beautiful bedrooms, an office, a fitted and equipped kitchen, a bathroom, a WC and a storeroom.",
+          "description": "Very beautiful furnished apartment of 107 square meters located on the first floor of a quiet condominium close to shops and transport. It consists of a corridor leading to a living room, two beautiful bedrooms, an office, a fitted and equipped kitchen, a bathroom, a WC and a storeroom.",
           "price": 1300,
           "prediction": 1173.38
         },
@@ -2323,7 +2323,7 @@
           "floor": 0,
           "furnished": "no",
           "image": "html/img/houses/177.JPG",
-          "description": "31 RUE LOUIS GUILLOUX PONT ROBERT SCHUMAN NEAR AGROCAMPUS 15 MÂ² 79 ON THE 1ST FLOOR PARKING KIT EQUIPPED WITH ELECTRIC HEATING",
+          "description": "31 RUE LOUIS GUILLOUX PONT ROBERT SCHUMAN NEAR AGROCAMPUS 15 square meters 79 ON THE 1ST FLOOR PARKING KIT EQUIPPED WITH ELECTRIC HEATING",
           "price": 405,
           "prediction": 402.4
         },
@@ -2336,7 +2336,7 @@
           "floor": 1,
           "furnished": "yes",
           "image": "html/img/houses/178.JPG",
-          "description": "Rennes Villejean - rue de Picardie Fully furnished type 4 apartment of 76.1 mÂ² comprising an entrance hall, a living room with south-facing balcony, a fitted and equipped kitchen (hob, micro -waves, fridge), a shower room and a WC. In the immediate vicinity of the university, metro, bus, shops and main roads. BEDROOM 3: 10.95 mÂ²: Rent: 450 euros all charges included (Water, Electricity, Heating, Internet) ",
+          "description": "Rennes Villejean - rue de Picardie Fully furnished type 4 apartment of 76.1 square meters comprising an entrance hall, a living room with south-facing balcony, a fitted and equipped kitchen (hob, micro -waves, fridge), a shower room and a WC. In the immediate vicinity of the university, metro, bus, shops and main roads. BEDROOM 3: 10.95 square meters.",
           "price": 450,
           "prediction": 309.16
         },
@@ -2349,7 +2349,7 @@
           "floor": 6,
           "furnished": "no",
           "image": "html/img/houses/179.JPG",
-          "description": "Large 30 mÂ² studio including 1 living room + fitted cupboard and kitchenette, 1 shower room. Individual electric heating. ",
+          "description": "Large 30 square meters studio including 1 living room + fitted cupboard and kitchenette, 1 shower room. Individual electric heating. ",
           "price": 417,
           "prediction": 588.46
         },
@@ -2427,7 +2427,7 @@
           "floor": 3,
           "furnished": "yes",
           "image": "html/img/houses/185.JPG",
-          "description": "THREE-ROOM APARTMENT WITH BALCONY For rent: discover this 3-room apartment of 75 mÂ², in the city of Rennes (35200). It is located on the 3rd floor of a building. To enjoy sunny days, this apartment has a balcony. A cellar offers this accommodation additional storage space. This property is rented with a garage. The apartment is in the commune of Rennes. There are several schools (kindergarten, primary, elementary and college) within 10 minutes of the apartment. As for public transport, there are two metro lines a few steps from the property. ",
+          "description": "THREE-ROOM APARTMENT WITH BALCONY For rent: discover this 3-room apartment of 75 square meters, in the city of Rennes (35200). It is located on the 3rd floor of a building. To enjoy sunny days, this apartment has a balcony. A cellar offers this accommodation additional storage space. This property is rented with a garage. The apartment is in the commune of Rennes. There are several schools (kindergarten, primary, elementary and college) within 10 minutes of the apartment. As for public transport, there are two metro lines a few steps from the property. ",
           "price": 1200,
           "prediction": 927.15
         },
@@ -2453,7 +2453,7 @@
           "floor": 23,
           "furnished": "no",
           "image": "html/img/houses/187.JPG",
-          "description": "Come and discover at CÃ´me Immobilier this superb West-facing apartment type 4 of 95 MÂ² tastefully decorated, located on the 23rd floor of the emblematic building of RENNES whose architecture was designed by GEORGES MAILLOLS. It is a stone's throw from the town center and the lices market. This property consists of an entrance with cupboard, two bedrooms with cupboards, a bathroom with walk-in shower, a fully fitted and equipped kitchen, a large living room with a breathtaking view of the city.",
+          "description": "Come and discover at CÃ´me Immobilier this superb West-facing apartment type 4 of 95 square meters tastefully decorated, located on the 23rd floor of the emblematic building of RENNES whose architecture was designed by GEORGES MAILLOLS. It is a stone's throw from the town center and the lices market. This property consists of an entrance with cupboard, two bedrooms with cupboards, a bathroom with walk-in shower, a fully fitted and equipped kitchen, a large living room with a breathtaking view of the city.",
           "price": 1550,
           "prediction": 1294.71
         },
@@ -2557,7 +2557,7 @@
           "floor": 2,
           "furnished": "no",
           "image": "html/img/houses/195.JPG",
-          "description": "Rennes Voltaire, renovated T8 house of approximately 114mÂ², comprising on the ground floor, a living room with stove, a fitted kitchen, a laundry room, a toilet, on the 1st level: 4 bedrooms, 1 with private shower room, cupboards , bathroom, wc, office and on the 2nd level, a relaxation-leisure area of â€‹â€‹approx. 46 mÂ². Veranda, enclosed garden of around 250 mÂ², garage, electric heating.",
+          "description": "Rennes Voltaire, renovated T8 house of approximately 114square meters, comprising on the ground floor, a living room with stove, a fitted kitchen, a laundry room, a toilet, on the 1st level: 4 bedrooms, 1 with private shower room, cupboards , bathroom, wc, office and on the 2nd level, a relaxation-leisure area of â€‹â€‹approx. 46 square meters. Veranda, enclosed garden of around 250 square meters, garage, electric heating.",
           "price": 1815,
           "prediction": 1257.55
         },
@@ -2596,7 +2596,7 @@
           "floor": "-",
           "furnished": "no",
           "image": "html/img/houses/198.JPG",
-          "description": "104mÂ² pavilion with pretty enclosed garden with trees. Entrance hall, bright living room, separate kitchen, 4 bedrooms (including one on the ground floor), 2 separate WCs, bathroom, shower room, cupboards .Rented with a garage (not attached).",
+          "description": "104square meters pavilion with pretty enclosed garden with trees. Entrance hall, bright living room, separate kitchen, 4 bedrooms (including one on the ground floor), 2 separate WCs, bathroom, shower room, cupboards .Rented with a garage (not attached).",
           "price": 1159,
           "prediction": 1163.54
         },

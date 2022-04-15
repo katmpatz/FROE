@@ -12,12 +12,12 @@
     "button_text" : "I agree. Start the experiment.",
     "page_path" : "pages/default/consent.php",
     "disabled" : false,
-    "start_page" : false,
+    "start_page" : true,
     "save_page" : false
   },
   "description" : {
     "id" : "description",
-    "button_text" : "I understand. Let's start.",
+    "button_text" : "Let's start.",
     "page_path" : "pages/default/description_filter_example.php",
     "disabled" : false,
     "start_page" : false,

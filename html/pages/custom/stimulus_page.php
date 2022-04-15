@@ -217,7 +217,6 @@ $('body').on('next', function(e, type){
         measurements.participant_id, 
         measurements.condition,
         <?php echo $trial;?> + "", 
-        <?php echo $filter;?> + "", 
         ]);
         if(<?php echo $condition;?> == 1){
           actual = "<?php echo $house[$experiment_data_id]["price"];?>"
@@ -233,7 +232,7 @@ $('body').on('next', function(e, type){
                 "step":3,
                 "actual": actual,
                 "answer": price_answered,
-                "savePriceTime": save_price_time,
+                // "savePriceTime": save_price_time,
                 //"requestPredictionTime": request_prediction_time,
                 "startTime": start_time,
                 "endTime": end_time,
