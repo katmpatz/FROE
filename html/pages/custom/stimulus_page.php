@@ -17,7 +17,7 @@
           <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $house[$experiment_data_id]["squaremeters"];?></p>
         </div>
         <div class="col-4">
-          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $house[$experiment_data_id]["rooms"];?>  </p>
+          <p class="light-p"><span class="label-info">Rooms:</span> <?php echo $house[$experiment_data_id]["rooms"];?>  </p>
           <p class="light-p"><span class="label-info">Furnished:</span> <?php echo $house[$experiment_data_id]["furnished"];?></p>
         </div>
         <div class="col-4">
@@ -26,7 +26,7 @@
         </div>
         <div class="col-12">
           <p class="light-p"><span class="label-info">Description:</span>
-            <?php echo $house[$experiment_data_id]["description"];?>
+            <?php echo $house[$experiment_data_id]["shortDescription"];?>
           </p>
         </div>
       </div>
@@ -38,16 +38,16 @@
       <div class="predict" >
         <p class="light-p">Based on the presented information, 
             <?php if ($condition == 1): ?>
-              <span>how would you price this appartment per month in Euros €</span>
+              <span>how would you price this apartment per month in Euros €</span>
             <?php elseif ($condition == 2): ?>
               <span>what do you think the algorithm price prediction will be in Euros €</span>
             <?php endif ?>
         </p>
         <div class="row" style="margin-left:0px !important;">
             <?php if ($condition == 1): ?>
-              <label>Price: </label>
+              <label>Estimation of Price: </label>
             <?php elseif ($condition == 2): ?>
-              <label>Prediction: </label>
+              <label>Estimation of Prediction: </label>
             <?php endif ?>
             <input
                   autocomplete="off" 
@@ -65,47 +65,55 @@
         </div> -->
         <div id="price_suggestion_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
             <?php if ($condition == 1): ?>
-              <h5>The actual price of this appartment is <span id="price"><?php echo $house[$experiment_data_id]["price"];?>€</span> per month. </h5>
-              <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>€) and the actual one is <span class="price-differenece" id="output_c1_<?php echo $id;?>"></span>€.
+              <h5>The actual price of this apartment is <span id="price"><?php echo $house[$experiment_data_id]["price"];?>€</span> per month. </h5>
+              <!-- <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>€) and the actual one is <span class="price-differenece" id="output_c1_<?php echo $id;?>"></span>€. -->
             <?php elseif ($condition == 2): ?>
-              <h5>The algorithm predicts that this appartment will cost <span id="price"><?php echo $house[$experiment_data_id]["prediction"];?>€</span> per month. </h5>
-              <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>€) and the predicted one is <span class="price-differenece" id="output_c2_<?php echo $id;?>"></span>€.
+              <h5>The algorithm predicts that this apartment will cost <span id="price"> <?php echo $prediction;?>€</span> per month. </h5>
+              <!-- <p>The difference between the saved price (<span id="saved_price_<?php echo $id;?>"></span>€) and the predicted one is <span class="price-differenece" id="output_c2_<?php echo $id;?>"></span>€. -->
             <?php endif ?>
           <!-- <br><span id="sure_<?php echo $id;?>"></span>. -->
         </p>
         </div>
-        
-      </div>
-  </div>
-  <div class="col-12 top-40" id="evaluation_<?php echo $id;?>">
-    <h4>Evaluation:</h4>
-      <div class="line"></div>
+        <div class="col-12 top-20" id="evaluation_<?php echo $id;?>">
+    <!-- <h4>Evaluation:</h4>
+      <div class="line"></div> -->
       <form action="" style="margin: top 20px;">
-        <p>The prediction of the model is surprising.</p>
+        <?php if ($condition == 1): ?>
+          <p>The price of the apartment is surprising.</p>
+        <?php elseif ($condition == 2): ?>
+          <p>The prediction of the model is surprising.</p>
+        <?php endif ?>
         <ul class='likert'>
           <li>
-            <input type="radio" name="surprise_<?php echo $id;?>" id="radio1"  value="5">
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio1"  value="7">
             <label>Strongly disagree</label>
           </li>
           <li>
-            <input type="radio" name="surprise_<?php echo $id;?>" id="radio2" value="4">
-            <label>Disagree</label>
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio2" value="6">
           </li>
           <li>
-            <input type="radio" name="surprise_<?php echo $id;?>" id="radio3" value="3">
-            <label>Neutral</label>
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio3" value="5">
           </li>
           <li>
-            <input type="radio" name="surprise_<?php echo $id;?>" id="radio4" value="2">
-            <label>Agree</label>
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio4" value="4">
           </li>
           <li>
-            <input type="radio" name="surprise_<?php echo $id;?>" id="radio5" value="1">
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio5" value="3">
+          </li>
+          <li>
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio6" value="2">
+          </li>
+          <li>
+            <input type="radio" name="surprise_<?php echo $id;?>" id="radio7" value="1">
             <label>Strongly agree</label>
           </li>
         </ul>
         </form> 
-  </div>         
+  </div>  
+        
+      </div>
+  </div>
+       
 </div>
 
 <script type="text/javascript">
@@ -221,7 +229,7 @@ $('body').on('next', function(e, type){
         if(<?php echo $condition;?> == 1){
           actual = "<?php echo $house[$experiment_data_id]["price"];?>"
         } else {
-          actual = "<?php echo $house[$experiment_data_id]["prediction"];?>"
+          actual = "<?php echo $prediction;?>"
         }
         $.ajax({
             async: false,

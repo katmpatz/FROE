@@ -27,7 +27,7 @@
     "id" : "training",
     "button_text" : "Next",
     "page_path" : "pages/custom/training.php",
-    "repetitions" : 3,
+    "repetitions" : 1,
     "disabled" : false,
     "start_page" : false,
     "save_page" : false

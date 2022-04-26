@@ -25,7 +25,8 @@
           <b>What do we expect from you: </b>  If you agree to participate in the study, you will be shown apartments for rental and will be asked questions such as to evaluate how surprising is their price or the price prediction. The entire experiment will take approximately 13 minutes.
         </p>
         <p>
-          <b>Your rights to withdraw from the experiment at any time: </b> Your participation in this experiment is entirely voluntary and you may stop at any time, without providing a reason and without penalty. However, we will not be able to pay you if you do not complete the experiment.
+          <b>Your rights to withdraw from the experiment at any time: </b> Your participation in this experiment is entirely voluntary and you may stop at any time, without providing a reason and without penalty. 
+          <!-- However, we will not be able to pay you if you do not complete the experiment. -->
         </p>
         <p>
           <b>Your rights to confidentiality and privacy: </b> Your participation in this research is confidential. All responses provided will be stored anonymously. For text responses, we ask you not to include any identifying information such as your name or email address. We will check your text responses to confirm that no identifiable information is provided. After our research project is completed, all anonymized data will be made publicly available on an open science platform.

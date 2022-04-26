@@ -30,7 +30,7 @@
         </div> -->
         <div class="col-12">
           <p class="light-p"><span class="label-info">Description:</span>
-            <?php echo $house[$experiment_data_id]["description"];?>
+            <?php echo $house[$experiment_data_id]["shortDescription"];?>
           </p>
         </div>
       </div>
@@ -42,9 +42,9 @@
       <h4>Pricing:</h4>
       <div class="line"></div>
       <div class="predict" >
-        <p class="light-p">Based on the presented information, how would you price this appartment per month in Euros €</p>
+        <p class="light-p">Based on the presented information, how would you price this apartment per month in Euros €</p>
         <div class="row" style="margin-left:0px !important;">
-            <label>Price: </label>
+            <label>Estimation of Price: </label>
             <input
                   autocomplete="off" 
                   type="number" 
@@ -62,12 +62,12 @@
       <!-- end of condition 1 -->
       <!-- condition 2 -->
     <?php elseif ($condition == 2): ?> 
-      <h4>Price prediction:</h4>
+      <h4>Prediction:</h4>
       <div class="line"></div>
       <div class="predict" >
-        <p class="light-p">Based on the presented information, what do you think that the model will predict for this appartment per month in Euros €</p>
+        <p class="light-p">Based on the presented information, what do you think that the model will predict for this apartment per month in Euros €</p>
         <div class="row" style="margin-left:0px !important;">
-            <label>Prediction: </label>
+            <label>Estimation of Prediction: </label>
             <input
                   autocomplete="off" 
                   type="number" 
@@ -143,7 +143,7 @@ $('body').on('next', function(e, type){
         if(<?php echo $condition;?> == 1){
           actual = "<?php echo $house[$experiment_data_id]["price"];?>"
         } else {
-          actual = "<?php echo $house[$experiment_data_id]["prediction"];?>"
+          actual = "<?php echo $prediction?>"
         }
         $.ajax({
             async: false,

@@ -8,34 +8,23 @@
         <ul>
           <li>
             <?php if ($condition == 1): ?>
-              <p>You will see informations for an apartment and you will have to estimate the actual price.</p>
+              <p>You first have to estimate the price of 10 apartments given their features and your knowledge of the rental market in Rennes (similar to Phase2).</p>
             <img src ="html/img/end_testing_c1_1.JPG" width="800" style="margin-bottom:50px">
             <?php elseif ($condition == 2): ?>
-              <p>You will see informations for an apartment and you will have to estimate the prediction of the algorithm.</p>
+              <p>You first have to estimate the price prediction of 10 apartments given their features and your knowledge about the algorithm's predictions (similar to Phase2). </p>
             <img src ="html/img/end_testing_c2_1.JPG" width="800" style="margin-bottom:50px">
             <?php endif ?>
-            
           </li>
           <li>
             <?php if ($condition == 1): ?>
-              <p>When you save your price you will see the actual price of the apartment.</p>
+              <p>Once you saved the price, the system will provide the actual price of this apartement. You then have to indicate how surprising is this actual price (based on your knowledge of the rental market in Rennes).</p>
               <img src ="html/img/end_testing_c1_2.JPG" width="800" style="margin-bottom:50px">
             <?php elseif ($condition == 2): ?>
-              <p>When you save your estimation you will see the actual prediction of the algorithm.</p>
+              <p>Once you saved your prediction, the system will provide the actual prediction of the algorithm for this apartement. You then have to indicate how surprising is this prediction (based on your knowledge about the algorithm's predictions).</p>
               <img src ="html/img/end_testing_c2_2.JPG" width="800" style="margin-bottom:50px">
             <?php endif ?>
           </li>
-          <li>
-            <?php if ($condition == 1): ?>
-              <p>After, you have to evaluate how surprising is the price of the apartment based on the training you had.</p>
-              <img src ="html/img/end_testing_c1_3.JPG" width="800" style="margin-bottom:50px">
-            <?php elseif ($condition == 2): ?>
-              <p>After, you have to evaluate how surprising is the price prediction of the apartment based on the training you had.</p>
-              <img src ="html/img/end_testing_c1_3.JPG" width="800" style="margin-bottom:50px">
-            <?php endif ?>
-          </li>
-          <li>
-            <p>Click the <i>"Next"</i> button below, to proceed at the next apartment</p>
+            <p>This phase is about 5 minutes long. Click the <i>"Next"</i> button below, to proceed at the next apartment.</p>
           </li>
         </ul>
       </div>

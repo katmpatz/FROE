@@ -25,7 +25,7 @@
         </div>
         <div class="col-12">
           <p class="light-p"><span class="label-info">Description:</span>
-            <?php echo $house[$experiment_data_id]["description"];?>
+            <?php echo $house[$experiment_data_id]["shortDescription"];?>
           </p>
         </div>
       </div>
@@ -42,7 +42,7 @@
         <?php elseif ($condition == 2): ?>
           <div class="col-12">
             <p class="light-p"><span class="label-info">Price prediction of the algorithm:</span>
-              <span id="price" style="color:#386cba;"><?php echo $house[$experiment_data_id]["prediction"];?>€</span>
+              <span id="price" style="color:#386cba;"><?php echo $prediction;?>€ </span>
             </p>
             <!-- <p style="font-size:15px;">The difference between the actual price and the prediction is <span id="difference_<?php echo $id;?>"></span>€</p> -->
           </div>  

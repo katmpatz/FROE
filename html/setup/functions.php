@@ -2,11 +2,9 @@
 
 global $experiment_data_id, $houses, $house, $training_houses, $tr_house,  $data_for_csv, $price, $con, $pointer;
 
-  // the code below assigns the names of factor levels to variables according to the information given in the file constants.php
-  // If the default structure (2 factors each with 2 levels) is changed, then code below needs to be adapted. Otherwise, leave this as is.
 
 function loadConfig(){
-  global $config, $pages, $page_order, $houses, $training_houses;
+  global $config, $pages, $page_order, $houses, $apartment_order;
   // we temporarily change working directories
   $cwd = getcwd();
   chdir(dirname(__FILE__) . '/config/');
@@ -31,11 +29,10 @@ function loadConfig(){
     $houses = json_decode($housesFileContents, true);
   }
 
-  
-  // if(!isset($training_houses)){
-  //   $trainingHousesFileContents = file_get_contents("testing_data.json");
-  //   $training_houses = json_decode($trainingHousesFileContents, true);
-  // }
+  if(!isset($apartment_order)){
+    $orderApFileContents = file_get_contents("order.json");
+    $apartment_order = json_decode($orderApFileContents, true);
+  }
 
   chdir($cwd);
 }
@@ -49,6 +46,8 @@ function debug_to_console($data) {
   echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 }
 
+
+//we don't use it
 function checkForTimedOutFiles(){
   global $config;
   // check if there are abandoned files from participants who timed out
@@ -75,6 +74,7 @@ function checkForTimedOutFiles(){
   }
 }
 
+//we don't use it
 function select_random_file($dir)
 {
     // we temporarily change working directories
@@ -108,31 +108,33 @@ function select_random_file($dir)
 }
 
 
-function randomAssignment() {
-  // this function is called for between designs where a participant just needs to be randomly assigned to a condition combining a set of factor levels
-  global $config, $order_value, $factor1;
+// function randomAssignment() {
+//   // this function is called for between designs where a participant just needs to be randomly assigned to a condition combining a set of factor levels
+//   global $config, $order_value, $factor1;
 
-  // check if $order_value was already set through a GET parameter
-  if (isset($order_value)){
-    // don't do anything; a certain condition was requested
-  } else {
-    if (function_exists('random_int')){
-      $order_value = random_int(0, $config["num_conditions"] - 1);
-    } else {
-      $order_value = rand(0,$config["num_conditions"] - 1);
-    }
-  }
+//   // check if $order_value was already set through a GET parameter
+//   if (isset($order_value)){
+//     // don't do anything; a certain condition was requested
+//   } else {
+//     if (function_exists('random_int')){
+//       $order_value = random_int(0, $config["num_conditions"] - 1);
+//     } else {
+//       $order_value = rand(0,$config["num_conditions"] - 1);
+//     }
+//   }
 
-  switch ($order_value) {
-    case 0:
-        $factor1 = $config["factors"][0]["levels"][0];
-        break;
-    case 1:
-        $factor1 = $config["factors"][0]["levels"][1];
-        break;
-  }
-}
+//   switch ($order_value) {
+//     case 0:
+//         $factor1 = $config["factors"][0]["levels"][0];
+//         break;
+//     case 1:
+//         $factor1 = $config["factors"][0]["levels"][1];
+//         break;
+//   }
+// }
 
+
+//we don't use it
 function randomAssignmentFromFiles($basedir = 'html/setup') {
   // this function is called for between designs where a participant just needs to be randomly assigned to a condition combining a set of factor levels
   global $config, $stimuli_order, $factor1;
@@ -149,17 +151,9 @@ function randomAssignmentFromFiles($basedir = 'html/setup') {
   }
 }
 
-function randomCondition(){
-  //decide if the difference will be minus or plus in the actual price
-  if(rand(0,1) < 0.5){
-    return 1;
-  } else {
-    return 2;
-  }
-}
 
 //function that ensure that we will have exactly the same order of houses in the two conditions
-function mirrorConditions($basedir = 'html/setup'){
+function mirrorConditions($basedir = 'results'){
   $count = 0;
   //open the condition file
   //As we don't use a database we need an extra file in order to be able to create file names based on an order
@@ -198,8 +192,30 @@ function mirrorConditions($basedir = 'html/setup'){
     $con = 2;
     $pointer = $count - 2 - intdiv($count, 2); //-2 because we want to keep the same order of appartments as the previous condition which was $count-1
   }
+
+  $con = 1;
   
-  return array($con,$pointer, $count);
+  return array($con, $pointer, $count);
+
+}
+
+function roundPrediction($pred) {
+  $round_pred = round($pred); //rounded without decimals
+  $last_digit = $round_pred % 10; //the last digit of the prediction
+  $lower_pred = $round_pred - $last_digit; //prediction rounded to the lower decadal, for example if the prediction is 37.34 the lower_pred will be 30
+  //if the last digit is closer to 0
+  if($last_digit < 2.5) {
+    $round_pred = $lower_pred;
+  }
+  //if the last digit is closer to 5
+  elseif($last_digit < 7.5 ) {
+    $round_pred = $lower_pred + 5;
+  }
+  //if the last digit is closer to 10
+  else {
+    $round_pred = $lower_pred + 10;
+  }
+  return $round_pred;
 
 }
 
@@ -207,18 +223,25 @@ function mirrorConditions($basedir = 'html/setup'){
 
 function generatePages() {
   // generate all pages based on the data indicated in the json files
-  global $page_order, $pages, $page_ids, $config, $stimuli_order, $start_page, $save_page, $factor1, $condition, $count; 
-  global $experiment_data_id, $houses, $house, $pointer, $trial;
+  global $page_order, $pages, $page_ids, $config, $start_page, $save_page , $condition, $count; 
+  global $experiment_data_id, $houses, $house, $pointer, $trial, $prediction, $apartment_order, $order, $user;
 
   list($condition,$pointer, $count) = mirrorConditions();
 
   $page_number = 0;
   $house = $houses['houses'];
+  $user = $apartment_order['users'];
+  $order = $user[$count]["order"];
+  //$order = [10,5,47,25,62,1,2,6,7,104,167,4,199,28,43];
   //shuffle($house);
   //variable which counts the repeats of the expirement in order to display the right info
-  $experiment_data_id = $pointer;
+  //$experiment_data_id = $pointer;
+  debug_to_console($count);
+  $experiment_data_id = 0;
+  $index = 0;
   $trial = -1;
   $trial_test = -1;
+  $prediction = 0;
   
 
   if (isset($start_page)){
@@ -239,8 +262,11 @@ function generatePages() {
             $start_page = $page_number-1;
          }
          //if the page is part of the training increase the $training_data_id in order to display the right house details
-         if($pages[$page_id]["id"] == "training" || $pages[$page_id]["id"] == "testing" || $pages[$page_id]["id"] == "main_stimulus"){
-          $experiment_data_id++ ;
+         if($pages[$page_id]["id"] == "training" || $pages[$page_id]["id"] == "training2" || $pages[$page_id]["id"] == "training3" || $pages[$page_id]["id"] == "training4" || $pages[$page_id]["id"] == "testing" || $pages[$page_id]["id"] == "main_stimulus"){
+          debug_to_console($order[$index]);
+          $experiment_data_id = $order[$index];
+          $index++;
+          $prediction = roundPrediction($house[$experiment_data_id]["prediction"]);
          }
          if($pages[$page_id]["id"] == "main_stimulus"){
           $trial++;
