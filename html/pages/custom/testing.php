@@ -3,61 +3,80 @@
     <img src ="html/img/logo.png" height="30" class="logo-img">
     <h4 class="logo">PricingTool</h4>
   </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" id="progress_<?php echo $id;?>" aria-valuenow=<?php echo $trial_test + 1;?> aria-valuemin="1" aria-valuemax="20"></div>
+  </div>
+  <h6 style="color:#828d98; margin-top:10px;"><?php echo $trial_test + 1;?> out of 20 apartments</h6>
   <div class="row top-40">
-    <div class="col-6" id="ImageBlock_<?php echo $id;?>">
+    <div class="col-lg-6 col-sm-12" id="ImageBlock_<?php echo $id;?>">
         <img src ="<?php echo $house[$experiment_data_id]["image"];?>" class="Image">
     </div>
-    <div class="col-6">
+    <div id="houseInfo" class="col-lg-6 col-sm-12">
       <h4>Information:</h4>
       <div class="line"></div>
-      <div class="information row">
-        <div class="col-4">
+      <div class="smHide information row" style="margin-bottom:20px;">
+        <div class="col-md-4 col-xs-6">
           <p class="light-p"><span class="label-info">Type:</span> <?php echo $house[$experiment_data_id]["type"];?>  </p>
           <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $house[$experiment_data_id]["squaremeters"];?></p>
         </div>
-        <div class="col-4">
+        <div class="col-md-4 col-xs-6">
           <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $house[$experiment_data_id]["rooms"];?>  </p>
           <p class="light-p"><span class="label-info">Furnished:</span> <?php echo $house[$experiment_data_id]["furnished"];?></p>
         </div>
-        <div class="col-4">
+        <div class="col-md-4 col-xs-12">
           <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $house[$experiment_data_id]["bathrooms"];?></p>
           <p class="light-p"><span class="label-info">Floor:</span> <?php echo $house[$experiment_data_id]["floor"];?></p>
         </div>
-        <!-- <div class="col-12">
-          <p class="light-p"><span class="label-info">Location:</span>
-            See the place in the <a href="">map</a>
-          </p>
-        </div> -->
-        <div class="col-12">
+      </div>
+      <div class="lgHide mgl-5 row justify-content-right">
+        <div class="col-xs-5 ">
+          <p class="light-p"><span class="label-info">Type:</span> <?php echo $house[$experiment_data_id]["type"];?>  </p>
+          <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $house[$experiment_data_id]["squaremeters"];?></p>
+          <p class="light-p"><span class="label-info">Bathrooms:</span> <?php echo $house[$experiment_data_id]["bathrooms"];?></p>
+        </div>
+        <div class="offset-1 col-xs-5">
+          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $house[$experiment_data_id]["rooms"];?>  </p>
+          <p class="light-p"><span class="label-info">Furnished:</span> <?php echo $house[$experiment_data_id]["furnished"];?></p>
+          <p class="light-p"><span class="label-info">Floor:</span> <?php echo $house[$experiment_data_id]["floor"];?></p>
+        </div>
+      </div>
+      <div style="margin-bottom:10px;" class="mgl-5">
           <p class="light-p"><span class="label-info">Description:</span>
             <?php echo $house[$experiment_data_id]["shortDescription"];?>
           </p>
-        </div>
       </div>
     </div>
   </div>
   <div class="col-12 top-40">
   <!-- condition 1 -->
-    <?php if ($condition == 1): ?>
+    <?php if ($condition != 2): ?>
       <h4>Pricing:</h4>
       <div class="line"></div>
       <div class="predict" >
-        <p class="light-p">Based on the presented information, how would you price this apartment per month in Euros €</p>
+        <p class="light-p">Based on the presented information, how would you price this accommodation per month in Euros €</p>
         <div class="row" style="margin-left:0px !important;">
             <label>Estimation of Price: </label>
-            <input
-                  autocomplete="off" 
-                  type="number" 
-                  name="user-price" 
-                  id="user-price_<?php echo $id;?>" 
-            >
-            </input>
-            <button id="btn_save_<?php echo $id;?>" type="button" class="save-btn btn btn-outline-primary"><span id="save_<?php echo $id;?>"></span></button>
+              <input 
+                    class="testing-input"
+                    autocomplete="off" 
+                    type="number" 
+                    name="user-price-min" 
+                    id="user-price_min_<?php echo $id;?>" 
+                    placeholder="Min"
+              >
+              </input>
+              <input 
+                    class="testing-input"
+                    autocomplete="off" 
+                    type="number" 
+                    name="user-price-max" 
+                    id="user-price_max_<?php echo $id;?>" 
+                    placeholder="Max"
+              >
+              </input>
+              <button id="btn_save_<?php echo $id;?>" type="button" class="save-btn btn btn-outline-primary"><span id="save_<?php echo $id;?>"></span></button>
         </div>
         <span id="invalid_price_<?php echo $id;?>" class="error-message"></span>
-        <!-- <div class="row" id="display_price_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
-         <p>The actual price for the apartment is <?php echo $house[$experiment_data_id]["price"];?>€</p>
-        </div> -->
       </div>
       <!-- end of condition 1 -->
       <!-- condition 2 -->
@@ -65,17 +84,28 @@
       <h4>Prediction:</h4>
       <div class="line"></div>
       <div class="predict" >
-        <p class="light-p">Based on the presented information, what do you think that the model will predict for this apartment per month in Euros €</p>
+        <p class="light-p">Based on the presented information, what do you think that the model will predict for this accommodation per month in Euros €</p>
         <div class="row" style="margin-left:0px !important;">
             <label>Estimation of Prediction: </label>
-            <input
-                  autocomplete="off" 
-                  type="number" 
-                  name="user-price" 
-                  id="user-price_<?php echo $id;?>" 
-            >
-            </input>
-            <button id="btn_save_<?php echo $id;?>" type="button" class="save-btn btn btn-outline-primary"><span id="save_<?php echo $id;?>"></span></button>
+              <input
+                    class="testing-input"
+                    autocomplete="off" 
+                    type="number" 
+                    name="user-price-min" 
+                    id="user-price_min_<?php echo $id;?>"
+                    placeholder="Min"
+              >
+              </input>
+              <input 
+                    class="testing-input"
+                    autocomplete="off" 
+                    type="number" 
+                    name="user-price-max" 
+                    id="user-price_max_<?php echo $id;?>"
+                    placeholder="Max" 
+              >
+              </input>
+              <button id="btn_save_<?php echo $id;?>" type="button" class="save-btn btn btn-outline-primary"><span id="save_<?php echo $id;?>"></span></button>
         </div>
         <span id="invalid_price_<?php echo $id;?>" class="error-message"></span>
         <!-- <div class="row" id="display_price_<?php echo $id;?>" style="margin-top:20px; margin-bottom:10px;">
@@ -89,23 +119,32 @@
 </div>
 
 <script type="text/javascript">
-    var price_answered = "";
-    var request_prediction = false;
-    var save_price_time = 0;
+    var price_answered_min = "";
+    var price_answered_max = "";
+    var start_time;
+    var end_time = 0;
+    // var request_prediction = false;
+    // var save_price_time = 0;
     
 //Take the value of the user's input
-$('#user-price_<?php echo $id;?>').on('input', function() {
+$('#user-price_min_<?php echo $id;?>').on('input', function() {
     //change text and style at the save button
     $("#save_<?php echo $id;?>").text("Save");
     $('#btn_save_<?php echo $id;?>').css({'background':'transparent', 'color':'#6f91f5'})
 
     //check if the price is valid and make save button not disable when the user enters a price
-    price_answered = $('#user-price_<?php echo $id;?>').val();
-    if (price_answered != "" &&  price_answered > 0) {
+    price_answered_min = $('#user-price_min_<?php echo $id;?>').val();
+    if (price_answered_max != "" &&  parseInt(price_answered_max) > 0 && parseInt(price_answered_min) > 0 && price_answered_min != "") {
       $('#btn_save_<?php echo $id;?>').prop('disabled', false);
       $("#invalid_price_<?php echo $id;?>").text("");
-    } else if(price_answered <= 0){
+    } else if(price_answered_min <= 0){
       $("#invalid_price_<?php echo $id;?>").text("The price has to be a positive number");
+      $('#btn_save_<?php echo $id;?>').prop('disabled', true);
+      $('#btn_save_<?php echo $id;?>').css({'background':'transparent', 'color':'grey'})
+    }
+    
+    if(parseInt(price_answered_min) > parseInt(price_answered_max)){
+      $("#invalid_price_<?php echo $id;?>").text("The min price can't be higher than the max price");
       $('#btn_save_<?php echo $id;?>').prop('disabled', true);
       $('#btn_save_<?php echo $id;?>').css({'background':'transparent', 'color':'grey'})
     }
@@ -117,6 +156,37 @@ $('#user-price_<?php echo $id;?>').on('input', function() {
     //$("#sure_<?php echo $id;?>").text("Save first the price and then click on 'Next'");
 });
 
+//Take the value of the user's input
+$('#user-price_max_<?php echo $id;?>').on('input', function() {
+    //change text and style at the save button
+    $("#save_<?php echo $id;?>").text("Save");
+    $('#btn_save_<?php echo $id;?>').css({'background':'transparent', 'color':'#6f91f5'})
+
+    //check if the price is valid and make save button not disable when the user enters a price
+    price_answered_max = $('#user-price_max_<?php echo $id;?>').val();
+    if (price_answered_max != "" &&  price_answered_max > 0 && price_answered_min > 0 && price_answered_min != "") {
+      $('#btn_save_<?php echo $id;?>').prop('disabled', false);
+      $("#invalid_price_<?php echo $id;?>").text("");
+    } else if(price_answered_max <= 0){
+      $("#invalid_price_<?php echo $id;?>").text("The price has to be a positive number");
+      $('#btn_save_<?php echo $id;?>').prop('disabled', true);
+      $('#btn_save_<?php echo $id;?>').css({'background':'transparent', 'color':'grey'})
+    } 
+    
+    if(parseInt(price_answered_min) > parseInt(price_answered_max)){
+      $("#invalid_price_<?php echo $id;?>").text("The min price can't be higher than the max price");
+      $('#btn_save_<?php echo $id;?>').prop('disabled', true);
+      $('#btn_save_<?php echo $id;?>').css({'background':'transparent', 'color':'grey'})
+    }
+
+    //as the user hasn't saved yet the price make the next button disabled again
+    $("#btn_<?php echo $id;?>").prop('disabled', true);
+
+    //add text to help the user understand that he has to save in order to proceed
+    //$("#sure_<?php echo $id;?>").text("Save first the price and then click on 'Next'");
+});
+
+
 //Save the price
 $('#btn_save_<?php echo $id;?>').on('click', function(e) {
     //change text and style at the save button
@@ -124,6 +194,7 @@ $('#btn_save_<?php echo $id;?>').on('click', function(e) {
     $('#btn_save_<?php echo $id;?>').css({'background':'#6f91f5', 'color':'white'})
     $("#display_price_<?php echo $id;?>").show();
     $("#btn_<?php echo $id;?>").prop('disabled', false);
+    $("input").prop('disabled', true);
 
     save_price_time = e.timeStamp;
     
@@ -131,7 +202,7 @@ $('#btn_save_<?php echo $id;?>').on('click', function(e) {
 
 
 $('body').on('next', function(e, type){
-    if (type === '<?php echo $id;?>' && price_answered != ""){
+    if (type === '<?php echo $id;?>' && price_answered_min != "" && price_answered_max != ""){
         end_time = e.timeStamp;
         // we need to log our data
         trial_log.push([
@@ -140,7 +211,7 @@ $('body').on('next', function(e, type){
         <?php echo $trial;?> + "", 
         <?php echo $filter;?> + "", 
         ]);
-        if(<?php echo $condition;?> == 1){
+        if(<?php echo $condition;?> != 2){
           actual = "<?php echo $house[$experiment_data_id]["price"];?>"
         } else {
           actual = "<?php echo $prediction?>"
@@ -148,12 +219,15 @@ $('body').on('next', function(e, type){
         $.ajax({
             async: false,
             type: "POST",
-            url: '/FROE/html/setup/save_data.php',
+            url: "<?php echo $url;?>",
             data: {
+                "user": "<?php echo $user_id;?>",
                 "condition": "<?php echo $condition;?>",
                 "step":2,
                 "actual": actual,
-                "answer": price_answered,
+                "answer": 0,
+                "answer_min": price_answered_min,
+                "answer_max": price_answered_max,
                 "savePriceTime": save_price_time,
                 //"requestPredictionTime": request_prediction_time,
                 "startTime": start_time,
@@ -162,6 +236,7 @@ $('body').on('next', function(e, type){
                 "trial":  "<?php echo $trial_test;?>", 
                 "likert": 0,
                 "completed": 0,
+                "start": 0,
             },
             success: function(data)
             { 
@@ -176,13 +251,16 @@ $('body').on('next', function(e, type){
 
 $('body').on('show', function(e, type){
   if (type === '<?php echo $id;?>'){
+    var width_progress = ((<?php echo $trial_test;?> + 1) / 20) * 100 + '%';
+    $('#progress_<?php echo $id;?>').css({'width': width_progress});
     start_time = e.timeStamp;
     end_time = 0;
-    request_prediction_time = 0;
-    request_prediction = false;
+    // request_prediction_time = 0;
+    // request_prediction = false;
     $('#btn_save_<?php echo $id;?>').prop('disabled', true);
     $('#display_price_<?php echo $id;?>').hide();
     $("#save_<?php echo $id;?>").text("Save");
+    $("input").prop('disabled', false);
 
     console.log("showing page " + type);
     console.log(<?php echo $id;?>);

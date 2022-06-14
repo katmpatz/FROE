@@ -44,5 +44,9 @@
     "directory_name" : "stimuli_order",
     "read_stimuli_order_from_files" : true
   },
-  "css_file_name" : "main_filter_example.css"
+  "css_file_name" : "main_filter_example.css",
+  "url_local" : "/FROE/html/setup/save_data.php",
+  "url_server" : "/html/setup/save_data.php" 
 }
+
+  

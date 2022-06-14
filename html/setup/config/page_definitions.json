@@ -27,7 +27,7 @@
     "id" : "training",
     "button_text" : "Next",
     "page_path" : "pages/custom/training.php",
-    "repetitions" : 1,
+    "repetitions" : 2,
     "disabled" : false,
     "start_page" : false,
     "save_page" : false
@@ -44,7 +44,7 @@
     "id" : "testing",
     "button_text" : "Next",
     "page_path" : "pages/custom/testing.php",
-    "repetitions" : 3,
+    "repetitions" : 2,
     "disabled" : true,
     "start_page" : false,
     "save_page" : false
@@ -61,7 +61,7 @@
     "id" : "main_stimulus",
     "button_text" : "Next",
     "page_path" : "pages/custom/stimulus_page.php",
-    "repetitions" : 5,
+    "repetitions" : 2,
     "disabled" : true,
     "start_page" : false,
     "save_page" : false
@@ -86,7 +86,7 @@
     "id" : "feedback",
     "button_text" : "Finish",
     "page_path" : "pages/default/feedback.php",
-    "disabled" : false,
+    "disabled" : true,
     "start_page" : false,
     "save_page" : true
   },

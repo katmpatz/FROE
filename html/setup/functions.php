@@ -30,7 +30,7 @@ function loadConfig(){
   }
 
   if(!isset($apartment_order)){
-    $orderApFileContents = file_get_contents("order.json");
+    $orderApFileContents = file_get_contents("order_p1.json");
     $apartment_order = json_decode($orderApFileContents, true);
   }
 
@@ -139,21 +139,21 @@ function randomAssignmentFromFiles($basedir = 'html/setup') {
   // this function is called for between designs where a participant just needs to be randomly assigned to a condition combining a set of factor levels
   global $config, $stimuli_order, $factor1;
   $basedir = rtrim($basedir, '/') . '/';
-  $directory = $basedir . $config["stimuli_order_files"]["directory_name"];
-  $file = select_random_file($directory . "/unused");
+  //$directory = $basedir . $config["stimuli_order_files"]["directory_name"];
+  //$file = select_random_file($directory . "/unused");
   if (is_null($file)){
     $order_value = null;
     $factor1 = null;
   } else {
-    $factor1 = $file; // we store the name of the file in the factor variable. That way it will be saved as the 'condition' assigned to the participant.
-    $stimuli_order = explode(',', rtrim(file_get_contents($directory . '/in_use/' . $file)));
+    //$factor1 = $file; // we store the name of the file in the factor variable. That way it will be saved as the 'condition' assigned to the participant.
+    //$stimuli_order = explode(',', rtrim(file_get_contents($directory . '/in_use/' . $file)));
 
   }
 }
 
 
 //function that ensure that we will have exactly the same order of houses in the two conditions
-function mirrorConditions($basedir = 'results'){
+function mirrorConditions($basedir = 'html/setup/results'){
   $count = 0;
   //open the condition file
   //As we don't use a database we need an extra file in order to be able to create file names based on an order
@@ -176,26 +176,10 @@ function mirrorConditions($basedir = 'results'){
     }
   }
 
-  //if the trials are more than the total number of houses, start from the beginning
-  if($count >= 200){
-    $count = $count - 200;
-  }
-
   // close the file
   fclose($idf);
-  //if the total number of lines is an even number move the pointer and change condition
-  if($count == 0 || $count % 2 == 0){
-    $con = 1;
-    $pointer = $count - 1 - intdiv($count, 2); //-1 because we increase +1 before the first trial at the generatePages() and - count/2 to increase every two trials
-  //else if the total number of lines is an odd number keep the same position of the pointer as the previous condition and change condition
-  } else {
-    $con = 2;
-    $pointer = $count - 2 - intdiv($count, 2); //-2 because we want to keep the same order of appartments as the previous condition which was $count-1
-  }
-
-  $con = 1;
   
-  return array($con, $pointer, $count);
+  return $count;
 
 }
 
@@ -224,23 +208,28 @@ function roundPrediction($pred) {
 function generatePages() {
   // generate all pages based on the data indicated in the json files
   global $page_order, $pages, $page_ids, $config, $start_page, $save_page , $condition, $count; 
-  global $experiment_data_id, $houses, $house, $pointer, $trial, $prediction, $apartment_order, $order, $user;
+  global $experiment_data_id, $houses, $house,  $trial, $prediction, $apartment_order, $order, $user, $user_id, $url;
 
-  list($condition,$pointer, $count) = mirrorConditions();
+  $count = mirrorConditions();
+  //for local developement
+  $url = $config["url_local"];
+
+  // //for uploading at the server
+  // $url = $config["url_server"];
 
   $page_number = 0;
   $house = $houses['houses'];
   $user = $apartment_order['users'];
   $order = $user[$count]["order"];
-  //$order = [10,5,47,25,62,1,2,6,7,104,167,4,199,28,43];
-  //shuffle($house);
-  //variable which counts the repeats of the expirement in order to display the right info
-  //$experiment_data_id = $pointer;
+  $condition = $user[$count]["condition"];
+  $user_id= $user[$count]["user_id"];
+
   debug_to_console($count);
   $experiment_data_id = 0;
   $index = 0;
   $trial = -1;
   $trial_test = -1;
+  $trial_train = -1;
   $prediction = 0;
   
 
@@ -262,7 +251,7 @@ function generatePages() {
             $start_page = $page_number-1;
          }
          //if the page is part of the training increase the $training_data_id in order to display the right house details
-         if($pages[$page_id]["id"] == "training" || $pages[$page_id]["id"] == "training2" || $pages[$page_id]["id"] == "training3" || $pages[$page_id]["id"] == "training4" || $pages[$page_id]["id"] == "testing" || $pages[$page_id]["id"] == "main_stimulus"){
+         if($pages[$page_id]["id"] == "training" || $pages[$page_id]["id"] == "testing" || $pages[$page_id]["id"] == "main_stimulus"){
           debug_to_console($order[$index]);
           $experiment_data_id = $order[$index];
           $index++;
@@ -273,6 +262,9 @@ function generatePages() {
          }
         if($pages[$page_id]["id"] == "testing"){
           $trial_test++;
+        }
+        if($pages[$page_id]["id"] == "training"){
+          $trial_train++;
         }
         
          // check if the current page needs to be repeated (multiple trials); 
