@@ -58,34 +58,47 @@
       $trial = $_POST["trial"];
       $condition = $_POST["condition"];
       $step = $_POST["step"];
-      $actual = $_POST["actual"];
+      $rentalPrice = $_POST["rentalPrice"];
+      $recommendation = $_POST["recommedation"];
       $answer = $_POST["answer"];
       $answer_min = $_POST["answer_min"];
       $answer_max = $_POST["answer_max"];
-      $savePriceTime = $_POST["savePriceTime"];
+      $savePriceTime = (int) (intval($_POST["savePriceTime"])/1000);
       // $requestPredictionTime = $_POST["requestPredictionTime"];
       $startTime = (int) (intval($_POST["startTime"])/1000); //we divide by 1000 to get the seconds
       $endTime = (int) (intval($_POST["endTime"])/1000); //we divide by 1000 to get the seconds
       $houseId = $_POST["houseId"];
-      $likert = $_POST["likert"];
-      $difference_answer = 0;
-      $percentage_difference_answer = 0;
-      $difference_answer_abs = 0;
-      $percentage_difference_answer_abs = 0;
-
+      $surprise = $_POST["surprise"];
+      $confidence = $_POST["confidence"];
+      $expectations = 0;
+      $trust = $_POST["trust"];
+      $trustSaveTime = (int) (intval($_POST["saveTrustTime"])/1000);
+      $change = $_POST["change"];
+      $second_estimation = $_POST["secondEstimation"];
+      $second_estimation_time = (int) (intval($_POST["secondEstimationTime"])/1000);
+      $yesTime =(int) (intval($_POST["yesTime"])/1000);
+      $noTime = (int) (intval($_POST["noTime"])/1000);
+      $finalEstimation = $_POST["finalEstimation"];
+      $stars = $_POST["stars"];
+      $weight_of_advice = 0;
       //additional data
       $duration = $endTime - $startTime;
-
+      if($savePriceTime > 0){
+        $reaction_time = $endTime - $savePriceTime;
+      } else {
+        $reaction_time = 0;
+      }
+      
       if($step == 3){
-        $difference_answer = $answer - $actual;
-        $percentage_difference_answer = ($answer - $actual)/$actual;
-        $difference_answer_abs = abs($answer - $actual);
-        $percentage_difference_answer_abs = abs(($answer - $actual)/$actual);
+        $expectations = abs(($answer - $rentalPrice)/$answer*100);
+        if($second_estimation > -1){
+          $weight_of_advice = abs(($finalEstimation - $answer)/($recommendation - $answer));
+        }
       }
 
 
       //add the values in an array
-      $data = [$user, $trial, $houseId, $condition, $step, $actual, $answer, $answer_min, $answer_max, $startTime, $savePriceTime, $endTime, $duration, $likert, $difference_answer, $difference_answer_abs, $percentage_difference_answer, $percentage_difference_answer_abs];
+      $data = [$user, $trial, $houseId, $condition, $step, $rentalPrice, $recommendation , $answer, $answer_min, $answer_max, $startTime, $savePriceTime, $endTime, $duration, $reaction_time, $surprise, $confidence, $expectations, $trust, $trustSaveTime, $yesTime, $noTime, $change, $second_estimation, $second_estimation_time, $finalEstimation, $stars, $weight_of_advice];
       
       //print to check the values
       debug_to_console($data);
@@ -102,10 +115,10 @@
 
       // if the file is empty save the column headers
       if(0 == filesize($filename)){
-        fputcsv($f, array('User', 'Trial', 'House', 'Condition', 'Phase', 'Actual', 'Answer', 'AnswerMin', 'AnswerMax','StartTime', 'SaveTime', 'EndTime', 'Duration', 'Surprise', 'Difference', 'AbsDifference', 'Percentage', 'AbsPercentage'));
+        fputcsv($f, array('User', 'Trial', 'House', 'Condition', 'Phase', 'RentalPrice', 'Recommendation', 'Answer', 'AnswerMin', 'AnswerMax','StartTime', 'SaveTime', 'EndTime', 'Duration', 'Reaction Time', 'Subjective Surprise', 'Confidence', 'Expectations', 'Trust', 'Trust Save Time', 'Yes Time', 'No time', 'Change', 'Second Estimation', 'Second Estimation Time', 'Final Estimation', 'Stars', 'Weight of Advice'));
       }
       if(0 == filesize($final)){
-        fputcsv($fn, array('User', 'Trial', 'House', 'Condition', 'Phase', 'Actual', 'Answer', 'AnswerMin', 'AnswerMax','StartTime', 'SaveTime', 'EndTime', 'Duration', 'Surprise' ,'Difference', 'AbsDifference', 'Percentage', 'AbsPercentage'));
+        fputcsv($fn, array('User', 'Trial', 'House', 'Condition', 'Phase', 'RentalPrice', 'Recommendation', 'Answer', 'AnswerMin', 'AnswerMax','StartTime', 'SaveTime', 'EndTime', 'Duration', 'Reaction Time', 'Subjective Surprise', 'Confidence', 'Expectations', 'Trust', 'Trust Save Time', 'Yes Time', 'No time', 'Change', 'Second Estimation', 'Second Estimation Time', 'Final Estimation', 'Stars', 'Weight of Advice'));
       }
 
       if ($f === false) {
@@ -136,11 +149,12 @@
       $age = $_POST["age"];
       $gender = $_POST["gender"];
       $familiarityRennes = $_POST["familiarityRennes"];
-      $confident_p2 = $_POST["confident_p2"];
-      $confident_p3 = $_POST["confident_p3"];
+      $trust = $_POST["trust"];
       $comments = $_POST["comments"];
+      $totalStars = $_POST["totalStars"];
+      $totalEuros = $_POST["totalEuros"];
 
-      $data = [$user, $age, $gender, $familiarityRennes, $confident_p2, $confident_p3, $comments];
+      $data = [$user, $age, $gender, $familiarityRennes, $trust, $totalStars, $totalEuros, $comments];
 
     //COMPLETE - save user's info when they complete the experiment
     //if the experiment is completed save the user info
@@ -153,7 +167,7 @@
 
       // if the file is empty save the column headers
       if(0 == filesize($userfile)){
-        fputcsv($usf, array('User', 'Age', 'Gender', 'FamilliarityWithRennes', 'Confident_phase2', 'Confident_phase3', 'Comments'));
+        fputcsv($usf, array('User', 'Age', 'Gender', 'FamilliarityWithRennes', 'Trust', 'TotalStars', 'TotalEuros', 'Comments'));
       }
 
       //add the data at the csv

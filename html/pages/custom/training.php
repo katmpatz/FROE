@@ -6,13 +6,13 @@
   <div class="progress">
     <div class="progress-bar" role="progressbar" id="progress_<?php echo $id;?>" aria-valuenow=<?php echo $trial_train + 1;?> aria-valuemin="1" aria-valuemax="20"></div>
   </div>
-  <h6 style="color:#828d98; margin-top:10px;"><?php echo $trial_train + 1;?>  out of 20 apartments</h6>
+  <h6 style="color:#828d98; margin-top:10px;"><?php echo $trial_train + 1;?>  out of 30 apartments</h6>
   <div class="row top-50">
     <div class="col-lg-6 col-sm-12" id="ImageBlock_<?php echo $id;?>">
         <img src ="<?php echo $house[$experiment_data_id]["image"];?>" class="Image">
     </div>
     <div id="houseInfo" class="col-lg-6 col-sm-12">
-      <h4>Information:</h4>
+      <h4>Information: </h4>
       <div class="line"></div>
       <div class="smHide information row" style="margin-bottom:20px;">
         <div class="col-md-4 col-xs-6">
@@ -20,7 +20,7 @@
           <p class="light-p"><span class="label-info">Square meters:</span> <?php echo $house[$experiment_data_id]["squaremeters"];?></p>
         </div>
         <div class="col-md-4 col-xs-6">
-          <p class="light-p"><span class="label-info">Bedrooms:</span> <?php echo $house[$experiment_data_id]["rooms"];?>  </p>
+          <p class="light-p"><span class="label-info">Rooms:</span> <?php echo $house[$experiment_data_id]["rooms"];?>  </p>
           <p class="light-p"><span class="label-info">Furnished:</span> <?php echo $house[$experiment_data_id]["furnished"];?></p>
         </div>
         <div class="col-md-4 col-xs-12">
@@ -95,12 +95,13 @@ $('body').on('next', function(e, type){
     $.ajax({
             async: false,
             type: "POST",
-            url: "<?php echo $url;?>",
+            url: "<?php echo $url . 'save_data.php';?>",
             data: {
                 "user": "<?php echo $user_id;?>",
                 "condition": "<?php echo $condition;?>",
                 "step":1,
-                "actual": actual,
+                "rentalPrice": "<?php echo $house[$experiment_data_id]["price"];?>",
+                "recommedation": "<?php echo $prediction;?>",
                 "answer": 0,
                 "answer_min": 0,
                 "answer_max": 0,
@@ -110,7 +111,17 @@ $('body').on('next', function(e, type){
                 "endTime": end_time,
                 "houseId": "<?php echo $house[$experiment_data_id]["id"];?>", 
                 "trial":  "<?php echo $trial_train;?>", 
-                "likert": 0,
+                "confidence": 0,
+                "surprise": 0,
+                "trust": 0,
+                "saveTrustTime": 0,
+                "change": 0,
+                "secondEstimation": 0,
+                "secondEstimationTime": 0,
+                "yesTime": 0,
+                "noTime": 0,
+                "finalEstimation": 0,
+                "stars": 0,
                 "completed": 0,
                 "start": 0,
             },
@@ -128,7 +139,7 @@ $('body').on('next', function(e, type){
 
 $('body').on('show', function(e, type){
   if (type === '<?php echo $id;?>'){
-    var width_progress = ((<?php echo $trial_train;?> + 1) / 20) * 100 + '%';
+    var width_progress = ((<?php echo $trial_train;?> + 1) / 30) * 100 + '%';
     $('#progress_<?php echo $id;?>').css({'width': width_progress});
     start_time = e.timeStamp;
     end_time = 0;

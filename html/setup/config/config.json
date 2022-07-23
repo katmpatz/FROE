@@ -45,8 +45,8 @@
     "read_stimuli_order_from_files" : true
   },
   "css_file_name" : "main_filter_example.css",
-  "url_local" : "/FROE/html/setup/save_data.php",
-  "url_server" : "/html/setup/save_data.php" 
+  "url_local" : "/FROE/html/setup/",
+  "url_server" : "/html/setup/"
 }
 
   

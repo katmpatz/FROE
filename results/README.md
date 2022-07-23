@@ -1,1 +1,0 @@
-Result files will appear in this directory

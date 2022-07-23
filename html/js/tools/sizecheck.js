@@ -74,7 +74,7 @@ export function checkWindowDimension() {
     $('#dimension-message').hide();
   }
 
-  if (zoom <= 0.9) {
+  if (zoom <= 0.5) {
     $('#content').hide();
     $('#zoom-message').show();
   } else {

@@ -53,6 +53,7 @@
 
   $is_pilot = false;
   $is_debug = false;
+  
 
   if (isset($_GET["DEBUG"]) || isset($_GET["debug"])) {
     $is_debug = true;
@@ -108,48 +109,48 @@ if ($is_debug  || $is_pilot){
 
 
 <?php
-  if(isset($config['stimuli_order_files']['read_stimuli_order_from_files'])){
-    if ($config['stimuli_order_files']['read_stimuli_order_from_files']){
-      randomAssignmentFromFiles();
-    }
-  } else {
-    randomAssignment();
-  }
+  // if(isset($config['stimuli_order_files']['read_stimuli_order_from_files'])){
+  //   if ($config['stimuli_order_files']['read_stimuli_order_from_files']){
+  //     randomAssignmentFromFiles();
+  //   }
+  // } else {
+  //   randomAssignment();
+  // }
 
 
-  $condition = $factor1;
+  // $condition = $factor1;
 
-  if (is_null($condition)){
-    ?>
+  // if (is_null($condition)){
+  ?>
 
-    <h3>No configuration files available</h3>
-    <p>If you see this message, then all experiment configuration files have been used up. This may be a temporary or permanent state. Check back in a few minutes. If the message persists, then the system assigned too many participants to this study.</p>
+  <!-- <h3>No configuration files available</h3>
+  <p>If you see this message, then all experiment configuration files have been used up. This may be a temporary or permanent state. Check back in a few minutes. If the message persists, then the system assigned too many participants to this study.</p> -->
 
-    <?php
-    exit();
-  }
+  <?php
+  //   exit();
+  // }
 
 
   // The following lines create a log file name "requested.csv" which contains a timestamp and participants id for all people who requested the page. This is mainly useful for debugging purposes to figure where something went wrong. It can also be used to detect if someone reloaded the page.
   
-  $starter_filename = "results/requested.csv";
-  $exists = file_exists($starter_filename);
-  $starter_file = fopen($starter_filename, "a+");
+  // $starter_filename = "results/requested.csv";
+  // $exists = file_exists($starter_filename);
+  // $starter_file = fopen($starter_filename, "a+");
 
-  if (!$exists){
-    fwrite($starter_file, "timestamp,participant_id,condition,study_id,session_id");
-  }
+  // if (!$exists){
+  //   fwrite($starter_file, "timestamp,participant_id,condition,study_id,session_id");
+  // }
 
-  fwrite($starter_file,
-    PHP_EOL .
-    date(DateTime::ISO8601) . ',' .
-    (($is_debug) ? 'DEBUG' : $participant_id) . ',' .
-    $condition . ',' .
-    $study_id . ',' .
-    $session_id
-  );
+  // fwrite($starter_file,
+  //   PHP_EOL .
+  //   date(DateTime::ISO8601) . ',' .
+  //   (($is_debug) ? 'DEBUG' : $participant_id) . ',' .
+  //   $condition . ',' .
+  //   $study_id . ',' .
+  //   $session_id
+  // );
 
-  fclose($starter_file);
+  // fclose($starter_file);
 
   // These are hidden input fields which store information to be retrievable with javascript.
 ?>
@@ -216,19 +217,19 @@ if ($is_debug  || $is_pilot){
 
 
     // if the constant $EXCLUDE_RELOADERS is set to true, check if a cookie has been set already
-    if ($('#exclude_reloaders').val() > 0){
-      if (checkCookie()){
-        document.cookie = "prolific_study=" +  $('#participant_id').val() + "; max-age=" + 60*60*24*7;
-        if (getCookie("accepted") == 1 && !is_debug) {
-          $("main").hide();
-          $("#reloader-container").show();
-          $('body').trigger("reloaded");
-        }
-      } else {
-          $("main").hide();
-          $("#no-cookie-container").show();
-      }
-    }
+    // if ($('#exclude_reloaders').val() > 0){
+    //   if (checkCookie()){
+    //     document.cookie = "prolific_study=" +  $('#participant_id').val() + "; max-age=" + 60*60*24*7;
+    //     if (getCookie("accepted") == 1 && !is_debug) {
+    //       $("main").hide();
+    //       $("#reloader-container").show();
+    //       $('body').trigger("reloaded");
+    //     }
+    //   } else {
+    //       $("main").hide();
+    //       $("#no-cookie-container").show();
+    //   }
+    // }
 
     $('<?php echo implode(',' , $page_ids);?>').hide();
       

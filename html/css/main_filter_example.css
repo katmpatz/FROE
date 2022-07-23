@@ -114,7 +114,7 @@ button{
 
 .Image{
     width: 500px ;
-    height: 340px;
+    height: 280px;
     border-radius:10px;
 }
 
@@ -349,8 +349,8 @@ u{
 
 .navbar-logo {
     color: #6f91f5; 
-    margin-top:40px; 
-    margin-bottom:40px; 
+    margin-top:25px; 
+    margin-bottom:25px; 
     margin-right:40px;
 }
 
@@ -362,6 +362,14 @@ u{
 .logo{
     font-size:32px; 
     font-weight:800;
+}
+
+.top-20 {
+    margin-top:20px;
+}
+
+.top-25 {
+    margin-top:25px;
 }
 
 .top-40 {
@@ -376,14 +384,12 @@ u{
     margin-top:50px;
 }
 
-.top-20 {
-    margin-top:20px;
-}
+
 
 input[type=number]{
     margin-left: 10px;
     margin-top: -5px;
-    width: 150px;
+    width: 120px;
     text-align: left;
     font-size: 15px;
     height:35px;
@@ -505,6 +511,107 @@ form .likert li input[type=radio] {
 .mt-250{
     margin-top:250px;
 }
+
+.mt-20{
+    margin-top:20px;
+}
+
+#not_conf{
+    white-space: nowrap; 
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+#conf{
+    white-space: nowrap;
+    margin-top: 10px;
+    margin-left: -100px;
+}
+
+form .likert-conf {
+    margin-top:-8px !important;
+    list-style:none;
+    width:80%;
+    margin:0;
+    padding:0 0 25px;
+    display:block;
+  }
+
+  form .likert-conf:last-of-type {border-bottom:0;}
+  form .likert-conf:before {
+    content: '';
+    position:relative;
+    top:17px;
+    left:7%;
+    display:block;
+    background-color:#d2daf1;
+    height:4px;
+    width:82%;
+  }
+
+  form .likert-conf li {
+    display:inline-block;
+    width:13%;
+    text-align:center;
+    vertical-align: top;
+  }
+
+  form .likert-conf li input[type=radio] {
+    display:block;
+    position:relative;
+    top:0;
+    left:50%;
+    margin-left:-6px;
+    
+  }
+
+  
+form .likert-trust {
+    margin-top:-8px !important;
+    list-style:none;
+    width:100%;
+    margin:0;
+    padding:0 0 25px;
+    display:block;
+  }
+
+  form .likert-trust:last-of-type {border-bottom:0;}
+  form .likert-trust:before {
+    content: '';
+    position:relative;
+    top:17px;
+    left:7%;
+    display:block;
+    background-color:#d2daf1;
+    height:4px;
+    width:86%;
+  }
+
+  form .likert-trust li {
+    display:inline-block;
+    width:13%;
+    text-align:center;
+    vertical-align: top;
+  }
+
+  form .likert-trust li input[type=radio] {
+    display:block;
+    position:relative;
+    top:0;
+    left:50%;
+    margin-left:-6px;
+    
+  }
+
+  .nav-icon {
+    margin-left: 5px;
+    margin-top: -6px;
+    margin-right: 15px;
+  }
+
+  .center {
+    justify-content: center;
+  }
 
 @media only screen and (max-width: 900px) {
     #houseInfo{
@@ -651,7 +758,11 @@ select {
 .mt-250{
     margin-top:125px;
 }
+
+
 }
+
+
 
 
 

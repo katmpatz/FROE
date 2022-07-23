@@ -8,36 +8,43 @@
         <ul>
           <li>
             <?php if ($condition != 2): ?>
-              <p>You first have to estimate the price of 20 apartments given their features and your knowledge of the rental market (similar to Phase2).</p>
-            <img src ="html/img/end_testing_c1_1.JPG" width="800" style="margin-bottom:50px" class="smHide">
+              <p>You first have to estimate the rental price of a flat and how confident you feel about this estimation given its features and your knowledge of the rental market. Note that you can't change the estimated price and confidence after saving.</p>
+            <img src ="html/img/end_testing_1.JPG" width="800" style="margin-bottom:50px" class="smHide">
             <?php elseif ($condition == 2): ?>
-              <p>You first have to estimate the price prediction of 20 apartments given their features and your knowledge about the algorithm's predictions (similar to Phase2). </p>
+              <p>You first have to estimate the price recommendation of 20 flats given their features and your knowledge about the algorithm's recommendations (similar to Phase2). </p>
             <img src ="html/img/end_testing_c2_1.JPG" width="800" style="margin-bottom:50px" class="smHide">
             <?php endif ?>
           </li>
           <li>
             <?php if ($condition == 1): ?>
-              <p>Once you saved the price, the system will provide the actual price of this apartement. You then have to indicate how <u>surprising</u> is this actual price. <br><b>Not surprising</b>, means that this price is close to what you expected (based on your knowledge of the rental market), while <b>Very surprising</b> means that the price is unexpectedly high or low.</p>
+              <p>Once you saved the price, the system will provide the actual price of this apartement. You then have to indicate how <u>surprising</u> is this actual price. <br></p>
               <img src ="html/img/end_testing_c1_2.JPG" width="800" style="margin-bottom:50px" class="smHide">
             <?php elseif ($condition == 2): ?>
-              <p>Once you saved your prediction, the system will provide the prediction of the algorithm for this apartement. You then have to indicate how <u>surprising</u> is this prediction. <br><b>Not surprising</b>, means that this price prediction is close to what you expected (based on your knowledge about the algorithm's predictions), while <b>Very surprising</b> means that the price prediction is unexpectedly high or low.</p>
+              <p>Once you saved your recommendation, the system will provide the AI recommendation for this apartement. You then have to indicate how <u>surprising</u> is this recommendation. <br><b>Not surprising</b>, means that this price recommendation is close to what you expected (based on your knowledge about the algorithm's recommendations), while <b>Very surprising</b> means that the price recommendation is unexpectedly high or low.</p>
               <img src ="html/img/end_testing_c2_2.JPG" width="800" style="margin-bottom:50px" class="smHide">
             <?php elseif ($condition == 3 || $condition == 4): ?>
-              <p>Once you saved the price, the system will provide the prediction of the algorithm for this apartement. You then have to indicate how <u>surprising</u> is this prediction. <br><b>Not surprising</b>, means that this price prediction is close to what you expected (based on your knowledge of the rental market), while <b>Very surprising</b> means that the price prediction is unexpectedly high or low.</p>
-              <img src ="html/img/end_testing_c3_2.JPG" width="800" style="margin-bottom:50px" class="smHide">
+              <p>Once you have saved the price, the system will provide the AI recommendation for this flat. You then have to indicate how surprising this recommendation is.</p>
+              <img src ="html/img/end_testing_2.JPG" width="800" style="margin-bottom:50px" class="smHide">
             <?php endif ?>
           </li>
-            <p>This phase is about 7 minutes long. Click the <i>"Next"</i> button below, to proceed at the next apartment.</p>
+          <li>
+            <p> After seeing and evaluating the AI recommendation you can choose if you want to change or not your initial estimation. Based on how close is your final estimation to the real price of the flat, you gain from 1 to 5 stars. With 5 stars, you earn 0,80 €, with 4 stars you earn 0,20€, with 3 stars you neither gain nor lose, with 2 stars you lose 0,20€ and with 1 star you lose 0,80€.</p>
+            <img src ="html/img/end_testing_3.JPG" width="800" style="margin-bottom:50px" class="smHide">
+            <img src ="html/img/end_testing_4.JPG" width="400" style="margin-bottom:50px; border: 3px solid #f4f4f4; border-radius: 10px;" class="smHide">
+          </li>
+          <li>
+            <p>Every 5 trials, we ask you to evaluate if you trust the recommendations of the algorithm. You will estimate the rental price for 30 flats. This phase is about 15 minutes long. Click the "Next" button below, to proceed to the next flat.</p>
+            <img src ="html/img/end_testing_5.JPG" width="400" style="margin-bottom:50px;border: 3px solid #f4f4f4;border-radius: 10px;" class="smHide">
           </li>
         </ul>
-        <p class="top-50"><u>Please read carefully and answer to the following question:</u></p>
-                <div class="mb-3">
+        <!-- <p class="top-50"><u>Please read carefully and answer to the following question:</u></p> -->
+                <!-- <div class="mb-3">
                     <p>
                         When you have to evaluate a
                         <?php if ($condition == 1): ?>
                             <span>price</span>
                         <?php elseif ($condition != 1): ?>
-                            <span>prediction</span>
+                            <span>recommendation</span>
                         <?php endif ?>
                         as "Not surprising"?
                     </p>
@@ -75,11 +82,11 @@
                 <div class="mb-3">
                       <span id="message"></span>
                       <button id="btn_save_<?php echo $id;?>" type="button" class="btn btn-wider btn-design" style="color:white;">Check your responses</button>
-                </div>
+                </div> -->
       </div>
     </div>
 </div>
-
+<!-- 
 <script type="text/javascript">
 var answer_1 = 5;
 
@@ -110,5 +117,5 @@ $('body').on('show', function(e, type){
 });
 
 
-</script>
+</script> -->
 
