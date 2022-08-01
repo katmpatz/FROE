@@ -1,0 +1,26 @@
+User,Email,Age,Gender,FamilliarityWithRentalMarket,Trust,TotalStars,TotalEuros,Comments
+1,nbaok1997@gmail.com,25,2,5,4,113,11.60,"Phase 1 was very helpful. However there were very few expensive ones, so I was not able to ""learn"" them. 
+
+The AI-system behaves well for middle prices and not for high and low. It never exceeded 1400EU for example. This consists a personal observation which might be false. So, in general I cannot trust it but after the recommendation many times I changed my answer closer to the suggested one.
+
+Very pleasant quiz, without any technical issues. I would say it took me around 40-45 minutes. It requires some time imo. Random thoughts here, you could present us what prize would the AI achieve itself when asking for how much we trust it.
+
+Hope you have great results."
+5,eva.panag14@gmail.com,23,1,5,5,114,11.80,
+9,giangilom98@gmail.com,23,2,2,2,114,12.60,"Data given in phase one were mostly in the average region, causing wrong predictions in the estimation of very expensive or very cheap accommodations."
+12,xenikosmanos@gmail.com,25,2,5,5,106,10.60,"The overall study was very well costructed and easy to complete.
+I believe that the AI recomendations were decent. I think that one ""flaw"" is that it doesn't give much attention at the aesthetic quality of the interior. For example two appartments with the same characteristics (bedrooms, square meters, etc) could have a big difference on pricing, depending their interior design and look.
+
+Good luck with your study!!"
+12,antonis.gkortzis@gmail.com,35,2,5,4,109,10.40,
+19,not_going_to_give_you_my_email.@user.com,25,2,2,5,104,9.00,"I would like to know more information about the experiment. Are flats/entries randomized? Can an entry from Phase 1 or 2 appear in phase 3? Are prices based on real-life data or are they computed based on a custom formula?
+Phase 1 was helpful. I don't understand the purpose of Phase 2. I understand the need for data but I think Phase 3 might be too long. Takes a lot of time and during the final questions users are already tired and their judgment is affected. I don't know if the entries are randomized but in my case the experiment started with very accurate predictions by the system and that gave me the false idea that I should trust the system more than my own judgment (which turned out to be a mistake). "
+21,daniele.depaola.volta@gmail.com,24,2,5,5,112,11.80,"Very well structured experimental phases. Instructions are clear and crisp, allowing the user to contribute at its best. Good idea the gamification of tasks, in general answering 30 questions has not being frustrating at all, good job. One possible feedback could be to add more visibility on the location of apartments (More info on the City in the introducion). Overall, it was fun. Good luck! ;)"
+23,stellasenetaki@gmail.com,25,0,3,4,109,10.40,"Some of them seemed too expensive compared to the ones in phase 1. Phase 1 was helpful, but I believe more examples of larger apartments were needed. "
+26,behnooshmzd@gmail.com,25,1,5,3,110,11.00,
+36,federicabucchieri@gmail.com,24,1,6,4,114,11.80,"Phase 1 was helpful but it was hard to remember everything. I mostly based the answers on my instinct. The recommendation at the beginning seemed to follow a pattern (always 150 euros less than the actual price more or less). Then some other recommendation were totally out of scale in positive. I think that overall the algorithm biased my decisions to change answer negatively."
+32,tsolakidou@gmail.com,41,1,2,4,100,7.80,
+39,ema.zeni97@gmail.com,24,2,2,3,98,7.80,"I honestly think that you left out a very important factor, the apartment location. I think is the heaviest variable in rent prices, maybe not specifying the city, but at least the distance to the city center. The training sample price range was not wide enough, the most expensive flat was 1200€ per month, while in the test there were at least 6 where the value was much higher. I think the algorithm suffered because of that as well."
+40,eva.tsiand@gmail.com,28,0,2,1,102,8.20,
+40,ibrahim.laiche@gmail.com,24,2,4,4,107,10.80,
+45,aebacanu@yahoo.com,23,1,2,4,117,14.00,"At the beginning of the study, the instructions warned me that the recommendation system may either overestimate, underestimate, or accurately assess the prices. This for me meant that it was made to be pretty random for the study and made me not trust it very much. Based on the AI answers throughout the study, it really seemed like recommendations were randomly correct or wrong. So I didn't really rely on them very much and just trusted the data that I was given in phase 1. I couldn't say that I DIStrusted the algorithm either. I just didn't really trust it as much as I trusted the data and my own guesses."

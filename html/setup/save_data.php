@@ -89,9 +89,9 @@
         $reaction_time = 0;
       }
       
-      if($step == 3){
+      if($step == 3 && $answer != 0){
         $expectations = abs(($answer - $rentalPrice)/$answer*100);
-        if($second_estimation > -1){
+        if($second_estimation > -1 && ($recommendation - $answer) != 0){
           $weight_of_advice = abs(($finalEstimation - $answer)/($recommendation - $answer));
         }
       }
@@ -146,6 +146,7 @@
     } else {
       //GET DATA FROM FEEDBACK
       $user = $_POST["user"];
+      $email = $_POST["email"];
       $age = $_POST["age"];
       $gender = $_POST["gender"];
       $familiarityRennes = $_POST["familiarityRennes"];
@@ -154,7 +155,7 @@
       $totalStars = $_POST["totalStars"];
       $totalEuros = $_POST["totalEuros"];
 
-      $data = [$user, $age, $gender, $familiarityRennes, $trust, $totalStars, $totalEuros, $comments];
+      $data = [$user, $email, $age, $gender, $familiarityRennes, $trust, $totalStars, $totalEuros, $comments];
 
     //COMPLETE - save user's info when they complete the experiment
     //if the experiment is completed save the user info
@@ -167,7 +168,7 @@
 
       // if the file is empty save the column headers
       if(0 == filesize($userfile)){
-        fputcsv($usf, array('User', 'Age', 'Gender', 'FamilliarityWithRennes', 'Trust', 'TotalStars', 'TotalEuros', 'Comments'));
+        fputcsv($usf, array('User', 'Email', 'Age', 'Gender', 'FamilliarityWithRentalMarket', 'Trust', 'TotalStars', 'TotalEuros', 'Comments'));
       }
 
       //add the data at the csv

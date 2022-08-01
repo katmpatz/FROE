@@ -260,8 +260,8 @@
     // var request_prediction_time = 0;
     var save_price_time = 0;
     var save_trust_time = 0;
-    var estimation_answered = false;
-    var confidence_answered = false;
+    var estimation_answered_<?php echo $id;?> = false;
+    var confidence_answered_<?php echo $id;?> = false;
     var surprise_answered = false;
     var confidence = 0;
     var surprise = 0;
@@ -281,8 +281,8 @@ $('#user-price_<?php echo $id;?>').on('input', function() {
     //check if the price is valid and make save button not disable when the user enters a price
     price_answered = $('#user-price_<?php echo $id;?>').val();
     if (price_answered != "" &&  price_answered > 0) {
-      estimation_answered = true;
-      if(confidence_answered){
+      estimation_answered_<?php echo $id;?> = true;
+      if(confidence_answered_<?php echo $id;?>){
         $('#btn_save_<?php echo $id;?>').prop('disabled', false);
         //change text and style at the save button
         $("#save_<?php echo $id;?>").text("Save");
@@ -303,8 +303,8 @@ $('#user-price_<?php echo $id;?>').on('input', function() {
 //confidence
 $('input:radio[name="confidence_<?php echo $id;?>"]').on('click', function() {
   confidence = $('input[type="radio"][name="confidence_<?php echo $id;?>"]:checked').val();
-  confidence_answered = true;
-  if(estimation_answered){
+  confidence_answered_<?php echo $id;?> = true;
+  if(estimation_answered_<?php echo $id;?>){
     $('#btn_save_<?php echo $id;?>').prop('disabled', false);
   }
 });

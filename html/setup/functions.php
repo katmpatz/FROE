@@ -211,11 +211,11 @@ function generatePages() {
   global $experiment_data_id, $index, $houses, $house,  $trial, $prediction, $apartment_order, $order, $user, $user_id, $url, $house_id;
 
   $count = mirrorConditions();
-  //for local developement
-  $url = $config["url_local"];
+  // //for local developement
+  // $url = $config["url_local"];
 
-  // //for uploading at the server
-  // $url = $config["url_server"];
+  //for uploading at the server
+  $url = $config["url_server"];
 
   $page_number = 0;
   $house = $houses['houses'];

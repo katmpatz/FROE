@@ -1459,7 +1459,7 @@
         },
         {
           "id": 117,
-          "type": "apartment",
+          "type": "apartment", 
           "rooms": 2,
           "bathrooms": 1,
           "squaremeters": 46,

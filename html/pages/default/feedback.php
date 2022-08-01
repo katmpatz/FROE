@@ -15,6 +15,17 @@
   <div class="col">
     <h1>Feedback</h1>
   <div id="feedback" class="col-12 top-40">
+    <div style="margin-bottom:60px;">
+    <h4>Contact details:</h4>
+    <div class="line"></div>
+      <p>This field is important to send you more information about the payment.</p>
+      <label>Email*: </label> 
+      <input
+                name="email"
+                id="email_<?php echo $id;?>" 
+            >
+      </input>
+    </div>
     <h4>Personal Information:</h4>
     <div class="line"></div>
     <div class="row top-40">
@@ -144,11 +155,13 @@
 <script type="text/javascript">
   var comments = "";
   var age;
+  var email;
   var gender = $("#gender option:selected").val();
   var familiarityRennes;
   var confident_p2;
   var confident_p3;
   var age_ansrd = false;
+  var email_ansrd = false;
   var fam_ansrd = false;
   var trust_ansrd = false;
   var trust;
@@ -179,7 +192,7 @@
 $('input:radio[name="trust_<?php echo $id;?>"]').on('click', function() {
   trust = $('input[type="radio"][name="trust_<?php echo $id;?>"]:checked').val();
   trust_ansrd = true;
-  if(age_ansrd && fam_ansrd && trust_ansrd){
+  if(age_ansrd && fam_ansrd && trust_ansrd && email_ansrd){
       $("#btn_<?php echo $id;?>").prop('disabled', false);
     }
 });
@@ -189,11 +202,20 @@ $('#btn_save_trust_<?php echo $id;?>').on('click', function(e) {
   save_trust_time = new Date().getTime();
 });
 
-  //Take the value of the user's input
+  //Take the value of the user's input age
   $('#age_<?php echo $id;?>').on('input', function() {
     age = $('#age_<?php echo $id;?>').val();
     age_ansrd = true;
-    if(age_ansrd && fam_ansrd && trust_ansrd){
+    if(age_ansrd && fam_ansrd && trust_ansrd && email_ansrd){
+      $("#btn_<?php echo $id;?>").prop('disabled', false);
+    }
+  });
+
+    //Take the value of the user's input email
+    $('#email_<?php echo $id;?>').on('input', function() {
+    email = $('#email_<?php echo $id;?>').val();
+    email_ansrd = true;
+    if(age_ansrd && fam_ansrd && trust_ansrd && email_ansrd){
       $("#btn_<?php echo $id;?>").prop('disabled', false);
     }
   });
@@ -203,7 +225,7 @@ $('#btn_save_trust_<?php echo $id;?>').on('click', function(e) {
   $('input:radio[name="familiar_<?php echo $id;?>"]').on('click', function() {
     familiarityRennes = $('input[type="radio"][name="familiar_<?php echo $id;?>"]:checked').val();
     fam_ansrd = true;
-    if(age_ansrd && fam_ansrd && trust_ansrd){
+    if(age_ansrd && fam_ansrd && trust_ansrd && email_ansrd){
       $("#btn_<?php echo $id;?>").prop('disabled', false);
     }
   });
@@ -222,6 +244,7 @@ $('#btn_save_trust_<?php echo $id;?>').on('click', function(e) {
             url: "<?php echo $url . 'save_data.php';?>",
             data: {
                 "user": "<?php echo $user_id;?>",
+                "email": email,
                 "age": age,
                 "gender": gender,
                 "familiarityRennes": familiarityRennes,
